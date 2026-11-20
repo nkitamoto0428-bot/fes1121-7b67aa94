@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="ja">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="robots" content="noindex, nofollow, noarchive">
-<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+</head><body>
 <title>星天qlayフェス 当日運営</title>
+<meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap">
 <style>
@@ -45,7 +45,7 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:va
 .hin{max-width:640px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:10px 10px}
 .top{display:flex;align-items:baseline;justify-content:space-between;gap:8px}
 .brand{font-weight:900;font-size:17px;letter-spacing:.02em}
-.brand small{font-weight:500;font-size:11px;color:var(--muted);margin-left:6px;letter-spacing:.04em}
+.brand small{display:block;font-weight:500;font-size:11px;color:var(--muted);letter-spacing:.04em;line-height:1.3}
 .clock{font-variant-numeric:tabular-nums;font-size:12px;color:var(--muted);white-space:nowrap}
 .chips{display:flex;gap:6px;margin-top:8px;overflow-x:auto;scrollbar-width:none}
 .chips::-webkit-scrollbar{display:none}
@@ -114,9 +114,157 @@ h3{font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--muted);margin
 /* teardown */
 .td .slot .b .row .x{font-size:13.5px}
 .tdhead{font-size:13px;font-weight:700;color:var(--orange);background:color-mix(in srgb,var(--orange) 10%,var(--surface));border-radius:10px;padding:8px 12px}
+.jump{position:sticky;top:calc(env(safe-area-inset-top,0px) + var(--hh,96px));z-index:12;display:flex;gap:6px;margin:10px 0 2px;padding:6px 0;background:var(--bg);overflow-x:auto;scrollbar-width:none}
+.jump::-webkit-scrollbar{display:none}
+.jump button{flex:0 0 auto;min-height:40px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:0 14px;font:700 13px var(--font);cursor:pointer}
+details.fold{margin-top:12px}
+details.fold>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;min-height:44px;font-size:14px;font-weight:900;color:var(--ink);border-bottom:1px solid var(--line);margin-bottom:8px}
+details.fold>summary::-webkit-details-marker{display:none}
+details.fold>summary span{font-size:12px;font-weight:700;color:var(--muted)}
+details.fold>summary::after{content:"";margin-left:auto;width:9px;height:9px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg) translate(-2px,-2px);transition:transform .15s}
+details.fold[open]>summary::after{transform:rotate(-135deg)}
+.mode{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;margin:0 0 8px}
+.mode button{min-height:36px;padding:0 16px;border:0;background:var(--surface);color:var(--muted);font:700 13px var(--font);cursor:pointer}
+.mode button[aria-pressed="true"]{background:var(--ink);color:var(--surface)}
+#zt .mv{grid-template-columns:96px 1fr}.mv.c{padding:6px 12px;border-radius:10px}.mv.c .t{min-width:0}.mv.c .d{font-size:13.5px}
+details.fold>summary:focus-visible,.jump button:focus-visible,.mode button:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+.gwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:14px;background:var(--surface);overscroll-behavior-x:contain}
+.gt{position:relative}
+.gh{position:absolute;top:4px;transform:translateX(4px);font-size:11px;font-weight:700;color:var(--muted);font-variant-numeric:tabular-nums}
+.gl{position:absolute;top:22px;bottom:0;border-left:1px dashed var(--line)}
+.glane{position:absolute;left:0;right:0;border-top:1px solid var(--line)}
+.gname{position:sticky;left:0;display:flex;align-items:flex-start;width:72px;height:100%;padding:8px 6px;font-size:11.5px;font-weight:900;background:var(--surface);z-index:2;box-shadow:1px 0 0 var(--line)}
+.gbar{position:absolute;height:26px;border-radius:8px;border:0;padding:0 8px;font:700 12px var(--font);text-align:left;white-space:nowrap;overflow:clip;color:var(--ink);cursor:pointer;z-index:1}
+.gbar.g-in{background:color-mix(in srgb,var(--info) 22%,var(--surface));box-shadow:inset 3px 0 0 var(--info)}
+.gbar.g-show{background:color-mix(in srgb,var(--pink) 20%,var(--surface));box-shadow:inset 3px 0 0 var(--pink)}
+.gbar.g-out{background:color-mix(in srgb,var(--orange) 22%,var(--surface));box-shadow:inset 3px 0 0 var(--orange)}
+.gbar.g-etc{background:var(--sunk);box-shadow:inset 3px 0 0 var(--muted)}
+.gbar.pt{background:var(--surface);border:1.5px solid var(--line)}
+.gbar.sel{outline:2px solid var(--ink);outline-offset:1px}
+.gbar span{position:sticky;left:84px;display:inline-block}  /* 長いバーは横に送っても名前が見える */
+.gnow{position:absolute;top:20px;border-left:2px solid var(--green);z-index:3}
+.gdetail{margin-top:8px;border-radius:12px;background:var(--sunk);padding:10px 12px;font-size:13.5px;min-height:44px}
+.glegend{display:flex;flex-wrap:wrap;gap:6px 12px;margin-top:6px;font-size:11.5px;font-weight:700}
+.glegend span[class^="g-"]::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:4px;vertical-align:-1px}
+.glegend .g-in::before{background:var(--info)}.glegend .g-show::before{background:var(--pink)}.glegend .g-out::before{background:var(--orange)}.glegend .g-etc::before{background:var(--muted)}
+.gsec{position:absolute;left:0;right:0;height:24px;padding:4px 0;font-size:11.5px;font-weight:900;color:var(--muted);background:var(--sunk)}
+.gsec span{position:sticky;left:8px}
+.glane.perf .gname{width:98px;font-size:11.5px;line-height:1.3;overflow:hidden;padding:6px;z-index:4}
+.gconn{position:absolute;height:2px;background:var(--line);z-index:0}
+.gseg{position:absolute;height:10px;border-radius:5px;z-index:1}
+.gseg.g-in{background:var(--info)}.gseg.g-show{background:var(--pink)}.gseg.g-out{background:var(--orange)}.gseg.g-etc{background:var(--muted)}
+.gseg.pt{height:10px;border-radius:50%;width:10px!important}
+.gcap{position:absolute;height:22px;padding:0 7px 0 6px;border:0;border-left:3px solid var(--muted);border-radius:0 7px 7px 0;background:var(--sunk);color:var(--ink);font:700 12px var(--font);white-space:nowrap;cursor:pointer;z-index:2;display:flex;align-items:center;gap:5px}
+.gcap b{font-weight:700;font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
+.gcap.g-in{border-left-color:var(--info)}.gcap.g-show{border-left-color:var(--pink);background:color-mix(in srgb,var(--pink) 14%,var(--surface))}.gcap.g-out{border-left-color:var(--orange)}
+.gcap.sel{outline:2px solid var(--ink);outline-offset:1px}
+
+details.fold2{margin-top:6px}details.fold2>summary{list-style:none;cursor:pointer;min-height:40px;align-items:center}
+details.fold2>summary::-webkit-details-marker{display:none}
+details.fold2>summary::after{content:"";margin-left:auto;width:8px;height:8px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg) translate(-2px,-2px);transition:transform .15s}
+details.fold2[open]>summary::after{transform:rotate(-135deg)}
+details.fold2>summary:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+.fl-h{display:flex;align-items:baseline;gap:8px;font-size:13px;font-weight:900;margin:10px 2px 6px}.fl-h span{font-size:11.5px;font-weight:700;color:var(--muted)}
+.flow{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.fl-n{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:6px}.fl-n b{font-size:15px}.fl-n span{font-size:12px;font-weight:700;color:var(--muted);font-variant-numeric:tabular-nums}
+.fl-steps{display:flex;flex-wrap:wrap;align-items:center;gap:4px}
+.fl-st{border:0;border-radius:9px;padding:4px 8px;font:700 12.5px var(--font);color:var(--ink);text-align:left;cursor:pointer;line-height:1.3}
+.fl-st small{display:block;font-size:10.5px;font-weight:700;color:var(--muted);font-variant-numeric:tabular-nums}
+.fl-st.g-in{background:color-mix(in srgb,var(--info) 18%,var(--surface))}.fl-st.g-show{background:color-mix(in srgb,var(--pink) 18%,var(--surface));box-shadow:inset 0 0 0 1.5px var(--pink)}
+.fl-st.g-out{background:color-mix(in srgb,var(--orange) 18%,var(--surface))}.fl-st.g-etc{background:var(--sunk)}.fl-st.sel{outline:2px solid var(--ink);outline-offset:1px}
+.fl-ar{font-style:normal;color:var(--muted);font-size:12px}
+.fl-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:1px}
+.fl-dot.g-in{background:var(--info)}.fl-dot.g-show{background:var(--pink)}.fl-dot.g-out{background:var(--orange)}.fl-dot.g-etc{background:var(--muted)}
+.gruler{position:sticky;top:calc(env(safe-area-inset-top,0px) + var(--hh,96px) + var(--jh,58px));z-index:11;overflow:hidden;height:26px;margin:4px 0 -2px;background:var(--surface);border:1px solid var(--line);border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,.06)}
+.grin{position:relative;height:26px;will-change:transform;z-index:1}
+.grl{position:absolute;left:0;top:0;bottom:0;width:98px;z-index:3;display:flex;align-items:center;padding-left:10px;font-size:11px;font-weight:900;color:var(--muted);background:var(--surface);z-index:2;box-shadow:1px 0 0 var(--line)}
+.grh{position:absolute;top:5px;transform:translateX(4px);font-size:11.5px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+.gtog{border:0;cursor:pointer;text-align:left;font-family:var(--font);color:var(--ink);align-items:flex-start}
+.gtog::after{content:"";display:inline-block;width:6px;height:6px;margin:5px 0 0 6px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(-135deg);flex:none}
+.glane.perf.shut .gtog::after{transform:rotate(45deg);margin-top:2px}
+.glane.perf.shut .gname{color:var(--muted)}
+.gtog:focus-visible{outline:2px solid var(--green);outline-offset:-2px}
+.gvbar-top{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:2px 0 6px}
+.gvz,.gvnow{min-width:40px;min-height:36px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:10px;font:900 16px var(--font);cursor:pointer}
+.gvz:disabled{opacity:.35}.gvnow{font-size:13px;padding:0 12px;background:var(--green);border-color:var(--green);color:#fff}
+.gvhint{margin-left:auto}
+.gv{overflow:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;max-height:calc(100dvh - var(--hh,96px) - var(--jh,58px) - 150px);min-height:300px;border:1px solid var(--line);border-radius:14px;background:var(--surface);position:relative}
+.gvg{position:relative}
+.gv .gvbar.gpart{background:var(--ink)!important;border-color:var(--ink)!important;font-weight:900}
+.gv .gvbar.gpart span{color:var(--surface)!important}
+.gvh{position:sticky;top:0;z-index:6;height:30px;background:var(--surface);border-bottom:1px solid var(--line)}
+.gvt{position:absolute;top:7px;transform:translateX(4px);font-size:12px;font-weight:900;color:var(--ink);font-variant-numeric:tabular-nums}
+.gvn{position:sticky;left:0;z-index:4;display:flex;align-items:flex-start;width:72px;height:100%;padding:7px 6px;font:800 11px/1.3 var(--font);color:var(--ink);background:var(--surface);box-shadow:1px 0 0 var(--line);text-align:left;word-break:break-all}
+.gvn.corner{z-index:7;align-items:center;color:var(--muted);height:30px}
+.gvn.lane{color:var(--muted)}
+button.gvn{border:0;cursor:pointer}
+button.gvn::after{content:"";flex:none;width:5px;height:5px;margin:4px 0 0 4px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(-135deg)}
+.gvr.shut button.gvn::after{transform:rotate(45deg);margin-top:1px}.gvr.shut .gvn{color:var(--muted)}
+.gvs{position:relative;height:34px;background:var(--sunk);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.gvsb{position:sticky;left:0;z-index:4;height:100%;display:flex;align-items:center;gap:8px;padding:0 12px;border:0;background:transparent;color:var(--ink);font:900 13px var(--font);cursor:pointer;white-space:nowrap}
+.gvsb small{font-size:11px;font-weight:700;color:var(--muted)}
+.gvsb::after{content:"";width:7px;height:7px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(-135deg);margin-left:4px}
+.gvs.shut .gvsb::after{transform:rotate(45deg)}
+.gvr{position:relative;border-bottom:1px solid var(--line)}
+.gvr>i,.gvr>button:not(.gvn){position:absolute}
+.gvc{top:12px;height:2px;background:var(--line)}
+.gvseg{height:9px;border-radius:5px;z-index:1}.gvseg.g-in{background:var(--info)}.gvseg.g-show{background:var(--pink)}.gvseg.g-out{background:var(--orange)}.gvseg.g-etc{background:var(--muted)}
+.gvcap{height:22px;padding:0 7px 0 5px;border:0;border-left:3px solid var(--muted);border-radius:0 7px 7px 0;background:var(--sunk);color:var(--ink);font:700 12px var(--font);white-space:nowrap;cursor:pointer;display:flex;align-items:center;gap:4px;z-index:2}
+.gvcap b{font-size:11px;color:var(--muted);font-weight:700;font-variant-numeric:tabular-nums}
+.gvcap.g-in{border-left-color:var(--info)}.gvcap.g-show{border-left-color:var(--pink);background:color-mix(in srgb,var(--pink) 14%,var(--surface))}.gvcap.g-out{border-left-color:var(--orange)}
+.gvbar{height:24px;border:0;border-radius:7px;padding:0 8px;font:700 12px var(--font);color:var(--ink);text-align:left;white-space:nowrap;overflow:clip;cursor:pointer;z-index:1}
+.gvbar span{position:sticky;left:80px;display:inline-block}
+.gvbar.g-in{background:color-mix(in srgb,var(--info) 22%,var(--surface));box-shadow:inset 3px 0 0 var(--info)}.gvbar.g-show{background:color-mix(in srgb,var(--pink) 20%,var(--surface));box-shadow:inset 3px 0 0 var(--pink)}
+.gvbar.g-out{background:color-mix(in srgb,var(--orange) 22%,var(--surface));box-shadow:inset 3px 0 0 var(--orange)}.gvbar.g-etc{background:var(--sunk);box-shadow:inset 3px 0 0 var(--muted)}
+.gvbar.pt{background:var(--surface);border:1.5px solid var(--line)}
+.gvcap.sel,.gvbar.sel{outline:2px solid var(--ink);outline-offset:1px}
+.gvg>.gnow{position:absolute;top:30px;bottom:0;border-left:2px solid var(--green);z-index:3;pointer-events:none}
+.gtoast{position:fixed;left:max(12px,env(safe-area-inset-left,0px));right:max(12px,env(safe-area-inset-right,0px));bottom:calc(72px + env(safe-area-inset-bottom,0px));z-index:40;max-width:616px;margin:0 auto;display:flex;gap:10px;align-items:flex-start;background:var(--ink);color:var(--surface);border-radius:14px;padding:12px 14px;font-size:14px;line-height:1.5;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.gtoast button{flex:none;border:0;background:transparent;color:var(--surface);font:700 13px var(--font);text-decoration:underline;cursor:pointer;min-height:32px}
+.gvz:focus-visible,.gvnow:focus-visible,.gvsb:focus-visible,button.gvn:focus-visible,.gvcap:focus-visible,.gvbar:focus-visible{outline:2px solid var(--green);outline-offset:-2px}
+.shv{max-height:calc(100dvh - var(--hh,96px) - 190px)}
+.shr .gvn{width:92px;align-items:center;font-size:12px;padding:4px 6px}
+.shr .gvn .star{color:var(--pink);margin-right:2px}
+.shn{border:0;cursor:pointer}
+.shb{position:absolute;top:7px;height:26px;border-radius:8px;background:var(--c);display:flex;align-items:center;overflow:clip;z-index:1}
+.shb>span{position:sticky;left:96px;padding:0 8px;font:800 11.5px var(--font);color:var(--ink);white-space:nowrap;font-variant-numeric:tabular-nums}
+.shb.asm{border-right:2px dashed var(--ink);border-radius:8px 2px 2px 8px}
+.shb.flx{border-left:2px dashed var(--ink);border-right:2px dashed var(--ink);border-radius:2px}
+.shk{position:absolute;top:37px;height:20px;border-radius:5px;background:var(--ink);color:var(--surface);font:800 10px var(--font);display:flex;align-items:center;justify-content:center;overflow:hidden;white-space:nowrap;box-shadow:inset -1px 0 0 var(--surface);z-index:2}
+.shbr b{margin-left:3px;font-size:10px}
+.shbr.man{border-color:var(--pink);border-width:2px}
+.shbr.drag{z-index:9;box-shadow:0 4px 12px rgba(0,0,0,.3);transform:scale(1.08)}
+.shrb{display:block;margin:4px 0 8px;font:700 13px var(--font);padding:8px 12px;border-radius:10px;border:1px solid currentColor;background:transparent;color:inherit;min-height:40px}
+.shbr{position:absolute;top:5px;height:30px;border-radius:6px;z-index:3;touch-action:none;cursor:grab;user-select:none;-webkit-user-select:none;background:repeating-linear-gradient(135deg,var(--surface) 0 4px,var(--line) 4px 8px);border:1.5px solid var(--ink);font:800 10.5px var(--font);color:var(--ink);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.chips.pchips{gap:4px}.chips.pchips .chip{padding:6px 9px}.chips.pchips .chip.z{min-width:38px}
+.shhow{margin:0 0 10px}.shhow summary{cursor:pointer;font-weight:700;font-size:13px;color:var(--muted);min-height:32px;display:flex;align-items:center}
+.chipsep{width:1px;align-self:stretch;background:var(--line);margin:4px 2px;flex:0 0 auto}
+.shck{margin:0 0 12px;border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:8px 12px}
+.shck summary{cursor:pointer;font-weight:800;font-size:14px}
+.shck summary em{display:block;font-style:normal;font-size:12.5px;margin-top:2px}
+.shck summary span{display:block;font-weight:600;font-size:11.5px;color:var(--muted)}
+.shckz{display:grid;grid-template-columns:20px minmax(0,1fr);gap:8px;margin:8px 0;align-items:start}
+.shckz>b{font-size:15px}
+.shckz>div{display:grid;gap:4px}
+.shckr{display:grid;grid-template-columns:minmax(0,9.5em) minmax(0,1fr);gap:0 8px;font-size:12px;padding:4px 6px;border-radius:8px;background:color-mix(in srgb,var(--line) 40%,transparent)}
+.shckr .p{font-weight:800}.shckr .p small{margin-left:4px;color:var(--muted);font-weight:700}
+.shckr .n{min-width:0;overflow-wrap:anywhere}
+.shckr .g{grid-column:1/-1;font-weight:700;color:var(--muted)}
+.shckr.ng{background:color-mix(in srgb,var(--pink) 16%,transparent)}.shckr.ng .g,.ngt{color:var(--pink)}
+.gtoast.shsheet{max-height:70dvh;overflow:auto;flex-direction:column;align-items:stretch;gap:2px}
+.shsheet>b{font-size:15px}
+.shsheet>button{align-self:flex-end}
+.shsel{display:flex;flex-direction:column;gap:2px;margin:8px 0;font-size:12px;font-weight:700}
+.shsel select{font:700 15px var(--font);padding:8px;border-radius:10px;border:1px solid var(--line);background:#fff;color:#222;min-height:44px}
+.shst{display:block;opacity:.75;margin-bottom:6px}
+.shinfo{font-size:12.5px;margin-bottom:6px}
+.shb i{font-style:normal;font-weight:700;font-size:10.5px;color:var(--muted);margin-left:6px}
+.shz .gvsb{font-size:13px;width:max-content}
+.shz .gvsb::after,button.shn::after{display:none}
+.gvh.gvh-float{box-shadow:0 3px 6px rgba(0,0,0,.08)}
 /* bottom tabs */
 nav.tabs{position:fixed;left:0;right:0;bottom:0;z-index:25;background:var(--surface);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px);padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
-nav.tabs .in{max-width:640px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr)}
+nav.tabs .in{max-width:640px;margin:0 auto;display:grid;grid-template-columns:repeat(6,1fr)}
 nav.tabs button{background:none;border:0;color:var(--muted);font:700 11px var(--font);padding:8px 2px 9px;display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer}
 nav.tabs button svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 nav.tabs button[aria-current="page"]{color:var(--green)}
@@ -129,8 +277,6 @@ button:focus-visible,.chip:focus-visible,input:focus-visible{outline:2px solid v
 .foot{font-size:11.5px;color:var(--muted);margin-top:22px}
 @media (prefers-reduced-motion:no-preference){.view{animation:fade .18s ease-out}@keyframes fade{from{opacity:.4}to{opacity:1}}}
 </style>
-</head>
-<body>
 
 <header>
   <div class="hin">
@@ -142,7 +288,169 @@ button:focus-visible,.chip:focus-visible,input:focus-visible{outline:2px solid v
   </div>
 </header>
 
-<main class="wrap" id="app"></main>
+<main class="wrap"><div id="app"></div>
+<!-- 回遊施策（ホシテンクエスト スタッフシート）：kaiyu-production/staff-mobile/index.html から ops_quest_tab.py で差し込み。ここは直接直さない -->
+<style id="smq-css">:root .smq{--bg:#faf0ea;--surface:#fffdfb;--ink:#23211c;--sub:#6b625b;--line:#e8ddd4;--acc:#006cb7;--acc-ink:#ffffff;--soft:#e6f0f8;--hi:#fff3cf;--hi-line:#f0b429;--hi-ink:#7a4b00;--warn:#c8443f;
+--f-disp:"Zen Maru Gothic","BIZ UDPGothic","Hiragino Maru Gothic ProN",sans-serif;--f-body:"BIZ UDPGothic","Hiragino Sans","Noto Sans JP",sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .smq{--bg:#16181b;--surface:#212429;--ink:#f1ece6;--sub:#b3aaa1;--line:#33373d;--acc:#5aa9e6;--acc-ink:#0d1b26;--soft:#1d2d3a;--hi:#332b19;--hi-line:#b98a1f;--hi-ink:#f3cf7a;--warn:#ef7c76;color-scheme:dark}}
+:root[data-theme="dark"] .smq{--bg:#16181b;--surface:#212429;--ink:#f1ece6;--sub:#b3aaa1;--line:#33373d;--acc:#5aa9e6;--acc-ink:#0d1b26;--soft:#1d2d3a;--hi:#332b19;--hi-line:#b98a1f;--hi-ink:#f3cf7a;--warn:#ef7c76;color-scheme:dark}
+.smq .sm-view{display:grid;gap:18px}
+.smq .sm-view>*{min-width:0}
+.smq h2{font-family:var(--f-disp);font-size:22px;margin:4px 0 0;text-wrap:balance}
+.smq h3{font-family:var(--f-disp);font-size:18px;margin:0}
+.smq h4{font-size:13px;letter-spacing:.12em;color:var(--sub);margin:12px 0 4px}
+.smq .sm-lead{margin:0;color:var(--sub);font-size:14px}
+.smq .sm-now{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 14px;display:flex;gap:10px;align-items:center}
+.smq .sm-now b{font-family:var(--f-disp);font-size:20px;color:var(--acc);white-space:nowrap}
+.smq .sm-now span{font-size:14px;color:var(--sub)}
+.smq .sm-keys{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.smq .sm-kv{background:var(--surface);border-radius:12px;padding:10px 12px;display:grid;gap:2px}
+.smq .sm-kv span{font-size:12px;color:var(--sub)}
+.smq .sm-kv b{font-family:var(--f-disp);font-size:18px;color:var(--acc);font-variant-numeric:tabular-nums}
+.smq .sm-flow{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.smq .sm-flow li{display:flex;gap:12px;align-items:center;background:var(--surface);border-radius:12px;padding:10px 12px}
+.smq .sm-flow b{display:block;font-family:var(--f-disp)}
+.smq .sm-flow span{font-size:14px;color:var(--sub)}
+.smq .sm-ic{flex:none;width:40px;height:40px;border-radius:12px;background:var(--soft);display:grid;place-items:center}
+.smq .sm-ic svg{width:24px;height:24px;fill:none;stroke:var(--acc);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.smq .sm-tl{list-style:none;margin:0;padding:0 0 0 14px;border-left:3px solid var(--line);display:grid;gap:10px}
+.smq .sm-tl li{position:relative;display:flex;gap:12px;align-items:baseline}
+.smq .sm-tl li::before{content:"";position:absolute;left:-21px;top:7px;width:11px;height:11px;border-radius:50%;background:var(--line)}
+.smq .sm-tl time{font-family:var(--f-disp);font-variant-numeric:tabular-nums;min-width:52px;font-weight:700}
+.smq .sm-tl li.past{color:var(--sub)}
+.smq .sm-tl li.cur::before{background:var(--acc);box-shadow:0 0 0 4px var(--soft)}
+.smq .sm-tl li.cur{font-weight:700;color:var(--acc)}
+.smq .sm-tl li:last-child time,.smq .sm-tl li:last-child span{color:var(--warn);font-weight:700}
+.smq .sm-visor{background:var(--hi);border:2px solid var(--hi-line);border-radius:14px;padding:12px;display:grid;grid-template-columns:72px 1fr;gap:12px;align-items:center}
+.smq .sm-visor img{width:72px;height:auto;display:block}
+.smq .sm-visor h3{color:var(--hi-ink);font-size:17px}
+.smq .sm-visor p{margin:4px 0 0;font-size:14.5px}
+.smq mark{background:var(--hi-line);color:#2a1d00;padding:0 4px;border-radius:4px;white-space:nowrap}
+.smq .sm-ans{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.smq .sm-ans div{border-radius:12px;background:var(--surface);border-top:5px solid var(--z);text-align:center;padding:8px 4px}
+.smq .sm-ans small{display:block;font-size:12px;color:var(--sub)}
+.smq .sm-ans b{font-family:var(--f-disp);font-size:26px;color:var(--z)}
+.smq .sm-chips{display:flex;flex-wrap:wrap;gap:8px}
+.smq .sm-chip{min-height:44px;padding:0 16px;border-radius:99px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);font:700 15px var(--f-body);cursor:pointer}
+.smq .sm-chip[aria-pressed="true"]{background:var(--acc);border-color:var(--acc);color:var(--acc-ink)}
+.smq .sm-chip:focus-visible,.smq .sm-btn:focus-visible,.smq summary:focus-visible,.smq input:focus-visible{outline:3px solid var(--hi-line);outline-offset:2px}
+.smq .sm-card{background:var(--surface);border-radius:16px;padding:16px;border:1px solid var(--line)}
+.smq .sm-where{margin:4px 0 0;color:var(--acc);font-weight:700;font-size:14px}
+.smq .sm-card ol{margin:0;padding-left:22px;display:grid;gap:4px}
+.smq .sm-card p{margin:0}
+.smq .sm-say{background:var(--soft);border-radius:10px;padding:8px 10px}
+.smq .sm-ng{font-size:14.5px}
+.smq .sm-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;background:var(--surface);border-radius:14px;padding:8px}
+.smq .sm-scroll svg{display:block;min-width:520px;width:100%;height:auto}
+.smq .sm-hint{font-size:12px;color:var(--sub);margin:4px 0 0}
+.smq .sm-leg{margin:0;padding-left:22px;display:grid;gap:6px;font-size:14.5px}
+.smq .sm-leg b{margin-right:6px}
+.smq .sm-steps{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.smq .sm-steps li{display:flex;gap:12px;background:var(--surface);border-radius:12px;padding:12px}
+.smq .sm-n{flex:none;width:32px;height:32px;border-radius:50%;background:var(--acc);color:var(--acc-ink);display:grid;place-items:center;font-family:var(--f-disp)}
+.smq .sm-steps strong{font-family:var(--f-disp);font-size:17px;margin-right:8px}
+.smq .sm-steps em{font-style:normal;font-size:12px;color:var(--acc);border:1px solid var(--acc);border-radius:99px;padding:0 8px}
+.smq .sm-steps span{display:block;font-size:14.5px}
+.smq .sm-scene{background:var(--surface);border-radius:12px;padding:12px;border-left:5px solid var(--warn)}
+.smq .sm-scene:last-child{border-left-color:#8a63c9}
+.smq .sm-scene h4{margin:0 0 4px;color:var(--ink);font-size:15px;letter-spacing:0}
+.smq .sm-scene p{margin:0;font-size:14.5px}
+.smq .sm-find{background:var(--surface);border-radius:16px;padding:14px;display:grid;gap:10px;border:1px solid var(--line)}
+.smq .sm-find label{font-weight:700}
+.smq .sm-find input{font:700 28px var(--f-disp);width:100%;min-height:56px;border-radius:12px;border:2px solid var(--line);background:var(--bg);color:var(--ink);padding:0 14px;font-variant-numeric:tabular-nums}
+.smq .sm-res{min-height:84px;border-radius:12px;background:var(--soft);padding:12px;display:grid;gap:2px;align-content:center}
+.smq .sm-res b{font-family:var(--f-disp);font-size:20px}
+.smq .sm-res small{color:var(--sub)}
+.smq .sm-tw{overflow-x:auto;background:var(--surface);border-radius:14px}
+.smq table{border-collapse:collapse;width:100%;font-size:14.5px}
+.smq td,.smq th{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.smq th{font-size:12px;color:var(--sub);font-weight:700}
+.smq td small{display:block;color:var(--sub);font-size:12.5px}
+.smq .sm-no{font-family:var(--f-disp);font-weight:700;white-space:nowrap;border-left:5px solid var(--z);font-variant-numeric:tabular-nums}
+.smq .sm-q{text-align:right;font-variant-numeric:tabular-nums}
+.smq .sm-btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:52px;border-radius:14px;background:var(--acc);color:var(--acc-ink);font:700 17px var(--f-disp);text-decoration:none}
+.smq .sm-tr,.smq .sm-eq{background:var(--surface);border-radius:12px;border:1px solid var(--line)}
+.smq summary{min-height:48px;display:flex;align-items:center;padding:0 14px;font-weight:700;cursor:pointer;list-style:none}
+.smq summary::after{content:"＋";margin-left:auto;color:var(--sub)}
+.smq details[open] summary::after{content:"－"}
+.smq summary::-webkit-details-marker{display:none}
+.smq .sm-tr p{margin:0;padding:0 14px 12px}
+.smq .sm-eq ul{margin:0;padding:0 14px 12px;list-style:none;display:grid;gap:8px}
+.smq .sm-eq li span{display:block;font-size:13.5px;color:var(--sub)}
+.smq .sm-eq li small{display:block;font-size:13px}
+.smq .sm-plan{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.smq .sm-plan li{display:grid;grid-template-columns:48px 1fr 40px;gap:8px;align-items:center;font-variant-numeric:tabular-nums}
+.smq .sm-plan i{height:14px;border-radius:7px;background:linear-gradient(90deg,var(--acc) var(--w),var(--line) var(--w))}
+.smq .sm-plan b{text-align:right}
+.smq .sm-tab[aria-current="page"]{color:var(--acc)}
+.smq .sm-fig{overflow-x:auto;-webkit-overflow-scrolling:touch;background:var(--surface);border-radius:14px;padding:8px}
+.smq .sm-fig svg{display:block;width:100%;height:auto}
+.smq .sm-fig.w560 svg{min-width:560px}
+.smq .sm-fig.w520 svg{min-width:520px}
+.smq .sm-fig.w600 svg{min-width:600px}
+.smq .sm-fig.w300 svg{max-width:420px;margin:0 auto}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .smq .sm-fig{background:#f6efe8}}
+:root[data-theme="dark"] .smq .sm-fig{background:#f6efe8}
+.smq .sm-b3{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.smq .sm-b3 li{background:var(--surface);border-radius:14px;padding:10px 8px;display:grid;justify-items:center;text-align:center;gap:4px;position:relative}
+.smq .sm-b3 li>b{position:absolute;top:6px;left:8px;width:22px;height:22px;border-radius:50%;background:var(--acc);color:var(--acc-ink);display:grid;place-items:center;font-size:12px}
+.smq .sm-b3 strong{font-family:var(--f-disp);font-size:15px;line-height:1.3}
+.smq .sm-b3 span{font-size:12px;color:var(--sub);line-height:1.4}
+.smq .sm-ic.big{width:56px;height:56px;border-radius:16px}
+.smq .sm-ic.big svg{width:34px;height:34px}
+.smq .sm-ngbox{background:var(--surface);border-radius:12px;padding:10px 12px;font-size:14px;display:grid;grid-template-columns:auto 1fr;gap:4px 10px}
+.smq .sm-ngbox b{color:var(--warn);font-size:13px}
+.smq .sm-do{list-style:none;margin:8px 0;padding:0;display:grid;gap:6px}
+.smq .sm-do li{display:flex;gap:8px;align-items:flex-start;font-size:14.5px}
+.smq .sm-do li b{flex:none;width:24px;height:24px;border-radius:50%;background:var(--acc);color:var(--acc-ink);display:grid;place-items:center;font-size:12px}
+.smq .sm-say{position:relative;margin:4px 0 8px!important}
+.smq .sm-ng b{display:inline-block;color:var(--warn);font-size:12.5px;margin-right:6px}
+.smq .sm-eq ul li span{display:block}
+@media (prefers-reduced-motion:no-preference){.smq .sm-view{animation:sm-in .18s ease-out}
+@keyframes sm-in{from{opacity:.6;transform:translateY(4px)}to{opacity:1;transform:none}}}
+.smq{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.6;border-radius:16px;padding:12px 0 4px}
+.smq h2{font-size:19px}
+</style>
+<div class="smq" id="questApp" hidden>
+<section class="sm-view" data-q="top">
+ <div class="sm-now" id="sm-now"><b>当日の流れ</b><span>10:00〜17:00。4つそろったら、Cでガラガラ</span></div>
+ <div class="sm-keys"><div class="sm-kv"><span>ブース（札・スタンプ）</span><b>10:00〜17:00</b></div><div class="sm-kv"><span>ガラガラ（C）</span><b>10:00〜17:00</b></div><div class="sm-kv"><span>景品（ガラガラ）</span><b>490＋予備110</b></div><div class="sm-kv"><span>シール＋お菓子</span><b>194組分</b></div><div class="sm-kv"><span>ピーク</span><b>14〜17時</b></div><div class="sm-kv"><span>人数</span><b>9名（案）</b></div></div>
+ <div><h2>お客さんの流れ</h2><p class="sm-lead">数字の順に進む</p></div><div class="sm-fig w560"><svg class="v j" viewBox="0 0 600 164" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="4" width="92" height="156" rx="14" fill="#f6d2c5"/><path d="M24 30l17 -6 17 6 17 -6v40l-17 6 -17 -6 -17 6z" fill="#fefefd" stroke="#006cb7" stroke-width="2"/><path d="M41 24v40M58 30v40" stroke="#006cb7" stroke-width="1.5"/><g transform="translate(80,78) scale(0.8)"><circle cx="0" cy="-15" r="7" fill="#8fb8d6"/><rect x="-10" y="-6" width="20" height="22" rx="9" fill="#8fb8d6"/></g><circle cx="20" cy="18" r="9" fill="#006cb7"/><text x="20" y="21.6" text-anchor="middle" font-size="10.5" font-weight="700" fill="#fff">1</text><text x="56" y="102" text-anchor="middle" font-size="15" font-weight="700" fill="#006cb7">もらう</text><text x="50" y="120" text-anchor="middle" font-size="9.8" font-weight="600" fill="#23211c">リーフレットを</text><text x="50" y="133" text-anchor="middle" font-size="9.8" font-weight="600" fill="#23211c">どのブースでも</text><text x="50" y="146" text-anchor="middle" font-size="9.8" font-weight="600" fill="#23211c">もらう</text><path d="M93 70l7 4 -7 4z" fill="#55a7d7"/><rect x="104" y="4" width="92" height="156" rx="14" fill="#fae0ac"/><rect x="128" y="44" width="44" height="30" rx="5" fill="#006cb7"/><rect x="136" y="40" width="28" height="6" rx="2" fill="#0a4f85"/><g transform="translate(137,20)"><rect width="26" height="16" rx="2.5" fill="#fae0ac" stroke="#d9a74a"/><path d="M5 5h16M5 9h10" stroke="#b86a00" stroke-width="1.4"/></g><g transform="translate(182,80) scale(0.8)"><circle cx="0" cy="-15" r="7" fill="#f0a58e"/><rect x="-10" y="-6" width="20" height="22" rx="9" fill="#f0a58e"/></g><circle cx="120" cy="18" r="9" fill="#006cb7"/><text x="120" y="21.6" text-anchor="middle" font-size="10.5" font-weight="700" fill="#fff">2</text><text x="156" y="102" text-anchor="middle" font-size="15" font-weight="700" fill="#006cb7">ひく</text><text x="150" y="120" text-anchor="middle" font-size="9.8" font-weight="600" fill="#23211c">札の箱から</text><text x="150" y="133" text-anchor="middle" font-size="9.8" font-weight="600" fill="#23211c">1枚ひく</text><text x="150" y="146" text-anchor="middle" font-size="9.8" font-weight="600" fill="#23211c">（15:30まで）</text><path d="M193 70l7 4 -7 4z" fill="#55a7d7"/><rect x="204" y="4" width="92" height="156" rx="14" fill="#f9c9a3"/><rect x="226" y="46" width="48" height="30" rx="3" fill="#fefefd" stroke="#23211c" stroke-width="1.6"/><path d="M222 46l28 -16 28 16z" fill="#E8725F"/><rect x="244" y="56" width="12" height="20" fill="#bad3e1"/><path d="M236 22s6 -9 14 -9 14 9 14 9 -6 9 -14 9 -14 -9 -14 -9z" fill="#fff" stroke="#006cb7" stroke-width="2"/><circle cx="250" cy="22" r="4" fill="#006cb7"/><circle cx="220" cy="18" r="9" fill="#006cb7"/><text x="220" y="21.6" text-anchor="middle" font-size="10.5" font-weight="700" fill="#fff">3</text><text x="256" y="102" text-anchor="middle" font-size="15" font-weight="700" fill="#006cb7">さがす</text><text x="250" y="120" text-anchor="middle" font-size="9.8" font-weight="600" fill="#23211c">札のお店で</text><text x="250" y="133" text-anchor="middle" font-size="9.8" font-weight="600" fill="#23211c">答えの絵を</text><text x="250" y="146" text-anchor="middle" font-size="9.8" font-weight="600" fill="#23211c">さがす</text><path d="M293 70l7 4 -7 4z" fill="#55a7d7"/><rect x="304" y="4" width="92" height="156" rx="14" fill="#bad3e1"/><rect x="320" y="22" width="34" height="26" rx="8" fill="#fff" stroke="#006cb7" stroke-width="2"/><text x="337" y="41" text-anchor="middle" font-size="16" font-weight="700" fill="#006cb7">B</text><circle cx="372" cy="56" r="14" fill="none" stroke="#d9534f" stroke-width="3"/><text x="372" y="61" text-anchor="middle" font-size="13" font-weight="700" fill="#d9534f">済</text><g transform="translate(330,82) scale(0.75)"><circle cx="0" cy="-15" r="7" fill="#8fc5a0"/><rect x="-10" y="-6" width="20" height="22" rx="9" fill="#8fc5a0"/></g><circle cx="320" cy="18" r="9" fill="#006cb7"/><text x="320" y="21.6" text-anchor="middle" font-size="10.5" font-weight="700" fill="#fff">4</text><text x="356" y="102" text-anchor="middle" font-size="15" font-weight="700" fill="#006cb7">いう</text><text x="350" y="120" text-anchor="middle" font-size="9.8" font-weight="600" fill="#23211c">ブースで答え</text><text x="350" y="133" text-anchor="middle" font-size="9.8" font-weight="600" fill="#23211c">合っていれば</text><text x="350" y="146" text-anchor="middle" font-size="9.8" font-weight="600" fill="#23211c">スタンプ</text><path d="M393 70l7 4 -7 4z" fill="#55a7d7"/><rect x="404" y="4" width="92" height="156" rx="14" fill="#e6dff1"/><g transform="translate(444,44) scale(0.78)"><circle cx="0" cy="0" r="26" fill="#e6f2f8" stroke="#7eb9dc" stroke-width="2"/><circle cx="-10" cy="8" r="6.2" fill="#E8725F"/><circle cx="0" cy="10" r="6.2" fill="#E58A2E"/><circle cx="10" cy="8" r="6.2" fill="#2FA58A"/><circle cx="-15" cy="-2" r="6.2" fill="#3F6FD0"/><circle cx="-5" cy="0" r="6.2" fill="#8a6fc2"/><circle cx="6" cy="0" r="6.2" fill="#e0709a"/><circle cx="15" cy="-3" r="6.2" fill="#E8725F"/><circle cx="-9" cy="-11" r="6.2" fill="#E58A2E"/><circle cx="2" cy="-10" r="6.2" fill="#2FA58A"/><circle cx="11" cy="-12" r="6.2" fill="#3F6FD0"/><rect x="-22" y="26" width="44" height="18" rx="5" fill="#006cb7"/><rect x="14" y="34" width="14" height="10" rx="3" fill="#0a4f85"/><circle cx="32" cy="12" r="6" fill="#fff" stroke="#006cb7" stroke-width="2"/><path d="M32 12l9-6" stroke="#006cb7" stroke-width="3" stroke-linecap="round"/></g><circle cx="420" cy="18" r="9" fill="#006cb7"/><text x="420" y="21.6" text-anchor="middle" font-size="10.5" font-weight="700" fill="#fff">5</text><text x="456" y="102" text-anchor="middle" font-size="15" font-weight="700" fill="#006cb7">まわす</text><text x="450" y="120" text-anchor="middle" font-size="9.8" font-weight="600" fill="#23211c">スタンプ4つで</text><text x="450" y="133" text-anchor="middle" font-size="9.8" font-weight="600" fill="#23211c">Cのガラガラを</text><text x="450" y="146" text-anchor="middle" font-size="9.8" font-weight="600" fill="#23211c">1回</text><path d="M493 70l7 4 -7 4z" fill="#55a7d7"/><rect x="504" y="4" width="92" height="156" rx="14" fill="#f7d2c3"/><rect x="530" y="42" width="40" height="30" rx="4" fill="#fefefd" stroke="#e0709a" stroke-width="2"/><rect x="547" y="42" width="6" height="30" fill="#e0709a"/><rect x="530" y="52" width="40" height="6" fill="#e0709a"/><path d="M550 42c-8 -14 -22 -10 -16 -2 3 4 16 2 16 2zM550 42c8 -14 22 -10 16 -2 -3 4 -16 2 -16 2z" fill="#e0709a"/><circle cx="520" cy="18" r="9" fill="#006cb7"/><text x="520" y="21.6" text-anchor="middle" font-size="10.5" font-weight="700" fill="#fff">6</text><text x="556" y="102" text-anchor="middle" font-size="15" font-weight="700" fill="#006cb7">もらう</text><text x="550" y="120" text-anchor="middle" font-size="9.8" font-weight="600" fill="#23211c">出た番号の</text><text x="550" y="133" text-anchor="middle" font-size="9.8" font-weight="600" fill="#23211c">置き場から</text><text x="550" y="146" text-anchor="middle" font-size="9.8" font-weight="600" fill="#23211c">特典を1つ</text></svg></div>
+ <div><h2>持ち場と人数</h2><p class="sm-lead">答えはゾーンごとに同じ</p></div><div class="sm-fig w560"><svg class="v f" viewBox="0 0 600 244" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="6" width="96" height="168" rx="14" fill="#fefefd" stroke="#E8725F" stroke-width="3"/><text x="22" y="30" text-anchor="middle" font-size="22" font-weight="700" fill="#E8725F">B</text><rect x="56" y="14" width="38" height="20" rx="10" fill="#E8725F"/><text x="75" y="28.5" text-anchor="middle" font-size="9" font-weight="700" fill="#fff">答え B</text><g transform="translate(54.0,70) scale(1.2)"><circle cx="0" cy="-15" r="7" fill="#E8725F"/><rect x="-10" y="-6" width="20" height="22" rx="9" fill="#E8725F"/></g><text x="54.0" y="102" text-anchor="middle" font-size="9.6" font-weight="700" fill="#23211c">ブース</text><text x="54.0" y="117.0" text-anchor="middle" font-size="8.6" font-weight="600" fill="#6b625b">札をひかせる</text><text x="54.0" y="129.5" text-anchor="middle" font-size="8.6" font-weight="600" fill="#6b625b">答えを聞く</text><text x="54.0" y="142.0" text-anchor="middle" font-size="8.6" font-weight="600" fill="#6b625b">合えばスタンプ</text><rect x="110" y="6" width="262" height="168" rx="14" fill="#fefefd" stroke="#E58A2E" stroke-width="3"/><text x="126" y="30" text-anchor="middle" font-size="22" font-weight="700" fill="#E58A2E">C</text><rect x="326" y="14" width="38" height="20" rx="10" fill="#E58A2E"/><text x="345" y="28.5" text-anchor="middle" font-size="9" font-weight="700" fill="#fff">答え A</text><g transform="translate(157.66666666666666,70) scale(1.2)"><circle cx="0" cy="-15" r="7" fill="#E58A2E"/><rect x="-10" y="-6" width="20" height="22" rx="9" fill="#E58A2E"/></g><text x="157.66666666666666" y="102" text-anchor="middle" font-size="9.6" font-weight="700" fill="#23211c">ブース</text><text x="157.66666666666666" y="117.0" text-anchor="middle" font-size="8.6" font-weight="600" fill="#6b625b">札をひかせる</text><text x="157.66666666666666" y="129.5" text-anchor="middle" font-size="8.6" font-weight="600" fill="#6b625b">答えを聞く</text><text x="157.66666666666666" y="142.0" text-anchor="middle" font-size="8.6" font-weight="600" fill="#6b625b">合えばスタンプ</text><g transform="translate(240.99999999999997,70) scale(1.2)"><circle cx="0" cy="-15" r="7" fill="#E58A2E"/><rect x="-10" y="-6" width="20" height="22" rx="9" fill="#E58A2E"/></g><text x="240.99999999999997" y="102" text-anchor="middle" font-size="9.6" font-weight="700" fill="#23211c">①ガラガラ</text><text x="240.99999999999997" y="117.0" text-anchor="middle" font-size="8.6" font-weight="600" fill="#6b625b">「済」を押す</text><text x="240.99999999999997" y="129.5" text-anchor="middle" font-size="8.6" font-weight="600" fill="#6b625b">ガラガラ→番号を</text><text x="240.99999999999997" y="142.0" text-anchor="middle" font-size="8.6" font-weight="600" fill="#6b625b">声に出す・玉は戻す</text><g transform="translate(324.3333333333333,70) scale(1.2)"><circle cx="0" cy="-15" r="7" fill="#E58A2E"/><rect x="-10" y="-6" width="20" height="22" rx="9" fill="#E58A2E"/></g><text x="324.3333333333333" y="102" text-anchor="middle" font-size="9.6" font-weight="700" fill="#23211c">②景品・記録</text><text x="324.3333333333333" y="117.0" text-anchor="middle" font-size="8.6" font-weight="600" fill="#6b625b">置き場から渡す</text><text x="324.3333333333333" y="129.5" text-anchor="middle" font-size="8.6" font-weight="600" fill="#6b625b">スマホで番号タップ</text><text x="324.3333333333333" y="142.0" text-anchor="middle" font-size="8.6" font-weight="600" fill="#6b625b">きもちシールを渡す</text><rect x="380" y="6" width="96" height="168" rx="14" fill="#fefefd" stroke="#2FA58A" stroke-width="3"/><text x="396" y="30" text-anchor="middle" font-size="22" font-weight="700" fill="#2FA58A">D</text><rect x="430" y="14" width="38" height="20" rx="10" fill="#2FA58A"/><text x="449" y="28.5" text-anchor="middle" font-size="9" font-weight="700" fill="#fff">答え C</text><g transform="translate(428.0,70) scale(1.2)"><circle cx="0" cy="-15" r="7" fill="#2FA58A"/><rect x="-10" y="-6" width="20" height="22" rx="9" fill="#2FA58A"/></g><text x="428.0" y="102" text-anchor="middle" font-size="9.6" font-weight="700" fill="#23211c">ブース</text><text x="428.0" y="117.0" text-anchor="middle" font-size="8.6" font-weight="600" fill="#6b625b">札をひかせる</text><text x="428.0" y="129.5" text-anchor="middle" font-size="8.6" font-weight="600" fill="#6b625b">答えを聞く</text><text x="428.0" y="142.0" text-anchor="middle" font-size="8.6" font-weight="600" fill="#6b625b">合えばスタンプ</text><rect x="484" y="6" width="96" height="168" rx="14" fill="#fefefd" stroke="#3F6FD0" stroke-width="3"/><text x="500" y="30" text-anchor="middle" font-size="22" font-weight="700" fill="#3F6FD0">E</text><rect x="534" y="14" width="38" height="20" rx="10" fill="#3F6FD0"/><text x="553" y="28.5" text-anchor="middle" font-size="9" font-weight="700" fill="#fff">答え B</text><g transform="translate(532.0,70) scale(1.2)"><circle cx="0" cy="-15" r="7" fill="#3F6FD0"/><rect x="-10" y="-6" width="20" height="22" rx="9" fill="#3F6FD0"/></g><text x="532.0" y="102" text-anchor="middle" font-size="9.6" font-weight="700" fill="#23211c">ブース</text><text x="532.0" y="117.0" text-anchor="middle" font-size="8.6" font-weight="600" fill="#6b625b">札をひかせる</text><text x="532.0" y="129.5" text-anchor="middle" font-size="8.6" font-weight="600" fill="#6b625b">答えを聞く</text><text x="532.0" y="142.0" text-anchor="middle" font-size="8.6" font-weight="600" fill="#6b625b">合えばスタンプ</text><rect x="6" y="182" width="588" height="58" rx="14" fill="#fefefd" stroke="#e8ddd4" stroke-width="2"/><text x="46" y="216" text-anchor="middle" font-size="15" font-weight="700" fill="#23211c">全体</text><g transform="translate(106,212) scale(0.8)"><circle cx="0" cy="-15" r="7" fill="#d9534f"/><rect x="-10" y="-6" width="20" height="22" rx="9" fill="#d9534f"/></g><text x="106" y="236" text-anchor="middle" font-size="8.6" font-weight="700" fill="#23211c">責任者</text><g transform="translate(166,212) scale(0.8)"><circle cx="0" cy="-15" r="7" fill="#2fa58a"/><rect x="-10" y="-6" width="20" height="22" rx="9" fill="#2fa58a"/></g><g transform="translate(196,212) scale(0.8)"><circle cx="0" cy="-15" r="7" fill="#2fa58a"/><rect x="-10" y="-6" width="20" height="22" rx="9" fill="#2fa58a"/></g><text x="181" y="236" text-anchor="middle" font-size="8.6" font-weight="700" fill="#23211c">遊軍 2名</text><text x="232" y="207" text-anchor="start" font-size="9.6" font-weight="600" fill="#23211c">15・16時にスマホで「ガラガラ残り」を見る／休憩を回す（13:30〜）</text><text x="232" y="224" text-anchor="start" font-size="9.6" font-weight="700" fill="#006cb7">14〜17時（ピーク）は遊軍が C・B・E を手伝う</text></svg></div>
+ <div><h2>時間</h2><p class="sm-lead">札は15:30まで（暫定）・最終受付16:45</p></div><div class="sm-fig w520"><svg class="v tl" viewBox="0 0 600 134" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="52" width="560" height="34" rx="8" fill="#efe3d9"/><rect x="172.72727272727272" y="52" width="356.36363636363626" height="34" rx="8" fill="#bad3e1"/><rect x="376.3636363636364" y="52" width="152.72727272727263" height="34" fill="#f6b38e"/><text x="452.7272727272727" y="74" text-anchor="middle" font-size="14" font-weight="700" fill="#7a3a12">ピーク</text><text x="274.54545454545456" y="74" text-anchor="middle" font-size="11" font-weight="700" fill="#006cb7">ひろがる</text><path d="M20.0 88v5" stroke="#6b625b"/><text x="20.0" y="106" text-anchor="middle" font-size="9.5" font-weight="500" fill="#6b625b">7</text><path d="M70.9090909090909 88v5" stroke="#6b625b"/><text x="70.9090909090909" y="106" text-anchor="middle" font-size="9.5" font-weight="500" fill="#6b625b">8</text><path d="M121.81818181818183 88v5" stroke="#6b625b"/><text x="121.81818181818183" y="106" text-anchor="middle" font-size="9.5" font-weight="500" fill="#6b625b">9</text><path d="M172.72727272727272 88v5" stroke="#6b625b"/><text x="172.72727272727272" y="106" text-anchor="middle" font-size="9.5" font-weight="500" fill="#6b625b">10</text><path d="M223.63636363636365 88v5" stroke="#6b625b"/><text x="223.63636363636365" y="106" text-anchor="middle" font-size="9.5" font-weight="500" fill="#6b625b">11</text><path d="M274.5454545454545 88v5" stroke="#6b625b"/><text x="274.5454545454545" y="106" text-anchor="middle" font-size="9.5" font-weight="500" fill="#6b625b">12</text><path d="M325.45454545454544 88v5" stroke="#6b625b"/><text x="325.45454545454544" y="106" text-anchor="middle" font-size="9.5" font-weight="500" fill="#6b625b">13</text><path d="M376.3636363636364 88v5" stroke="#6b625b"/><text x="376.3636363636364" y="106" text-anchor="middle" font-size="9.5" font-weight="500" fill="#6b625b">14</text><path d="M427.2727272727273 88v5" stroke="#6b625b"/><text x="427.2727272727273" y="106" text-anchor="middle" font-size="9.5" font-weight="500" fill="#6b625b">15</text><path d="M478.1818181818182 88v5" stroke="#6b625b"/><text x="478.1818181818182" y="106" text-anchor="middle" font-size="9.5" font-weight="500" fill="#6b625b">16</text><path d="M529.090909090909 88v5" stroke="#6b625b"/><text x="529.090909090909" y="106" text-anchor="middle" font-size="9.5" font-weight="500" fill="#6b625b">17</text><path d="M580.0 88v5" stroke="#6b625b"/><text x="580.0" y="106" text-anchor="middle" font-size="9.5" font-weight="500" fill="#6b625b">18</text><path d="M45.45454545454545 40v12" stroke="#006cb7" stroke-width="2"/><circle cx="45.45454545454545" cy="38" r="4" fill="#006cb7"/><text x="41.45454545454545" y="24" text-anchor="end" font-size="9.8" font-weight="700" fill="#23211c">鍵開け</text><path d="M70.9090909090909 40v12" stroke="#006cb7" stroke-width="2"/><circle cx="70.9090909090909" cy="38" r="4" fill="#006cb7"/><text x="74.9090909090909" y="10" text-anchor="start" font-size="9.8" font-weight="700" fill="#23211c">朝礼</text><path d="M172.72727272727272 40v12" stroke="#006cb7" stroke-width="2"/><circle cx="172.72727272727272" cy="38" r="4" fill="#006cb7"/><text x="176.72727272727272" y="24" text-anchor="start" font-size="9.8" font-weight="700" fill="#23211c">開始</text><path d="M452.7272727272727 40v12" stroke="#006cb7" stroke-width="2"/><circle cx="452.7272727272727" cy="38" r="4" fill="#006cb7"/><text x="448.7272727272727" y="24" text-anchor="end" font-size="9.8" font-weight="700" fill="#23211c">札おわり</text><path d="M529.090909090909 40v12" stroke="#d9534f" stroke-width="3"/><circle cx="529.090909090909" cy="38" r="6" fill="#d9534f"/><text x="533.090909090909" y="24" text-anchor="start" font-size="12" font-weight="700" fill="#d9534f">全体終了</text><text x="516.3636363636364" y="128" text-anchor="middle" font-size="10.5" font-weight="700" fill="#d9534f">最終受付 16:45</text><path d="M516.3636363636364 110v6" stroke="#d9534f" stroke-width="2"/></svg></div>
+ <details class="sm-eq"><summary>時刻の一覧</summary><ol class="sm-tl" id="sm-tl"><li data-h="7.5"><time>7:30</time><span>鍵開け・備品</span></li><li data-h="8"><time>8:00</time><span>朝礼</span></li><li data-h="10"><time>10:00</time><span>開始</span></li><li data-h="14"><time>14:00</time><span>ピーク</span></li><li data-h="15.5"><time>15:30</time><span>札を配り終える</span></li><li data-h="16.75"><time>16:45</time><span>最終受付</span></li><li data-h="17"><time>17:00</time><span>全体終了</span></li></ol></details>
+ <details class="sm-eq"><summary>責任者・遊軍｜10:00〜17:30</summary><ul><li>15・16時にスマホで「ガラガラ残り」を見る</li><li>休憩を回す（13:30〜）</li><li>14〜17時は遊軍をCとB・Eへ</li><li>計画より早く減っていたら予備を机の下へ出しておく</li><li>迷子・けが→責任者→本部<br>雨・中止→西山さんが判断</li></ul></details>
+ <section class="sm-visor"><img class="sm-vimg" alt="そうにゃんのサンバイザー（実物の写真）"><div><h3>そうにゃんのサンバイザー</h3><p>かぶっている子がいる家族は、ガラガラをもう1回まわせる。<mark>1家族 +1回まで</mark>（2人・3人かぶっていても +1回）。2回目の玉も同じ番号の置き場から渡し、スマホは1回ずつ押す。</p></div></section>
+</section>
+<section class="sm-view" data-q="booth" hidden>
+ <div><h2>ブースの対応</h2><p class="sm-lead">B・D・E ゾーン（Cゾーンのブースも同じ）｜10:00〜17:00｜札は15:30まで</p></div>
+ <ol class="sm-b3"><li><i class="sm-ic big"><svg viewBox="0 0 24 24"><rect x="4" y="9" width="16" height="11" rx="2"/><path d="M8 9V5h8v4"/><path d="M12 12v5"/></svg></i><b>1</b><strong>札を1枚ひいてもらう</strong><span>「どの おみせかな？ ひいてみよう」</span></li><li><i class="sm-ic big"><svg viewBox="0 0 24 24"><path d="M4 5h16v10H9l-5 4z"/><path d="M8 10h.01M12 10h.01M16 10h.01"/></svg></i><b>2</b><strong>答えを聞く</strong><span>「こたえは どれ？」</span></li><li><i class="sm-ic big"><svg viewBox="0 0 24 24"><rect x="5" y="15" width="14" height="5" rx="1.5"/><path d="M9 15v-3a3 3 0 1 1 6 0v3"/><path d="M8 20h8"/></svg></i><b>3</b><strong>合えばスタンプ</strong><span>「ぴったり！」</span></li></ol>
+ <div><h2>ゾーンの答え</h2><p class="sm-lead">子どもに見せない</p></div><div class="sm-ans"><div style="--z:#E8725F"><small>Bゾーン</small><b>B</b></div><div style="--z:#E58A2E"><small>Cゾーン</small><b>A</b></div><div style="--z:#2FA58A"><small>Dゾーン</small><b>C</b></div><div style="--z:#3F6FD0"><small>Eゾーン</small><b>B</b></div></div>
+ <div class="sm-ngbox"><b>答えがちがう</b>「もういちど みてみよう」<b>2回ちがう</b>札の「じつは」でヒント</div>
+ <div><h2>困ったとき</h2></div><div class="sm-fig w560"><svg class="v tr" viewBox="0 0 600 150" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="144" height="68" rx="12" fill="#fefefd" stroke="#e8ddd4" stroke-width="2"/><g transform="translate(12,14)"><path d="M6 8l10 -4 10 4 10 -4v26l-10 4 -10 -4 -10 4z" fill="#fff" stroke="#006cb7" stroke-width="2"/></g><rect x="104" y="7" width="34" height="13" rx="6.5" fill="#8a8f98"/><text x="121" y="16.6" text-anchor="middle" font-size="8" font-weight="700" fill="#fff">全員</text><text x="50" y="35" text-anchor="start" font-size="9" font-weight="700" fill="#006cb7">リーフレットがない</text><text x="50" y="51" text-anchor="start" font-size="8.2" font-weight="600" fill="#23211c">どのブースでもわたす</text><rect x="153" y="3" width="144" height="68" rx="12" fill="#fefefd" stroke="#e8ddd4" stroke-width="2"/><g transform="translate(162,14)"><rect x="8" y="6" width="22" height="30" rx="2" fill="#fff" stroke="#23211c" stroke-width="2"/><path d="M12 16l14 14M26 16l-14 14" stroke="#d9534f" stroke-width="3"/></g><rect x="254" y="7" width="34" height="13" rx="6.5" fill="#8a8f98"/><text x="271" y="16.6" text-anchor="middle" font-size="8" font-weight="700" fill="#fff">全員</text><text x="200" y="35" text-anchor="start" font-size="9" font-weight="700" fill="#006cb7">お店が閉まっている</text><text x="200" y="51" text-anchor="start" font-size="8.2" font-weight="600" fill="#23211c">同じゾーンで引き直す</text><rect x="303" y="3" width="144" height="68" rx="12" fill="#fefefd" stroke="#e8ddd4" stroke-width="2"/><g transform="translate(312,14)"><rect x="4" y="10" width="30" height="20" rx="3" fill="#fff" stroke="#23211c" stroke-width="2"/><path d="M14 16q3 -4 6 0 -3 3 0 6" stroke="#d9534f" stroke-width="2" fill="none"/></g><rect x="404" y="7" width="34" height="13" rx="6.5" fill="#8a8f98"/><text x="421" y="16.6" text-anchor="middle" font-size="8" font-weight="700" fill="#fff">全員</text><text x="350" y="35" text-anchor="start" font-size="9" font-weight="700" fill="#006cb7">札をなくした</text><text x="350" y="51" text-anchor="start" font-size="8.2" font-weight="600" fill="#23211c">同じゾーンでもう1枚</text><rect x="453" y="3" width="144" height="68" rx="12" fill="#fefefd" stroke="#e8ddd4" stroke-width="2"/><g transform="translate(462,14)"><path d="M12 34V14a3 3 0 016 0v8M18 22v-10a3 3 0 016 0v14c0 8 -4 8 -8 8s-4 -2 -4 -6" fill="#fde0c8" stroke="#23211c" stroke-width="1.8"/></g><rect x="554" y="7" width="34" height="13" rx="6.5" fill="#8a8f98"/><text x="571" y="16.6" text-anchor="middle" font-size="8" font-weight="700" fill="#fff">全員</text><text x="500" y="35" text-anchor="start" font-size="9" font-weight="700" fill="#006cb7">字が読めない子</text><text x="500" y="51" text-anchor="start" font-size="8.2" font-weight="600" fill="#23211c">指さしでOK</text></svg></div>
+ <details class="sm-eq"><summary>ブースの備品</summary><ul><li><b>札の箱（引く箱）</b><span>1｜机の前（子ども側）</span><small>子どもが1枚引く。中身が3分の1を切ったら補充</small></li><li><b>補充用の札（店ごとの束）</b><span>B 700・C 600・D 600・E 800｜机の下の箱</span><small>店ごとに同じ枚数（各10枚）を箱に足して混ぜる</small></li><li><b>リーフレット（蛇腹）の予備</b><span>【要確認】｜机の前</span><small>持っていない子に1部わたす</small></li><li><b>正解スタンプ・スタンプ台</b><span>2・2｜スタッフの手元</span><small>答えが合ったら、リーフレットのそのゾーンの欄に押す（1つは予備）</small></li><li><b>答えカード（ゾーンの文字）</b><span>1｜スタッフの手元（子どもから見えない向き）</span><small>B＝B・C＝A・D＝C・E＝B</small></li><li><b>説明パネル・ゾーンの表示</b><span>1｜机の前に立てる</span><small>遊び方を見せる</small></li></ul></details>
+</section>
+<section class="sm-view" data-q="c" hidden>
+ <div><h2>Cの机</h2><p class="sm-lead">左から並び、①ガラガラ → ②景品。Cのブースは「ブースBDE」タブと同じ</p></div>
+ <div class="sm-fig w560"><svg class="v cl" viewBox="0 0 600 234" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="4" width="592" height="226" rx="16" fill="#fff8ef" stroke="#e8ddd4" stroke-width="2"/><text x="54" y="28" text-anchor="middle" font-size="10" font-weight="700" fill="#6b625b">並ぶ列</text><g transform="translate(24,64) scale(0.62)"><circle cx="0" cy="-15" r="7" fill="#9fc0d6"/><rect x="-10" y="-6" width="20" height="22" rx="9" fill="#9fc0d6"/></g><g transform="translate(44,72) scale(0.62)"><circle cx="0" cy="-15" r="7" fill="#9fc0d6"/><rect x="-10" y="-6" width="20" height="22" rx="9" fill="#9fc0d6"/></g><g transform="translate(64,64) scale(0.62)"><circle cx="0" cy="-15" r="7" fill="#9fc0d6"/><rect x="-10" y="-6" width="20" height="22" rx="9" fill="#9fc0d6"/></g><g transform="translate(84,72) scale(0.62)"><circle cx="0" cy="-15" r="7" fill="#9fc0d6"/><rect x="-10" y="-6" width="20" height="22" rx="9" fill="#9fc0d6"/></g><line x1="14" y1="104" x2="59" y2="104" stroke="#6b625b" stroke-width="2" stroke-linecap="round"/><path d="M62 104l-6 -4v8z" fill="#6b625b"/><rect x="84" y="46" width="352" height="120" rx="12" fill="#fae0ac" opacity=".7"/><text x="100" y="40" text-anchor="start" font-size="10" font-weight="700" fill="#8a4b00">C 交換所の机</text><g transform="translate(140,84) scale(1.25)"><circle cx="0" cy="-15" r="7" fill="#006cb7"/><rect x="-10" y="-6" width="20" height="22" rx="9" fill="#006cb7"/></g><circle cx="140" cy="148" r="0"/><text x="140" y="118" text-anchor="middle" font-size="15" font-weight="700" fill="#006cb7">C①</text><circle cx="190" cy="76" r="14" fill="none" stroke="#d9534f" stroke-width="2.6"/><text x="190" y="80" text-anchor="middle" font-size="11" font-weight="700" fill="#d9534f">済</text><text x="190" y="104" text-anchor="middle" font-size="8.4" font-weight="500" fill="#6b625b">スタンプ</text><g transform="translate(255,92) scale(0.92)"><circle cx="0" cy="0" r="26" fill="#e6f2f8" stroke="#7eb9dc" stroke-width="2"/><circle cx="-10" cy="8" r="6.2" fill="#E8725F"/><circle cx="0" cy="10" r="6.2" fill="#E58A2E"/><circle cx="10" cy="8" r="6.2" fill="#2FA58A"/><circle cx="-15" cy="-2" r="6.2" fill="#3F6FD0"/><circle cx="-5" cy="0" r="6.2" fill="#8a6fc2"/><circle cx="6" cy="0" r="6.2" fill="#e0709a"/><circle cx="15" cy="-3" r="6.2" fill="#E8725F"/><circle cx="-9" cy="-11" r="6.2" fill="#E58A2E"/><circle cx="2" cy="-10" r="6.2" fill="#2FA58A"/><circle cx="11" cy="-12" r="6.2" fill="#3F6FD0"/><rect x="-22" y="26" width="44" height="18" rx="5" fill="#006cb7"/><rect x="14" y="34" width="14" height="10" rx="3" fill="#0a4f85"/><circle cx="32" cy="12" r="6" fill="#fff" stroke="#006cb7" stroke-width="2"/><path d="M32 12l9-6" stroke="#006cb7" stroke-width="3" stroke-linecap="round"/></g><text x="255" y="160" text-anchor="middle" font-size="9" font-weight="700" fill="#23211c">ガラガラ</text><line x1="210" y1="95" x2="223" y2="95" stroke="#006cb7" stroke-width="2" stroke-linecap="round"/><path d="M226 95l-6 -4v8z" fill="#006cb7"/><g transform="translate(332,84) scale(1.25)"><circle cx="0" cy="-15" r="7" fill="#e0709a"/><rect x="-10" y="-6" width="20" height="22" rx="9" fill="#e0709a"/></g><text x="332" y="118" text-anchor="middle" font-size="15" font-weight="700" fill="#c4456f">C②</text><g transform="translate(364,54)"><rect width="40" height="30" rx="3" fill="#fefefd" stroke="#006cb7" stroke-width="1.6"/><rect x="4" y="5" width="9" height="12" rx="1.5" fill="#bad3e1"/><rect x="4" y="19" width="9" height="7" rx="1.5" fill="#e8725f55"/><rect x="15" y="5" width="9" height="12" rx="1.5" fill="#bad3e1"/><rect x="15" y="19" width="9" height="7" rx="1.5" fill="#e8725f55"/><rect x="26" y="5" width="9" height="12" rx="1.5" fill="#bad3e1"/><rect x="26" y="19" width="9" height="7" rx="1.5" fill="#e8725f55"/><text x="20" y="40" text-anchor="middle" font-size="7.5" font-weight="700" fill="#23211c">チケット 1–34</text></g><g transform="translate(358,106)"><rect width="76" height="18" rx="3" fill="#8a6fc2"/><rect x="0" y="0" width="76" height="5" rx="3" fill="#00000022"/><text x="38.0" y="13.6" text-anchor="middle" font-size="7.4" font-weight="700" fill="#fff">カトラリー 35–42</text></g><g transform="translate(358,128)"><rect width="76" height="18" rx="3" fill="#e0709a"/><rect x="0" y="0" width="76" height="5" rx="3" fill="#00000022"/><text x="38.0" y="13.6" text-anchor="middle" font-size="7.4" font-weight="700" fill="#fff">シール＋お菓子 43–50</text></g><g transform="translate(444,52)"><rect width="44" height="76" rx="6" fill="#23211c"/><rect x="2.5" y="6" width="39" height="64" rx="3" fill="#fefefd"/><rect x="6.0" y="21.6" width="4.8" height="4.8" rx="2" fill="#e8ddd4"/><rect x="12.8" y="21.6" width="4.8" height="4.8" rx="2" fill="#e8ddd4"/><rect x="19.6" y="21.6" width="4.8" height="4.8" rx="2" fill="#e8ddd4"/><rect x="26.4" y="21.6" width="4.8" height="4.8" rx="2" fill="#e8ddd4"/><rect x="33.2" y="21.6" width="4.8" height="4.8" rx="2" fill="#e8ddd4"/><rect x="6.0" y="28.400000000000002" width="4.8" height="4.8" rx="2" fill="#e8ddd4"/><rect x="12.8" y="28.400000000000002" width="4.8" height="4.8" rx="2" fill="#e8ddd4"/><rect x="19.6" y="28.400000000000002" width="4.8" height="4.8" rx="2" fill="#006cb7"/><rect x="26.4" y="28.400000000000002" width="4.8" height="4.8" rx="2" fill="#e8ddd4"/><rect x="33.2" y="28.400000000000002" width="4.8" height="4.8" rx="2" fill="#e8ddd4"/><rect x="6.0" y="35.2" width="4.8" height="4.8" rx="2" fill="#e8ddd4"/><rect x="12.8" y="35.2" width="4.8" height="4.8" rx="2" fill="#e8ddd4"/><rect x="19.6" y="35.2" width="4.8" height="4.8" rx="2" fill="#e8ddd4"/><rect x="26.4" y="35.2" width="4.8" height="4.8" rx="2" fill="#e8ddd4"/><rect x="33.2" y="35.2" width="4.8" height="4.8" rx="2" fill="#e8ddd4"/><rect x="6.0" y="42.0" width="4.8" height="4.8" rx="2" fill="#e8ddd4"/><rect x="12.8" y="42.0" width="4.8" height="4.8" rx="2" fill="#e8ddd4"/><rect x="19.6" y="42.0" width="4.8" height="4.8" rx="2" fill="#e8ddd4"/><rect x="26.4" y="42.0" width="4.8" height="4.8" rx="2" fill="#e8ddd4"/><rect x="33.2" y="42.0" width="4.8" height="4.8" rx="2" fill="#e8ddd4"/></g><text x="466" y="142" text-anchor="middle" font-size="9" font-weight="700" fill="#23211c">スマホ</text><line x1="430" y1="80" x2="439" y2="80" stroke="#006cb7" stroke-width="2" stroke-linecap="round"/><path d="M442 80l-6 -4v8z" fill="#006cb7"/><rect x="508" y="46" width="80" height="120" rx="12" fill="#d6e0e6" opacity=".8"/><text x="548" y="40" text-anchor="middle" font-size="10" font-weight="700" fill="#23211c">シール台</text><circle cx="548" cy="82" r="13" fill="#f7d2c3" stroke="#e0709a" stroke-width="1.6"/><text x="548" y="108" text-anchor="middle" font-size="8.2" font-weight="700" fill="#23211c">きもちシール</text><rect x="522" y="118" width="52" height="30" rx="4" fill="#fff" stroke="#bad3e1" stroke-width="2"/><text x="548" y="136" text-anchor="middle" font-size="8.4" font-weight="700" fill="#23211c">キャンバス</text><rect x="180" y="178" width="290" height="46" rx="10" fill="#f3ebe4" stroke="#e8ddd4"/><text x="325" y="196" text-anchor="middle" font-size="9" font-weight="700" fill="#6b625b">机の下・横</text><circle cx="214" cy="212" r="9" fill="#cfc4ba"/><text x="250" y="216" text-anchor="middle" font-size="8.6" font-weight="700" fill="#23211c">抜いた玉の入れ物</text><g transform="translate(310,204)"><rect width="36" height="18" rx="3" fill="#b9a99a"/><rect x="0" y="0" width="36" height="5" rx="3" fill="#00000022"/><text x="18.0" y="13.6" text-anchor="middle" font-size="7.4" font-weight="700" fill="#fff">予備</text></g><text x="364" y="216" text-anchor="start" font-size="8.4" font-weight="700" fill="#23211c">シール＋お菓子</text><circle cx="172" cy="56" r="8" fill="#23211c"/><text x="172" y="59.6" text-anchor="middle" font-size="9.5" font-weight="700" fill="#fff">1</text><circle cx="226" cy="62" r="8" fill="#23211c"/><text x="226" y="65.6" text-anchor="middle" font-size="9.5" font-weight="700" fill="#fff">2</text><circle cx="358" cy="52" r="8" fill="#23211c"/><text x="358" y="55.6" text-anchor="middle" font-size="9.5" font-weight="700" fill="#fff">3</text><circle cx="352" cy="114" r="8" fill="#23211c"/><text x="352" y="117.6" text-anchor="middle" font-size="9.5" font-weight="700" fill="#fff">4</text><circle cx="450" cy="50" r="8" fill="#23211c"/><text x="450" y="53.6" text-anchor="middle" font-size="9.5" font-weight="700" fill="#fff">5</text><circle cx="522" cy="58" r="8" fill="#23211c"/><text x="522" y="61.6" text-anchor="middle" font-size="9.5" font-weight="700" fill="#fff">6</text><circle cx="196" cy="200" r="8" fill="#23211c"/><text x="196" y="203.6" text-anchor="middle" font-size="9.5" font-weight="700" fill="#fff">7</text><circle cx="306" cy="200" r="8" fill="#23211c"/><text x="306" y="203.6" text-anchor="middle" font-size="9.5" font-weight="700" fill="#fff">8</text></svg></div>
+ <details class="sm-eq"><summary>図の番号の説明</summary><ol class="sm-leg"><li><b>「済」スタンプ</b>スタンプ4つを確かめて押す（2回目を防ぐ）</li><li><b>ガラガラ</b>玉50個。1回まわす。玉は毎回戻す</li><li><b>ファイル 1–34</b>チケット。玉の番号のポケットから1枚</li><li><b>箱 35–50</b>カトラリー・シール＋お菓子。番号の箱から1組</li><li><b>スマホ</b>出た番号をタップ。残りと「抜く玉」が出る</li><li><b>シール台</b>きもちシールを渡し、キャンバスへ案内</li><li><b>抜いた玉の入れ物</b>空になった番号の玉を入れる</li><li><b>予備の箱</b>シール＋お菓子110組。景品が全部なくなってから</li></ol></details>
+ <div class="sm-chips" role="group" aria-label="持ち場"><button type="button" class="sm-chip" data-role="0" id="role-0">C① 受付・ガラガラ</button><button type="button" class="sm-chip" data-role="1" id="role-1">C② 景品・記録</button></div>
+ <article class="sm-card" data-card="0" hidden><h3>C① 受付・ガラガラ</h3><p class="sm-where">C｜10:00〜17:00（最終受付16:45）｜1組20秒</p><ol class="sm-do"><li><b>1</b>スタンプ4つを確認→「済」を押す</li><li><b>2</b>ガラガラを1回まわしてもらう→玉の番号を声に出す</li><li><b>3</b>そうにゃんのサンバイザーの子がいたら、もう1回まわせる（1家族+1回まで）</li><li><b>4</b>玉はそのままガラガラに戻す</li></ol><p class="sm-say">「どの おみせが まってるかな？」<br>サンバイザーの子へ「もう1回 まわせるよ！」</p><p class="sm-ng"><b>困ったら</b>②から「この玉を抜いて」と言われたら、その玉をガラガラから取り出す（抜いた玉の入れ物へ）</p></article><article class="sm-card" data-card="1" hidden><h3>C② 景品・記録</h3><p class="sm-where">C｜10:00〜17:00｜1組25秒</p><ol class="sm-do"><li><b>1</b>玉の番号の置き場から特典を1つわたす</li><li><b>2</b>スマホで同じ番号をタップ（残りが出る）</li><li><b>3</b>きもちシール1枚→キャンバスへ</li></ol><p class="sm-say">「おめでとう！ きもちシールは あちらへ」</p><p class="sm-ng"><b>困ったら</b>番号が「あと0」になったら①へ「○番を抜いて」。全部空になったら予備のシール＋お菓子（110組）</p></article>
+ <div><h2>1組ごとの動き</h2><p class="sm-lead">約45秒。1〜4をくり返す</p></div><div class="sm-fig w600"><svg class="v k4" viewBox="0 0 600 194" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="4" width="142" height="186" rx="14" fill="#fefefd" stroke="#e8ddd4" stroke-width="2"/><circle cx="22" cy="24" r="12" fill="#006cb7"/><text x="22" y="29" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">1</text><text x="98" y="29" text-anchor="middle" font-size="16" font-weight="700" fill="#006cb7">まわす</text><text x="98" y="43" text-anchor="middle" font-size="8.6" font-weight="700" fill="#6b625b">C①</text><g transform="translate(69,92) scale(0.95)"><circle cx="0" cy="0" r="26" fill="#e6f2f8" stroke="#7eb9dc" stroke-width="2"/><circle cx="-10" cy="8" r="6.2" fill="#E8725F"/><circle cx="0" cy="10" r="6.2" fill="#E58A2E"/><circle cx="10" cy="8" r="6.2" fill="#2FA58A"/><circle cx="-15" cy="-2" r="6.2" fill="#3F6FD0"/><circle cx="-5" cy="0" r="6.2" fill="#8a6fc2"/><circle cx="6" cy="0" r="6.2" fill="#e0709a"/><circle cx="15" cy="-3" r="6.2" fill="#E8725F"/><circle cx="-9" cy="-11" r="6.2" fill="#E58A2E"/><circle cx="2" cy="-10" r="6.2" fill="#2FA58A"/><circle cx="11" cy="-12" r="6.2" fill="#3F6FD0"/><rect x="-22" y="26" width="44" height="18" rx="5" fill="#006cb7"/><rect x="14" y="34" width="14" height="10" rx="3" fill="#0a4f85"/><circle cx="32" cy="12" r="6" fill="#fff" stroke="#006cb7" stroke-width="2"/><path d="M32 12l9-6" stroke="#006cb7" stroke-width="3" stroke-linecap="round"/><circle cx="26" cy="42" r="7" fill="#E58A2E" stroke="#fff" stroke-width="1.2"/><text x="26" y="45" text-anchor="middle" font-size="8" font-weight="700" fill="#fff">17</text></g><text x="75" y="146" text-anchor="middle" font-size="9.4" font-weight="700" fill="#23211c">ガラガラを1回まわしてもらい</text><text x="75" y="161" text-anchor="middle" font-size="9.4" font-weight="700" fill="#23211c">出た玉の番号を声に出す</text><rect x="154" y="4" width="142" height="186" rx="14" fill="#fefefd" stroke="#e8ddd4" stroke-width="2"/><circle cx="172" cy="24" r="12" fill="#c4456f"/><text x="172" y="29" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">2</text><text x="248" y="29" text-anchor="middle" font-size="16" font-weight="700" fill="#c4456f">わたす</text><text x="248" y="43" text-anchor="middle" font-size="8.6" font-weight="700" fill="#6b625b">C②</text><g transform="translate(187,60)"><rect width="40" height="30" rx="3" fill="#fefefd" stroke="#006cb7" stroke-width="1.6"/><rect x="4" y="5" width="9" height="12" rx="1.5" fill="#bad3e1"/><rect x="4" y="19" width="9" height="7" rx="1.5" fill="#e8725f55"/><rect x="15" y="5" width="9" height="12" rx="1.5" fill="#bad3e1"/><rect x="15" y="19" width="9" height="7" rx="1.5" fill="#e8725f55"/><rect x="26" y="5" width="9" height="12" rx="1.5" fill="#bad3e1"/><rect x="26" y="19" width="9" height="7" rx="1.5" fill="#e8725f55"/><text x="20" y="40" text-anchor="middle" font-size="7.5" font-weight="700" fill="#23211c"></text></g><rect x="195" y="65" width="9" height="12" rx="1.5" fill="#E58A2E"/><path d="M199 77q10 24 36 26" stroke="#23211c" stroke-width="2" fill="none" stroke-linecap="round"/><g transform="translate(239,94)"><rect width="26" height="16" rx="2.5" fill="#fae0ac" stroke="#d9a74a"/><path d="M5 5h16M5 9h10" stroke="#b86a00" stroke-width="1.4"/></g><text x="225" y="146" text-anchor="middle" font-size="9.4" font-weight="700" fill="#23211c">同じ番号（17）の置き場から</text><text x="225" y="161" text-anchor="middle" font-size="9.4" font-weight="700" fill="#23211c">特典を1つ渡す</text><rect x="304" y="4" width="142" height="186" rx="14" fill="#fefefd" stroke="#e8ddd4" stroke-width="2"/><circle cx="322" cy="24" r="12" fill="#006cb7"/><text x="322" y="29" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">3</text><text x="398" y="29" text-anchor="middle" font-size="16" font-weight="700" fill="#006cb7">戻す</text><text x="398" y="43" text-anchor="middle" font-size="8.6" font-weight="700" fill="#6b625b">C①</text><g transform="translate(367,96) scale(0.95)"><circle cx="0" cy="0" r="26" fill="#e6f2f8" stroke="#7eb9dc" stroke-width="2"/><circle cx="-10" cy="8" r="6.2" fill="#E8725F"/><circle cx="0" cy="10" r="6.2" fill="#E58A2E"/><circle cx="10" cy="8" r="6.2" fill="#2FA58A"/><circle cx="-15" cy="-2" r="6.2" fill="#3F6FD0"/><circle cx="-5" cy="0" r="6.2" fill="#8a6fc2"/><circle cx="6" cy="0" r="6.2" fill="#e0709a"/><circle cx="15" cy="-3" r="6.2" fill="#E8725F"/><circle cx="-9" cy="-11" r="6.2" fill="#E58A2E"/><circle cx="2" cy="-10" r="6.2" fill="#2FA58A"/><circle cx="11" cy="-12" r="6.2" fill="#3F6FD0"/><rect x="-22" y="26" width="44" height="18" rx="5" fill="#006cb7"/><rect x="14" y="34" width="14" height="10" rx="3" fill="#0a4f85"/><circle cx="32" cy="12" r="6" fill="#fff" stroke="#006cb7" stroke-width="2"/><path d="M32 12l9-6" stroke="#006cb7" stroke-width="3" stroke-linecap="round"/></g><path d="M413 86q-6 -30 -30 -34" stroke="#E58A2E" stroke-width="3" fill="none" stroke-dasharray="4 3"/><circle cx="413" cy="92" r="11" fill="#E58A2E" stroke="#fff" stroke-width="1.2"/><text x="413" y="95.2" text-anchor="middle" font-size="9" font-weight="700" fill="#fff">17</text><text x="375" y="146" text-anchor="middle" font-size="9.4" font-weight="700" fill="#23211c">渡したら、玉はそのまま</text><text x="375" y="161" text-anchor="middle" font-size="9.4" font-weight="700" fill="#23211c">ガラガラへ戻す</text><rect x="454" y="4" width="142" height="186" rx="14" fill="#fefefd" stroke="#e8ddd4" stroke-width="2"/><circle cx="472" cy="24" r="12" fill="#c4456f"/><text x="472" y="29" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">4</text><text x="548" y="29" text-anchor="middle" font-size="16" font-weight="700" fill="#c4456f">押す</text><text x="548" y="43" text-anchor="middle" font-size="8.6" font-weight="700" fill="#6b625b">C②</text><g transform="translate(504,50)"><rect width="42" height="76" rx="6" fill="#23211c"/><rect x="2.5" y="6" width="37" height="64" rx="3" fill="#fefefd"/><rect x="5.999999999999999" y="21.8" width="4.4" height="4.4" rx="2" fill="#e8ddd4"/><rect x="12.400000000000002" y="21.8" width="4.4" height="4.4" rx="2" fill="#e8ddd4"/><rect x="18.8" y="21.8" width="4.4" height="4.4" rx="2" fill="#e8ddd4"/><rect x="25.200000000000003" y="21.8" width="4.4" height="4.4" rx="2" fill="#e8ddd4"/><rect x="31.600000000000005" y="21.8" width="4.4" height="4.4" rx="2" fill="#e8ddd4"/><rect x="5.999999999999999" y="28.2" width="4.4" height="4.4" rx="2" fill="#e8ddd4"/><rect x="12.400000000000002" y="28.2" width="4.4" height="4.4" rx="2" fill="#e8ddd4"/><rect x="18.8" y="28.2" width="4.4" height="4.4" rx="2" fill="#e8ddd4"/><rect x="25.200000000000003" y="28.2" width="4.4" height="4.4" rx="2" fill="#e8ddd4"/><rect x="31.600000000000005" y="28.2" width="4.4" height="4.4" rx="2" fill="#e8ddd4"/><rect x="5.999999999999999" y="34.599999999999994" width="4.4" height="4.4" rx="2" fill="#e8ddd4"/><rect x="12.400000000000002" y="34.599999999999994" width="4.4" height="4.4" rx="2" fill="#e8ddd4"/><rect x="18.8" y="34.599999999999994" width="4.4" height="4.4" rx="2" fill="#e8ddd4"/><rect x="25.200000000000003" y="34.599999999999994" width="4.4" height="4.4" rx="2" fill="#e8ddd4"/><rect x="31.600000000000005" y="34.599999999999994" width="4.4" height="4.4" rx="2" fill="#e8ddd4"/><rect x="5.999999999999999" y="41.0" width="4.4" height="4.4" rx="2" fill="#e8ddd4"/><rect x="12.400000000000002" y="41.0" width="4.4" height="4.4" rx="2" fill="#e8ddd4"/><rect x="18.8" y="41.0" width="4.4" height="4.4" rx="2" fill="#006cb7"/><rect x="25.200000000000003" y="41.0" width="4.4" height="4.4" rx="2" fill="#e8ddd4"/><rect x="31.600000000000005" y="41.0" width="4.4" height="4.4" rx="2" fill="#e8ddd4"/></g><text x="525" y="146" text-anchor="middle" font-size="9.4" font-weight="700" fill="#23211c">スマホで同じ番号をタップ</text><text x="525" y="161" text-anchor="middle" font-size="9.4" font-weight="700" fill="#23211c">→残りが出る</text></svg></div>
+ <section class="sm-visor"><img class="sm-vimg" alt="そうにゃんのサンバイザー（実物の写真）"><div><h3>そうにゃんのサンバイザー</h3><p>かぶっている子がいる家族は、ガラガラをもう1回まわせる。<mark>1家族 +1回まで</mark>（2人・3人かぶっていても +1回）。2回目の玉も同じ番号の置き場から渡し、スマホは1回ずつ押す。</p></div></section>
+ <div><h2>とくべつな2つの場面</h2></div><div class="sm-fig w560"><svg class="v ab" viewBox="0 0 600 198" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="4" width="294" height="190" rx="14" fill="#fff1ef" stroke="#e8725f" stroke-width="2"/><text x="150" y="28" text-anchor="middle" font-size="12.5" font-weight="700" fill="#c0392b">「あと0」が出たら 玉を抜く</text><g transform="translate(24,40)"><rect width="46" height="80" rx="6" fill="#23211c"/><rect x="2.5" y="6" width="41" height="68" rx="3" fill="#fefefd"/><rect x="4" y="8" width="38" height="9" rx="2" fill="#d9534f"/><text x="23.0" y="14.6" text-anchor="middle" font-size="5.6" font-weight="700" fill="#fff">17番 抜く</text><rect x="6.0" y="21.4" width="5.2" height="5.2" rx="2" fill="#e8ddd4"/><rect x="13.2" y="21.4" width="5.2" height="5.2" rx="2" fill="#e8ddd4"/><rect x="20.4" y="21.4" width="5.2" height="5.2" rx="2" fill="#e8ddd4"/><rect x="27.6" y="21.4" width="5.2" height="5.2" rx="2" fill="#e8ddd4"/><rect x="34.8" y="21.4" width="5.2" height="5.2" rx="2" fill="#e8ddd4"/><rect x="6.0" y="28.599999999999998" width="5.2" height="5.2" rx="2" fill="#e8ddd4"/><rect x="13.2" y="28.599999999999998" width="5.2" height="5.2" rx="2" fill="#e8ddd4"/><rect x="20.4" y="28.599999999999998" width="5.2" height="5.2" rx="2" fill="#d9534f"/><rect x="27.6" y="28.599999999999998" width="5.2" height="5.2" rx="2" fill="#e8ddd4"/><rect x="34.8" y="28.599999999999998" width="5.2" height="5.2" rx="2" fill="#e8ddd4"/><rect x="6.0" y="35.8" width="5.2" height="5.2" rx="2" fill="#e8ddd4"/><rect x="13.2" y="35.8" width="5.2" height="5.2" rx="2" fill="#e8ddd4"/><rect x="20.4" y="35.8" width="5.2" height="5.2" rx="2" fill="#e8ddd4"/><rect x="27.6" y="35.8" width="5.2" height="5.2" rx="2" fill="#e8ddd4"/><rect x="34.8" y="35.8" width="5.2" height="5.2" rx="2" fill="#e8ddd4"/><rect x="6.0" y="43.0" width="5.2" height="5.2" rx="2" fill="#e8ddd4"/><rect x="13.2" y="43.0" width="5.2" height="5.2" rx="2" fill="#e8ddd4"/><rect x="20.4" y="43.0" width="5.2" height="5.2" rx="2" fill="#e8ddd4"/><rect x="27.6" y="43.0" width="5.2" height="5.2" rx="2" fill="#e8ddd4"/><rect x="34.8" y="43.0" width="5.2" height="5.2" rx="2" fill="#e8ddd4"/></g><line x1="78" y1="82" x2="103" y2="82" stroke="#d9534f" stroke-width="2.4" stroke-linecap="round"/><path d="M106 82l-6 -4v8z" fill="#d9534f"/><g transform="translate(128,96) scale(1.1)"><circle cx="0" cy="-15" r="7" fill="#e0709a"/><rect x="-10" y="-6" width="20" height="22" rx="9" fill="#e0709a"/></g><text x="128" y="120" text-anchor="middle" font-size="9" font-weight="700" fill="#c4456f">C②</text><path d="M142 70q16 -14 30 -4" stroke="#23211c" stroke-width="1.6" fill="none"/><text x="172" y="62" text-anchor="start" font-size="8.8" font-weight="700" fill="#23211c">「17番ぬいて」</text><line x1="150" y1="96" x2="181" y2="96" stroke="#006cb7" stroke-width="2.4" stroke-linecap="round"/><path d="M184 96l-6 -4v8z" fill="#006cb7"/><g transform="translate(204,96) scale(1.1)"><circle cx="0" cy="-15" r="7" fill="#006cb7"/><rect x="-10" y="-6" width="20" height="22" rx="9" fill="#006cb7"/></g><text x="204" y="120" text-anchor="middle" font-size="9" font-weight="700" fill="#006cb7">C①</text><g transform="translate(252,92) scale(0.62)"><circle cx="0" cy="0" r="26" fill="#e6f2f8" stroke="#7eb9dc" stroke-width="2"/><circle cx="-10" cy="8" r="6.2" fill="#E8725F"/><circle cx="0" cy="10" r="6.2" fill="#E58A2E"/><circle cx="10" cy="8" r="6.2" fill="#2FA58A"/><circle cx="-15" cy="-2" r="6.2" fill="#3F6FD0"/><circle cx="-5" cy="0" r="6.2" fill="#8a6fc2"/><circle cx="6" cy="0" r="6.2" fill="#e0709a"/><circle cx="15" cy="-3" r="6.2" fill="#E8725F"/><circle cx="-9" cy="-11" r="6.2" fill="#E58A2E"/><circle cx="2" cy="-10" r="6.2" fill="#2FA58A"/><circle cx="11" cy="-12" r="6.2" fill="#3F6FD0"/><rect x="-22" y="26" width="44" height="18" rx="5" fill="#006cb7"/><rect x="14" y="34" width="14" height="10" rx="3" fill="#0a4f85"/><circle cx="32" cy="12" r="6" fill="#fff" stroke="#006cb7" stroke-width="2"/><path d="M32 12l9-6" stroke="#006cb7" stroke-width="3" stroke-linecap="round"/></g><circle cx="262" cy="136" r="8" fill="#cfc4ba"/><text x="262" y="148" text-anchor="middle" font-size="8.4" font-weight="600" fill="#6b625b">入れ物へ</text><text x="151" y="166" text-anchor="middle" font-size="9" font-weight="600" fill="#23211c">置き場が空になった番号は、スマホが赤く知らせる。</text><text x="151" y="178" text-anchor="middle" font-size="9" font-weight="600" fill="#23211c">C②がC①へ伝え、C①がその玉を取り出す。</text><text x="151" y="190" text-anchor="middle" font-size="9" font-weight="600" fill="#23211c">抜くほど、残った特典が当たりやすくなる。</text><rect x="306" y="4" width="290" height="190" rx="14" fill="#f2ecf8" stroke="#8a6fc2" stroke-width="2"/><text x="451" y="28" text-anchor="middle" font-size="12.5" font-weight="700" fill="#5c3f94">ぜんぶ空になったら 予備</text><g transform="translate(346,82) scale(0.62)"><circle cx="0" cy="0" r="26" fill="#e6f2f8" stroke="#7eb9dc" stroke-width="2"/><circle cx="-10" cy="8" r="6.2" fill="#E8725F"/><circle cx="0" cy="10" r="6.2" fill="#E58A2E"/><circle cx="10" cy="8" r="6.2" fill="#2FA58A"/><circle cx="-15" cy="-2" r="6.2" fill="#3F6FD0"/><circle cx="-5" cy="0" r="6.2" fill="#8a6fc2"/><circle cx="6" cy="0" r="6.2" fill="#e0709a"/><circle cx="15" cy="-3" r="6.2" fill="#E8725F"/><circle cx="-9" cy="-11" r="6.2" fill="#E58A2E"/><circle cx="2" cy="-10" r="6.2" fill="#2FA58A"/><circle cx="11" cy="-12" r="6.2" fill="#3F6FD0"/><rect x="-22" y="26" width="44" height="18" rx="5" fill="#006cb7"/><rect x="14" y="34" width="14" height="10" rx="3" fill="#0a4f85"/><circle cx="32" cy="12" r="6" fill="#fff" stroke="#006cb7" stroke-width="2"/><path d="M32 12l9-6" stroke="#006cb7" stroke-width="3" stroke-linecap="round"/></g><text x="346" y="128" text-anchor="middle" font-size="9" font-weight="700" fill="#6b625b">景品ゼロ</text><line x1="372" y1="84" x2="397" y2="84" stroke="#8a6fc2" stroke-width="2.4" stroke-linecap="round"/><path d="M400 84l-6 -4v8z" fill="#8a6fc2"/><g transform="translate(412,62)"><rect width="46" height="26" rx="3" fill="#b9a99a"/><rect x="0" y="0" width="46" height="5" rx="3" fill="#00000022"/><text x="23.0" y="17.6" text-anchor="middle" font-size="7.4" font-weight="700" fill="#fff">予備</text></g><g transform="translate(470,62)"><circle cx="8" cy="8" r="8" fill="#f7d2c3" stroke="#e0709a" stroke-width="1.5"/><path d="M5 7h.1M11 7h.1M5 11c2 1.6 4 1.6 6 0" stroke="#e0709a" stroke-width="1.4" fill="none" stroke-linecap="round"/><rect x="19" y="3" width="12" height="9" rx="3" fill="#e0709a"/><path d="M19 7.5l-4-3v6zM31 7.5l4-3v6z" fill="#e0709a"/></g><text x="468" y="114" text-anchor="middle" font-size="9" font-weight="700" fill="#23211c">シール＋お菓子</text><line x1="500" y1="84" x2="521" y2="84" stroke="#8a6fc2" stroke-width="2.4" stroke-linecap="round"/><path d="M524 84l-6 -4v8z" fill="#8a6fc2"/><g transform="translate(552,92) scale(1.0)"><circle cx="0" cy="-15" r="7" fill="#9fc0d6"/><rect x="-10" y="-6" width="20" height="22" rx="9" fill="#9fc0d6"/></g><text x="552" y="124" text-anchor="middle" font-size="8.4" font-weight="700" fill="#6b625b">あとのお客さん</text><text x="451" y="166" text-anchor="middle" font-size="9" font-weight="600" fill="#23211c">ガラガラの景品が全部なくなったら、</text><text x="451" y="178" text-anchor="middle" font-size="9" font-weight="600" fill="#23211c">予備の「シール＋お菓子」を渡す。</text><text x="451" y="190" text-anchor="middle" font-size="9" font-weight="600" fill="#23211c">スマホの「予備を渡した」を押して数える。</text></svg></div>
+ <div><h2>ガラガラ残りの目安</h2><p class="sm-lead">15・16時に目安より10%以上少なければ、予備を机の下へ</p></div><ol class="sm-plan"><li><time>12:00</time><i style="--w:100%"></i><b>449</b></li><li><time>13:00</time><i style="--w:88%"></i><b>395</b></li><li><time>14:00</time><i style="--w:70%"></i><b>315</b></li><li><time>15:00</time><i style="--w:52%"></i><b>235</b></li><li><time>16:00</time><i style="--w:34%"></i><b>152</b></li><li><time>17:00</time><i style="--w:20%"></i><b>89</b></li></ol>
+</section>
+<section class="sm-view" data-q="help" hidden>
+ <a class="sm-btn" id="sm-live" href="https://claude.ai/public/artifacts/553b2b93-9b4d-4af4-9be1-01dadfd839a2" target="_blank" rel="noopener">出目ツールを開く</a>
+ <div class="sm-fig w300"><svg class="v ph" viewBox="0 0 300 152" xmlns="http://www.w3.org/2000/svg"><g transform="translate(18,6)"><rect width="82" height="140" rx="6" fill="#23211c"/><rect x="2.5" y="6" width="77" height="128" rx="3" fill="#fefefd"/><rect x="4" y="8" width="74" height="9" rx="2" fill="#006cb7"/><text x="41.0" y="14.6" text-anchor="middle" font-size="5.6" font-weight="700" fill="#fff">直前 17番</text><rect x="5.999999999999999" y="17.8" width="12.4" height="12.4" rx="2" fill="#e8ddd4"/><rect x="20.4" y="17.8" width="12.4" height="12.4" rx="2" fill="#e8ddd4"/><rect x="34.8" y="17.8" width="12.4" height="12.4" rx="2" fill="#e8ddd4"/><rect x="49.2" y="17.8" width="12.4" height="12.4" rx="2" fill="#e8ddd4"/><rect x="63.599999999999994" y="17.8" width="12.4" height="12.4" rx="2" fill="#e8ddd4"/><rect x="5.999999999999999" y="32.2" width="12.4" height="12.4" rx="2" fill="#e8ddd4"/><rect x="20.4" y="32.2" width="12.4" height="12.4" rx="2" fill="#e8ddd4"/><rect x="34.8" y="32.2" width="12.4" height="12.4" rx="2" fill="#e8ddd4"/><rect x="49.2" y="32.2" width="12.4" height="12.4" rx="2" fill="#e8ddd4"/><rect x="63.599999999999994" y="32.2" width="12.4" height="12.4" rx="2" fill="#006cb7"/><rect x="5.999999999999999" y="46.599999999999994" width="12.4" height="12.4" rx="2" fill="#e8ddd4"/><rect x="20.4" y="46.599999999999994" width="12.4" height="12.4" rx="2" fill="#e8ddd4"/><rect x="34.8" y="46.599999999999994" width="12.4" height="12.4" rx="2" fill="#e8ddd4"/><rect x="49.2" y="46.599999999999994" width="12.4" height="12.4" rx="2" fill="#e8ddd4"/><rect x="63.599999999999994" y="46.599999999999994" width="12.4" height="12.4" rx="2" fill="#e8ddd4"/><rect x="5.999999999999999" y="61.0" width="12.4" height="12.4" rx="2" fill="#e8ddd4"/><rect x="20.4" y="61.0" width="12.4" height="12.4" rx="2" fill="#e8ddd4"/><rect x="34.8" y="61.0" width="12.4" height="12.4" rx="2" fill="#e8ddd4"/><rect x="49.2" y="61.0" width="12.4" height="12.4" rx="2" fill="#e8ddd4"/><rect x="63.599999999999994" y="61.0" width="12.4" height="12.4" rx="2" fill="#e8ddd4"/></g><rect x="124" y="14" width="168" height="40" rx="10" fill="#e3efe6"/><text x="208" y="30" text-anchor="middle" font-size="13" font-weight="700" fill="#1d6f4a">番号を タップ</text><text x="208" y="46" text-anchor="middle" font-size="8.6" font-weight="600" fill="#6b625b">いま渡す特典が出る</text><rect x="124" y="62" width="168" height="40" rx="10" fill="#fde9e6"/><text x="208" y="78" text-anchor="middle" font-size="12.5" font-weight="700" fill="#c0392b">「あと0」→ 玉を抜く</text><text x="208" y="94" text-anchor="middle" font-size="8.6" font-weight="600" fill="#6b625b">赤い表示が出たら①へ</text><rect x="124" y="110" width="168" height="36" rx="10" fill="#fff1d6"/><text x="208" y="133" text-anchor="middle" font-size="9.6" font-weight="700" fill="#8a4b00">まちがえたら 「直前を取り消す」</text></svg></div>
+ <div><h2>困ったとき</h2><p class="sm-lead">右上＝担当（全員／C①／C②）</p></div><div class="sm-fig w560"><svg class="v tr" viewBox="0 0 600 150" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="144" height="68" rx="12" fill="#fefefd" stroke="#e8ddd4" stroke-width="2"/><g transform="translate(12,14)"><path d="M6 8l10 -4 10 4 10 -4v26l-10 4 -10 -4 -10 4z" fill="#fff" stroke="#006cb7" stroke-width="2"/></g><rect x="104" y="7" width="34" height="13" rx="6.5" fill="#8a8f98"/><text x="121" y="16.6" text-anchor="middle" font-size="8" font-weight="700" fill="#fff">全員</text><text x="50" y="35" text-anchor="start" font-size="9" font-weight="700" fill="#006cb7">リーフレットがない</text><text x="50" y="51" text-anchor="start" font-size="8.2" font-weight="600" fill="#23211c">どのブースでもわたす</text><rect x="153" y="3" width="144" height="68" rx="12" fill="#fefefd" stroke="#e8ddd4" stroke-width="2"/><g transform="translate(162,14)"><rect x="8" y="6" width="22" height="30" rx="2" fill="#fff" stroke="#23211c" stroke-width="2"/><path d="M12 16l14 14M26 16l-14 14" stroke="#d9534f" stroke-width="3"/></g><rect x="254" y="7" width="34" height="13" rx="6.5" fill="#8a8f98"/><text x="271" y="16.6" text-anchor="middle" font-size="8" font-weight="700" fill="#fff">全員</text><text x="200" y="35" text-anchor="start" font-size="9" font-weight="700" fill="#006cb7">お店が閉まっている</text><text x="200" y="51" text-anchor="start" font-size="8.2" font-weight="600" fill="#23211c">同じゾーンで引き直す</text><rect x="303" y="3" width="144" height="68" rx="12" fill="#fefefd" stroke="#e8ddd4" stroke-width="2"/><g transform="translate(312,14)"><rect x="4" y="10" width="30" height="20" rx="3" fill="#fff" stroke="#23211c" stroke-width="2"/><path d="M14 16q3 -4 6 0 -3 3 0 6" stroke="#d9534f" stroke-width="2" fill="none"/></g><rect x="404" y="7" width="34" height="13" rx="6.5" fill="#8a8f98"/><text x="421" y="16.6" text-anchor="middle" font-size="8" font-weight="700" fill="#fff">全員</text><text x="350" y="35" text-anchor="start" font-size="9" font-weight="700" fill="#006cb7">札をなくした</text><text x="350" y="51" text-anchor="start" font-size="8.2" font-weight="600" fill="#23211c">同じゾーンでもう1枚</text><rect x="453" y="3" width="144" height="68" rx="12" fill="#fefefd" stroke="#e8ddd4" stroke-width="2"/><g transform="translate(462,14)"><circle cx="19" cy="20" r="13" fill="#d9534f"/><text x="19" y="26" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">0</text></g><rect x="554" y="7" width="34" height="13" rx="6.5" fill="#6b4fa0"/><text x="571" y="16.6" text-anchor="middle" font-size="8" font-weight="700" fill="#fff">①②</text><text x="500" y="35" text-anchor="start" font-size="9" font-weight="700" fill="#006cb7">空の番号の玉が出た</text><text x="500" y="51" text-anchor="start" font-size="8.2" font-weight="600" fill="#23211c">玉を抜いて もう1回</text><rect x="3" y="77" width="144" height="68" rx="12" fill="#fefefd" stroke="#e8ddd4" stroke-width="2"/><g transform="translate(12,88)"><path d="M12 34V14a3 3 0 016 0v8M18 22v-10a3 3 0 016 0v14c0 8 -4 8 -8 8s-4 -2 -4 -6" fill="#fde0c8" stroke="#23211c" stroke-width="1.8"/></g><rect x="104" y="81" width="34" height="13" rx="6.5" fill="#8a8f98"/><text x="121" y="90.6" text-anchor="middle" font-size="8" font-weight="700" fill="#fff">全員</text><text x="50" y="109" text-anchor="start" font-size="9" font-weight="700" fill="#006cb7">字が読めない子</text><text x="50" y="125" text-anchor="start" font-size="8.2" font-weight="600" fill="#23211c">指さしでOK</text><rect x="153" y="77" width="144" height="68" rx="12" fill="#fefefd" stroke="#e8ddd4" stroke-width="2"/><g transform="translate(162,88)"><g transform="translate(2,10)"><rect width="34" height="22" rx="3" fill="#b9a99a"/><rect x="0" y="0" width="34" height="5" rx="3" fill="#00000022"/><text x="17.0" y="15.6" text-anchor="middle" font-size="7.4" font-weight="700" fill="#fff">予備</text></g></g><rect x="254" y="81" width="34" height="13" rx="6.5" fill="#c4456f"/><text x="271" y="90.6" text-anchor="middle" font-size="8" font-weight="700" fill="#fff">②</text><text x="200" y="109" text-anchor="start" font-size="9" font-weight="700" fill="#006cb7">景品がぜんぶ出た</text><text x="200" y="125" text-anchor="start" font-size="8.2" font-weight="600" fill="#23211c">予備を渡す（110組）</text><rect x="303" y="77" width="144" height="68" rx="12" fill="#fefefd" stroke="#e8ddd4" stroke-width="2"/><g transform="translate(312,88)"><path d="M6 16q13 -12 26 0M11 22q8 -7 16 0" stroke="#23211c" stroke-width="2.4" fill="none" stroke-linecap="round"/><circle cx="19" cy="29" r="2.4" fill="#23211c"/><path d="M6 6l26 28" stroke="#d9534f" stroke-width="3"/></g><rect x="404" y="81" width="34" height="13" rx="6.5" fill="#c4456f"/><text x="421" y="90.6" text-anchor="middle" font-size="8" font-weight="700" fill="#fff">②</text><text x="350" y="109" text-anchor="start" font-size="9" font-weight="700" fill="#006cb7">スマホがつながらない</text><text x="350" y="125" text-anchor="start" font-size="8.2" font-weight="600" fill="#23211c">紙の記録表に正の字</text><rect x="453" y="77" width="144" height="68" rx="12" fill="#fefefd" stroke="#e8ddd4" stroke-width="2"/><g transform="translate(462,88)"><path d="M10 20h16a6 6 0 010 12H14M10 20l6 -6M10 20l6 6" stroke="#006cb7" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><rect x="554" y="81" width="34" height="13" rx="6.5" fill="#c4456f"/><text x="571" y="90.6" text-anchor="middle" font-size="8" font-weight="700" fill="#fff">②</text><text x="500" y="109" text-anchor="start" font-size="9" font-weight="700" fill="#006cb7">番号をまちがえた</text><text x="500" y="125" text-anchor="start" font-size="8.2" font-weight="600" fill="#23211c">「直前を取り消す」</text></svg></div>
+ <details class="sm-eq"><summary>文字で見る（サンバイザーの家族が2〜3人など）</summary><ul><li><b>リーフレットを持っていない</b><span>どのブースでもわたす（予備を置く）</span></li><li><b>店が閉まっている</b><span>同じゾーンで札を引き直す</span></li><li><b>札をなくした</b><span>同じゾーンでもう1枚</span></li><li><b>置き場が空なのに玉が出た</b><span>玉を抜いて、もう1回まわす（スマホは押さない）</span></li><li><b>字が読めない子</b><span>指さしでOK（A・B・C）</span></li><li><b>サンバイザーの子が1家族に2〜3人</b><span>まわせるのは1家族 +1回だけ（人数ぶんではない）。2回目も同じ番号の置き場から渡す</span></li><li><b>ガラガラの景品が全部出た</b><span>予備のシール＋お菓子をわたす（110組）。尽きたら責任者へ</span></li><li><b>スマホがつながらない</b><span>紙の出目記録表に正の字→つながったら入力</span></li><li><b>番号をまちがえて押した</b><span>スマホの「直前を取り消す」</span></li></ul></details>
+ <div><h2>備品と置き場所</h2></div><div class="sm-view" style="gap:8px"><details class="sm-eq"><summary>各ゾーンのブース（B・C・D・E 各1）</summary><ul><li><b>札の箱（引く箱）</b><span>1｜机の前（子ども側）</span><small>子どもが1枚引く。中身が3分の1を切ったら補充</small></li><li><b>補充用の札（店ごとの束）</b><span>B 700・C 600・D 600・E 800｜机の下の箱</span><small>店ごとに同じ枚数（各10枚）を箱に足して混ぜる</small></li><li><b>リーフレット（蛇腹）の予備</b><span>【要確認】｜机の前</span><small>持っていない子に1部わたす</small></li><li><b>正解スタンプ・スタンプ台</b><span>2・2｜スタッフの手元</span><small>答えが合ったら、リーフレットのそのゾーンの欄に押す（1つは予備）</small></li><li><b>答えカード（ゾーンの文字）</b><span>1｜スタッフの手元（子どもから見えない向き）</span><small>B＝B・C＝A・D＝C・E＝B</small></li><li><b>説明パネル・ゾーンの表示</b><span>1｜机の前に立てる</span><small>遊び方を見せる</small></li></ul></details><details class="sm-eq"><summary>C 交換所（左から ①確認・ガラガラ → ②景品）</summary><ul><li><b>「済」スタンプ・スタンプ台</b><span>1・1｜机の左（列の入口側）</span><small>スタンプ4つを確かめたら押す（2回目を防ぐ）</small></li><li><b>巨大ガラガラ＋番号玉1〜50</b><span>1・50｜机の中央</span><small>子どもが1回まわす（そうにゃんのサンバイザーの子がいる家族は1家族+1回）。出た玉の番号を読む。玉は毎回戻す</small></li><li><b>抜いた玉の入れ物</b><span>1｜ガラガラの右</span><small>置き場が空になった番号の玉を入れる（出目ツールが「抜く玉」を知らせる）</small></li><li><b>番号ファイル（ポケット1〜34）</b><span>1冊｜机の右（スタッフ側）</span><small>テナントのチケット。出た番号のポケットから1枚抜いてわたす</small></li><li><b>番号の箱（35〜50）</b><span>16個｜机の下・横（番号が見える向き）</span><small>カトラリーセット（35〜42）・シール＋お菓子（43〜50）。出た番号の箱から1組わたす</small></li><li><b>スマホ（出目ツール）・充電</b><span>1台以上・モバイルバッテリー｜机の右</span><small>出た番号をタップ。QRで開き、画面上の「当日の出目」ボタンを押す</small></li><li><b>紙の出目記録表（予備）</b><span>2｜机の右</span><small>スマホがつながらないとき、正の字で記録</small></li><li><b>予備の玉</b><span>5｜机の下</span><small>玉をなくしたら、同じ番号を書いて使う</small></li></ul></details><details class="sm-eq"><summary>C 景品と予備・シールの台（交換所の右となり）</summary><ul><li><b>予備の「シール＋お菓子」</b><span>110組｜机の下の箱（ふた付き）</span><small>ガラガラの景品が全部なくなってから渡す（スマホの「予備」ボタン）</small></li><li><b>きもちシール</b><span>600（100×6）｜机の上</span><small>1人1枚わたす</small></li><li><b>シールキャンバス（A1×3）</b><span>1式｜うしろの壁</span><small>シールを貼ってもらう</small></li></ul></details><details class="sm-eq"><summary>本部</summary><ul><li><b>チケットの予備</b><span>【要確認】（印刷の余り）｜鍵のかかる箱</span><small>汚れ・破れの差し替えだけに使う</small></li><li><b>予備の札・リーフレット・インク・紙の出目記録表</b><span>少し｜本部の棚</span><small>ブースから言われたら届ける</small></li><li><b>ほしてん賞</b><span>【要確認】｜本部</span><small>予備も出切ったときの最終手段</small></li><li><b>名札・救急セット・連絡手段</b><span>人数分｜本部</span></li></ul></details></div>
+ <p class="sm-hint">景品 490＋予備 110｜数は「特典と玉」（マスター管理）の写し</p>
+</section>
+</div>
+</main>
 <button class="nowbtn" id="nowbtn" hidden>いまへ移動</button>
 
 <nav class="tabs" aria-label="画面の切り替え">
@@ -152,29 +460,13 @@ button:focus-visible,.chip:focus-visible,input:focus-visible{outline:2px solid v
     <button data-v="people"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.3-5.5 6.5-5.5s5.7 1.9 6.5 5.5"/><circle cx="17.5" cy="9" r="2.5"/><path d="M16 14.6c2.6.1 4.6 1.7 5.3 4.6"/></svg>人・役割</button>
     <button data-v="tear"><svg viewBox="0 0 24 24"><path d="M3 7h13v9H3z"/><path d="M16 10h3l2 3v3h-5"/><circle cx="7" cy="18" r="1.8"/><circle cx="17" cy="18" r="1.8"/></svg>撤収</button>
     <button data-v="stage"><svg viewBox="0 0 24 24"><path d="M9 18V6l11-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></svg>ステージ</button>
+    <button data-v="quest"><svg viewBox="0 0 24 24"><polygon points="12,3 18,6 21,12 18,18 12,21 6,18 3,12 6,6"/><circle cx="12" cy="12" r="3"/></svg>回遊施策</button>
   </div>
 </nav>
 
 <script>
 const D = {
-time: [
- ["7:30","全ゾーン鍵開け（土屋）。E倉庫から備品を出すときは緑のシールを貼る",{E:"E倉庫から備品出し"}],
- ["8:00","朝の会（相鉄さん・YADOKARI・アルバイト・ヤドレジ）",{}],
- ["8:30","PA（Movements）8:30 Eに集合→搬入 E→C→B。音量チェックはPAさんに朝一で依頼",{B:"PA搬入の補助",C:"PA受け入れ",D:"準備・設営",E:"PA搬入（最初）"}],
- ["9:00","キッチンカー搬入・車両誘導",{B:"ICHIPO",C:"SANDS"}],
- ["10:00","出店ブース 10:00〜",{B:"10:15 大道芸人ちぇん",C:"野ゲー（〜17:00）",D:"10:30 リビングトーク"}],
- ["11:00","INFO・チラシ配布／回遊施策スタート（ガラガラ 11:15〜）",{B:"11:30 ムラタップ",C:"11:00 HI-ORLEANS",E:"第1部 11:00〜"}],
- ["12:00","",{B:"12:00 ムラタップ練り歩き（B発・誘導 西田）／12:30 こっころ／LAB（2F）",C:"12:30 奥本DUO／12-15時 トレーラー展示（梶山）",D:"練り歩きのフィナーレ"}],
- ["13:00","回遊施策のピーク（13時〜）・アンケート回収（目標100件）",{B:"13:45 ワースレス練り歩き（B発・誘導 津田）",C:"13:30 デザイヤー（司会：斎藤）"}],
- ["14:00","",{C:"14:00 たーにーゲーム大会",D:"14:30 YADORESIカフェ",E:"第2部 14:00〜"}],
- ["15:00","札をひけるのは 15:30 まで",{B:"15:30 横浜ヨコハマ",C:"15:00 バブリン先生"}],
- ["16:00","撤収の積み込み開始（土屋・君塚）／16:45 回遊施策の最終受付",{B:"君塚：2Fの黄色備品回収",C:"16:00 夕日ビール（フィナーレ）",E:"16:30 ラテルミン"}],
- ["17:00","INFO・回遊施策 終了／撤収の車（タイムズ）17:00〜22:00 予約",{B:"土屋：黄色備品回収／西田：B1撤収→タイムズ／津田→E",C:"Cの片付け（北本・木村）",D:"地域団体・トレーラー展示の誘導",E:"第3部 17:00〜"}],
- ["18:30","",{D:"18:00 旅人WS → 18:30 片付け",E:"幕付きテント撤収完了 → コールマンテント設営"}],
- ["19:30","",{E:"19:30 Dancing Queen"}],
- ["20:00","撤収完了（E倉庫・クレギャラ・防災センター）",{E:"Eの撤収"}],
- ["22:00","タイムズを返す（予約の終わり）",{}]
-],
+time: [["7:30", ["電源の鍵を開ける：防災センターで鍵を受け取る（土屋 勇介）", "備品を各ゾーンへ運ぶ・ファミマとインフォメーションの備品を置く（君塚 豊・西田 健太朗）"], {"E": ["7:30〜8:00 E倉庫から備品を出す：出した備品には緑のシールを貼る"]}], ["8:00", ["朝礼（相鉄さん・YADOKARIメンバー・アルバイト・ヤドレジ）：全体像・クレメ・クエストの説明、アルバイトの紹介、メンバー発表", "当日の連絡はインカムアプリ（Zello）とスタッフ用LINEグループ", "開店前：Eゾーン倉庫にYADOKARIの備品を入れる（小田さんの立ち会い。時刻・担当は要確認）", "開店前：タリーズに蓄電池を渡す（担当は要確認）"], {}], ["8:30", ["PA（Movements）搬入：E 8:30 → C 8:45 → B 9:00 の順（各ゾーン15分）。サウンドチェックの前に最大音量を確認（相鉄さんの立ち会い）"], {"E": ["8:30〜8:45 PA搬入（Eが最初）", "8:30〜9:30 Eの設営"], "C": ["8:45〜9:00 PAを受け入れ"], "D": ["8:30〜9:30 準備・設営（YADORESIの設置を確認）", "朝のうちに、クレメちゃんみっけの荷物をDへ"]}], ["9:00", [], {"B": ["9:00〜9:15 PA搬入の補助（Bは最後）", "9:00 キッチンカー ICHIPO 搬入：車両誘導（左側通路から）・電源の確認。看板の設置OK", "10:00〜17:00 キッチンカー ICHIPO 販売：電源を貸し出す"], "C": ["9:00 キッチンカー SANDS 搬入：車両誘導・電源の確認", "10:00〜17:00 キッチンカー SANDS 販売：電源を貸し出す"]}], ["9:30", [], {"B": ["9:30〜9:45 大道芸人ちぇん 入り：控室へ案内", "9:45〜10:15 ちぇん セッティング（30分）：電源（コンセント2口）の場所を案内"]}], ["10:00", ["フェス開始（出店ブース・キッチンカー 10:00〜17:00）", "回遊施策（ホシテンクエスト）10:00〜17:00：各ゾーンのブースで札・スタンプ、Cでガラガラ", "各インフォメーション：ガイドブック配布・旗配り（なくなり次第終了）・演者にスカーフを渡す／終了後に回収・クレメちゃんのQRを読んでもらう"], {"B": ["10:00〜17:00 イベントINFO・チラシ配布（1Fインフォメーション）", "10:15〜10:45 大道芸人ちぇん 本番（投げ銭あり）", "10:30〜11:00 ムラタップ 入り：車2台の誘導（積み下ろし → コインパーキング）→ 控室へ", "10:45〜11:00 ちぇん 撤収 → 控室で荷物回収・退出"], "C": ["10:00〜17:00 イベントINFO・チラシ配布", "10:00〜17:00 ガラガラ：ログと特典はPCで管理（北本 直裕・松島 海咲）。最終受付16:45", "10:00〜17:00 野ゲー：見守り・遊び方を教える（竹之内 創太）", "10:00〜10:30 HI-ORLEANS 入り・搬入：控室αへ案内。物販テーブルを設置", "10:30〜11:00 HI-ORLEANS セッティング＋サウンドチェック（約30分）：ステージへ誘導"], "D": ["10:00〜17:00 イベントINFO・チラシ配布", "10:30〜12:30 リビングトーク（保護司会）", "終日：あなたと窓の文化祭・クレメのお部屋（クレメちゃん対応：遠藤 美智子）"], "E": ["10:00〜17:00 イベントINFO・チラシ配布"]}], ["11:00", [], {"B": ["11:00〜11:30 ムラタップ セッティング（約30分）：控室 → ステージへ誘導", "11:30〜12:05 こっころ 入り：控室で準備", "11:30〜11:50 ムラタップ 本番", "11:50〜12:25 ムラタップ練り歩きに同行（西田 健太朗）：横断歩道を誘導。12:05 C前を通過 → 12:15〜12:25 Dでフィナーレ"], "C": ["11:00〜11:30 HI-ORLEANS 本番（物販は〜12:00）", "11:00〜11:30 奥本DUO 入り：着いたらすぐ大寺 ちひろ・西山 るか・小田さん（SBM）を呼ぶ。電子ピアノの搬入を補助（車は積み下ろし後コインパーキング）→ 控室β", "11:30〜12:00 HI-ORLEANS 撤収・物販：控室αで荷物回収 → 退出", "11:30〜12:00 帷子戦士デザイヤー 入り：現地確認・打ち合わせ（大寺 ちひろ）"], "E": ["11:00〜13:00 第1部 キッズダンス", "11:00〜11:15 三ツ沢チアリーディングクラブLIPS 本番（第1部 キッズダンス・ダンス。第1部の窓口：おだぎりさん）", "11:15〜11:30 BEE KIDS A 本番（ダンス）", "11:30〜11:45 休憩", "11:45〜12:00 Cheer & Peace 本番（ダンス）"]}], ["12:00", [], {"B": ["12:00〜12:15 ムラタップの機材を片付け（スタッフ・約15分）：12:05頃 こっころをステージへ誘導", "12:30〜13:00 こっころ 本番（絵本の読み聞かせ・紙コップ）", "12:30〜 LAB vol.13（2F・君塚 豊）", "12:45 ザ・ワースレス 入室（5名）。12:45までにムラタップの荷物をBインフォへ移す（本人はBインフォで受け取り退出）"], "C": ["12:10〜12:30 デザイヤー リハーサル（控室α）：12:00 挨拶・控室α入り", "12:00〜12:20 奥本DUO セッティング（15〜20分）：ステージへ誘導", "12:05頃 ムラタップ練り歩きが通過（通路側）：盛り上げる", "12:00〜15:00 トレーラー展示（梶山 大起）", "12:30〜13:00 奥本DUO 本番。紹介で居住地など個人的なことに触れない", "12:50〜13:20 デザイヤー 衣装の着替え"], "D": ["12:15〜12:25 ムラタップ練り歩きのフィナーレ（トレーラーハウス前）", "12:00〜15:00 梶山 大起はCのトレーラー展示へ（Dは田中 惇資・遠藤 美智子で回す）"], "E": ["12:00〜12:15 BEE KIDS B 本番（ダンス）", "12:15〜12:30 休憩", "12:30〜12:45 Yu-kids 本番（ダンス）", "12:45〜13:00 BD LABO 本番（ダンス。第1部おわり）"]}], ["13:00", [], {"B": ["13:00〜13:15 ワースレス 控室で準備：物販テーブルを設置（ステージ横）。こっころは控室の荷物を回収", "13:00〜15:00 ワースレス 物販（ステージ横）", "13:15〜13:45 ワースレス セッティング（30分）：ステージへ誘導", "13:30〜15:30 こっころ 赤ちゃん人形の抱っこ体験（B出店スペース・机2・椅子2）", "13:45〜14:05 ザ・ワースレス 本番"], "C": ["13:00〜13:30 奥本DUO 撤収：急かさない。電子ピアノの搬出を補助", "13:00〜13:30 バブリン先生 到着・搬入：電話あり。補助2名。控室βはDUOの退出後", "13:00〜17:00 アンケート：ガラガラの待ち時間にQRで答えてもらう（目標100件・回答者はおかし1個）", "13:20〜13:30 デザイヤー セッティング（10分）：ステージ裏で待機。DUOの撤収が終わってから", "13:30〜14:00 デザイヤー ヒーローショー（司会：斎藤 理恵瑠）", "13:30〜14:00 バブリン先生 ステージ脇で準備"]}], ["14:00", [], {"B": ["14:05〜15:00 ワースレス練り歩きに同行（津田 康汰）：横断歩道を誘導。14:20 C前 → 14:30〜14:45 Dでフィナーレ → 15:00頃 Bに戻る", "14:50〜15:00 横浜ヨコハマ 到着（2名）：インフォ前で待機"], "C": ["14:00〜14:30 デザイヤーのグリーティング（ステージ横）：子どもの列誘導・パーテーションポール設置（河村 慧ほか）", "14:00〜15:00 たーにーのゲーム大会（野ゲー近く）：参加者の勧誘・誘導", "14:00〜15:00 バブリン先生 フィールドで準備", "14:20頃 ワースレス練り歩きが通過（フィールドには入れない）", "14:30〜15:00 デザイヤー 控室αで着替え → 退出（15:00 夕日ビールと入れ替わり）"], "D": ["14:30〜14:45 ワースレス練り歩きのフィナーレ（トレーラーハウス前）", "14:30〜16:00 YADORESIカフェ（認知症カフェ）"], "E": ["14:00〜17:00 第2部 小中学生のダンスと音楽ライブ", "14:00〜14:30 相鉄Billy 本番（第2部 小中学生のダンスと音楽ライブ・音楽ライブ。ライブの窓口：あいそるさん）", "14:30〜14:40 Dance International 本番（ダンス）", "14:40〜14:55 ダンスサークルLOOP'S 本番（ダンス）", "14:55〜15:10 miniCaribe 本番（ダンス）"]}], ["15:00", ["札をひけるのは 15:30 まで"], {"B": ["15:00〜15:20 横浜ヨコハマ 入室・着替え：ワースレスの荷物をインフォ付近へ移す。マイク2本・出囃子CDを先にセット", "15:00 ワースレス物販 終了／ポニー 終了 → 備品を回収し B搬入口へ（土屋 勇介＋Bスタッフ）", "15:20〜15:30 横浜ヨコハマをステージへ誘導", "15:30〜16:00 横浜ヨコハマ 本番（登場時に出囃子CD）。ワースレスは控室で着替え → 16:00までに退出", "15:30 こっころ 終了 → 備品を回収し B搬入口へ"], "C": ["15:00〜15:40 夕日ビール 入り：控室αで待機（デザイヤー退出と入れ替わり）", "15:00〜15:30 バブリン先生 シャボン玉ショー：見守り2名・通路側にポールを置き乱入を防ぐ", "15:00 たーにーのゲーム大会 終了 → まとめておく", "15:30〜15:40 バブリン先生 片付け：補助2名・ポール撤去。SBMのポール8本もまとめる", "15:40〜16:00 夕日ビール セッティング（約20分）：フィールドが空き次第"], "E": ["15:10〜16:30 休憩"]}], ["16:00", ["撤収の積み込み開始：いずみ野班（土屋 勇介・君塚 豊、ハイエース）が黄の備品を拾う（B→C→B→C・D→E）", "16:00〜 会場の片付けは西田 健太朗が見る（17:00からはタイムズで回る。17:00以降に会場で見る人は要確認）", "16:45 回遊施策の最終受付"], {"B": ["16:00〜16:30 横浜ヨコハマ 撤収・着替え：16:30までに退出。ステージ終了 → 観客席・控室を片付ける", "16:00 ファミマ・からだラボ 終了 → 備品を回収（Bスタッフ）", "16:00 いずみ野班がB搬入口でBの黄を積む（18点：ポニー・ワースレス物販・こっころ・からだラボ・Bの控室）（土屋 勇介・君塚 豊）", "16:30〜17:00 ステージ全体撤収：備品を色ごとに分けて回収を待つ（赤＝YADOKARI・青＝防災倉庫・黄＝いずみ野・緑＝Eゾーン倉庫）", "16:45 土屋 勇介がBを離れる（積み込みへ）。16:45以降のBのリーダーは要確認"], "C": ["16:00〜16:30 夕日ビール 本番（フィナーレ）", "16:10頃 バブリン先生 控室βで私物回収 → 出庫・退出", "16:30〜17:00 夕日ビール 撤収（急ぎ・手伝う）：PARK終了 → 観客席・控室α・βを片付ける", "16:30 いずみ野班がCの荷下ろし場でCの黄を積む（11点：たーにー・控室α・β）"], "E": ["16:30〜17:00 ラテルミン 本番（音楽ライブ）"]}], ["17:00", ["INFO・回遊施策 終了／全ゾーンで撤収開始（インフォメ・簡易インフォ）。PAのテントはPAの機材が出たあと", "QG班（西田 健太朗、タイムズ 17:00〜21:00）：B→C→D→Eインフォメの順に回り、赤・青をQGへ集める（余裕があれば青は防災倉庫）。黄はQGに持っていかない"], {"B": ["17:00 ダイワサイクル 終了 → 備品を回収（Bスタッフ）", "17:00 いずみ野班がBに戻り、BのPA・ダイワ・簡易インフォ・インフォメの黄を積む（15点）", "17:00 津田 康汰はBが終わったらEへ"], "C": ["17:00 Cの片付け（北本 直裕・木村 勇樹）：ガラガラ終了。野ゲー・インフォメを片付ける（ガラガラは青＝防災倉庫）", "17:40 いずみ野班がCのPAの黄とHI-ORLEANS物販の机を積む"], "D": ["17:00〜18:30 地域団体さん・トレーラーハウス展示の利用者を誘導", "17:40 いずみ野班がDのインフォメの黄（机・椅子）を積む"], "E": ["17:00 Eのインフォメ終了 → 赤はQG班が回収、緑（机1・椅子2）はEゾーン倉庫へ", "17:00〜20:00 第3部 おとなのダンスと音楽ライブ", "17:00〜17:30 BD LABO 本番（第3部 おとなのダンスと音楽ライブ・ダンス）", "17:30〜18:00 クローバー 本番（音楽ライブ）", "Eのメンバーは状況でCへ振り替えることがある"]}], ["18:00", ["18:00〜18:30 いずみ野班：搬入表（備品レイアウトの黄）で積んだ数を確かめ、積み残しを拾う（ここまで52点）", "18:00 QG班：タリーズの赤・青もQGへ。余裕があれば青は防災倉庫、赤はQGに分ける"], {"B": ["18:00 タリーズ 終了 → 備品を回収。蓄電池をqgへ → その日に小田さんへ返す（西山 るか・大寺 ちひろ）", "18:00 芝生ロールを防災センターへ戻す"], "D": ["18:00〜18:30 旅人よ！星天に集まりたまえ！！（WS）", "18:30 Dのすべてを片付け"], "E": ["18:00〜18:30 Yu-kids / IoTama From LOOP'S 本番（ダンス）", "18:30〜19:00 控室の入れ替え：CのコールマンテントをEへ移して設営（津田 康汰・斎藤 理恵瑠）し、いずみ野から借りている控室のテント・垂れ幕・鉄板おもり2と交換 → いずみ野班が積む（4点）。机1・椅子1は緑→Eゾーン倉庫", "18:30〜19:00 Star King 本番（音楽ライブ）"]}], ["19:00", ["19:00 いずみ野班（土屋 勇介・君塚 豊）がEからそのままいずみ野へ必ず出発（一回だけ・合計56点。EのPAの黄14点は乗らない → 扱いは要確認）", "19:00〜20:00 いずみ野で降ろして数え、鍵をかける（片道約40分＋積み下ろし約20分）"], {"E": ["19:00 いずみ野班がEからいずみ野へ出発", "19:00〜19:30 BD LABO 本番（ダンス）", "19:30〜20:00 Dancing Queen 本番（ダンスステージと音楽ライブのコラボレーション）"]}], ["20:00", ["撤収完了（E倉庫・クレギャラ・防災センター）", "20:00〜 いずみ野班がハイエースで星川に戻る（約40分）"], {"E": ["20:00 終了 → Eの撤収（Eのリーダー・QG班 西田 健太朗）：PA・観客席の赤はQG、緑（机・椅子・fratipiの机）はEゾーン倉庫へ"]}], ["21:00", ["21:00 タイムズを返す（西田 健太朗。17:00〜21:00の予約）", "21:00〜22:00 いずみ野班がハイエースを返す（22:00までに横浜で必ず返す）"], {}]],
 zones: {
  B:{place:"星天STAGE（駅前広場）／2F クレギャラ", lead:"土屋 勇介（業務委託）・西田 健太朗",
   members:[
@@ -186,7 +478,6 @@ zones: {
    ["2F","前山 倫子（qg）","","ほしてん応援部（クレギャラ）",0],
    ["2F","榊原 幸栄","","クレギャラ",0],
    ["1F・2F","上杉 勢太","","1F（B1）と2F（B2）を掛け持ち",0]],
-  moves:[["7:30","土屋：全ゾーンの鍵開け","g"],["8:30-9:00","PA搬入の補助（E→C→Bの最後）","g"],["9:00-10:00","キッチンカーICHIPO搬入・車両誘導","g"],["10:15-16:00","演者：控室への案内・入れ替わり",""],["11:00-17:00","INFO・チラシ配布（1F）","g"],["片付け 16:00","君塚：2Fの黄色備品回収を開始","k"],["片付け 17:00","土屋：黄色備品回収／西田：B1完全撤収→タイムズ","k"]],
   specials:[["12:00-12:30","ムラタップ練り歩き（Bから出発）横断歩道の誘導1名","西田"],["13:45-14:45","ワースレス練り歩き（Bから出発）誘導1名","津田"],["15:00-17:00","出店者の備品回収：ポニー15:00・ファミマ／からだラボ16:00・ダイワサイクル17:00","回収"],["17:00〜","津田はB終了後にEへ移動","津田"],["17:00〜","タイムズ（17:00〜22:00予約）で B・C・EのYADOKARI・防災備品を回収","西田"]],
   note:"1F（B1）＝駅前広場（星天STAGE）／2F（B2）＝クレギャラ・LAB",
   maps:[["B2_layout","レイアウト（全体）"],["B3_stage","ステージ周辺 詳細レイアウト"],["B4_rain","ステージ周辺 雨天時レイアウト"]]},
@@ -200,7 +491,6 @@ zones: {
    ["","斎藤 理恵瑠（全体司会）","8:00〜21:00","デザイヤー司会→全体司会（C・B・E）。18:30 Eでテント設営",0],
    ["","竹之内 創太","8:00〜17:00","野ゲーのセットアップ・見守り・片付け",0],
    ["","河村 慧","14:00〜","グリーティング列誘導・回遊施策のピーク対応",0]],
-  moves:[["8:50-9:00","PA受け入れ（しゅんたさん）","g"],["9:00-10:00","キッチンカーSANDS搬入・車両誘導・電源確認","g"],["10:00-17:00","野ゲー（竹之内：セットアップ・見守り・片付け）",""],["11:00-16:30","演者6組（控室α・βを交互に使用）",""],["11:15-17:00","回遊施策（13時からピーク）＋アンケート回収 目標100件","g"],["片付け 15:00 / 15:30","①ゲーム大会（15:00）　②バブリンのポール（15:30）","k"],["片付け 16:30 / 17:00","③観客席・PA　④インフォ・野ゲー（北本・木村が中心）","k"]],
   specials:[["回遊施策の待ち時間","QRでアンケートに答えてもらう（目標100件）。回答者はボックスからおかし1個","全員"],["ガラガラの記録","ログと特典は北本がPCで管理。松島さんも対応","北本"],["景品引換時","そうにゃんバイザーの家族は、ガラガラをもう1回","北本"],["13:30-14:00","デザイヤーの司会 → そのあと全体司会（C・B・E）","斎藤"],["14:00-15:00","グリーティングの子どもの列誘導・パーテーションポール設置","河村"]],
   note:"役割はその場で振り分ける。13時からのピークは全員で回遊施策へ",
   maps:[["C2_layout","レイアウト（全体）"],["C3_stage","ステージ周辺 詳細レイアウト"],["C4_stage2","ステージ周辺 詳細レイアウト（ボール配置）"]]},
@@ -209,7 +499,6 @@ zones: {
    ["","田中 惇資","8:00〜","リーダー。北本さんが回遊施策を解説",1],
    ["","梶山 大起（セールス）","8:00〜","リーダー。12:00〜15:00 はCのトレーラー展示",1],
    ["","遠藤 美智子（セールス）","8:00〜","クレメちゃん対応（詳細は西山さんから説明）",0]],
-  moves:[["8:30-9:30","準備・設営（YADORESI設置の確認）","g"],["10:30-12:30","リビングトーク（保護司会）",""],["11:00-17:00","イベントINFO・チラシ配布","g"],["12:00 / 13:45","ムラタップ・ワースレス練り歩きのフィナーレ",""],["14:30-16:00","YADORESIカフェ／終日：窓の文化祭・クレメのお部屋",""],["17:00-18:30","地域団体さん・トレーラーハウス展示の利用誘導（18:00 旅人WS）",""],["片付け 18:30","Dのすべてを片付け","k"]],
   specials:[["終日","クレメちゃん対応（遠藤）。詳細は西山さんから説明","遠藤"],["12:00-15:00","梶山さんはCゾーンのトレーラー展示へ。その間は田中・遠藤で回す","梶山"],["17:00-18:30","地域団体さん・トレーラーハウス展示の利用者を誘導",""],["朝","クレメちゃんみっけの荷物をDへ",""]],
   note:"Dは18:30まで続く（旅人WS 18:00-18:30）",
   maps:[["D2_layout","レイアウト"]]},
@@ -222,7 +511,6 @@ zones: {
    ["","中川 晃都","8:00〜","Eの設営・演者対応",0],
    ["","津田 康汰","17:00〜","Bが終わったら合流。18:30 コールマンテント設営",0],
    ["","斎藤 理恵瑠","18:30〜","全体司会。18:30 コールマンテント設営",0]],
-  moves:[["7:30-8:00","E倉庫から備品を出す（緑のシールを貼る）","g"],["8:30","PA集合・搬入（Eが最初。小林さん）","g"],["11:00-17:00","イベントINFO・チラシ配布","g"],["第1部 11:00／第2部 14:00","ダンス（窓口：おだぎりさん）・ライブ（あいそるさん）",""],["第3部 17:00〜19:30","17:00 BD LABO … 19:30 Dancing Queen",""],["片付け 〜18:30","幕付きテントの撤収完了 → 18:30〜 コールマンテント設営","k"],["片付け 20:00","撤収完了：E倉庫・クレギャラ・防災センターへ","k"]],
   specials:[["終日","車の侵入防止の柵：南京錠の番号 9015",""],["終日","デシベル測定","西山"],["18:30〜","コールマンテント設営（CのテントをEへ移す）","津田"],["状況に応じて","Eのメンバーは、Cへ振り替えることがある",""],["20:00","撤収完了。片付け先：E倉庫・クレギャラ・防災センター（いずみ野へは運ばない）","撤収"]],
   note:"18:30のテント設営は津田・斎藤",
   maps:[["E2_layout","ステージ配置（フロアマップ）"]]}
@@ -245,29 +533,20 @@ roles:[
  ["撮影","下鳥 達也（Ubird）","終日撮影。時間・範囲は確認済み"],
  ["全体司会（C・B・E）","斎藤 理恵瑠","Cのデザイヤー司会のあと全体司会へ。音量チェックはPAさんに朝一で依頼"]
 ],
-tear:[
- ["15:00",{B:"①ワースレス物販／ポニーの備品を回収",C:"①ゲーム大会"}],
- ["15:30",{B:"②こっころ",C:"②バブリンのポール／控室β（16:10ごろ）"}],
- ["16:00",{A:"撤収の積み込み開始（土屋・君塚）",B:"君塚：2Fの黄色備品回収／ファミマ・からだラボの備品回収"}],
- ["16:30",{B:"③控室・観客席・PA",C:"③観客席・PA／控室α（16:45ごろ）"}],
- ["17:00",{A:"タイムズ 17:00〜22:00予約。西田が受け取り→B・C・EのYADOKARI・防災備品を回収",B:"土屋：黄色備品回収／西田：B1完全撤収→タイムズ／ダイワサイクルの備品回収",C:"④インフォ・野ゲー／Cの片付け（北本・木村）",D:"インフォ終了／地域団体・展示の誘導（〜18:30）",E:"インフォ終了／津田がBから合流／メンバーは状況でCへ"}],
- ["18:30",{D:"Dのすべてを片付け（18:00 旅人WSのあと）",E:"幕付きテント撤収完了→CのコールマンテントをEへ移して設営（津田・斎藤）"}],
- ["20:00",{A:"撤収完了",E:"Eの撤収完了→E倉庫・クレギャラ・防災センターへ"}],
- ["22:00",{A:"タイムズを返す（予約の終わり）"}]
-],
+tear:[["15:00", {"B": "ポニー・ワースレス物販の備品を回収 → 黄はB搬入口へ（土屋 勇介＋Bスタッフ）", "C": "たーにーのゲーム大会をまとめる（黄はCの荷下ろし場へ）"}], ["15:30", {"B": "こっころの備品を回収 → B搬入口", "C": "バブリン先生のポールをまとめる（防災倉庫の青10本とSBMの8本を混ぜない）／控室β（16:10ごろ）"}], ["16:00", {"A": "いずみ野班（土屋 勇介・君塚 豊、ハイエース）がB搬入口でBの黄を積む（18点）／会場の片付けは西田 健太朗が見る", "B": "ファミマ・からだラボの備品を回収／ステージ終了 → 観客席・控室"}], ["16:30", {"A": "いずみ野班がCの荷下ろし場でCの黄を積む（11点）", "C": "ステージ終了 → 観客席・控室α・β・PA"}], ["16:45", {"B": "土屋 勇介がBを離れる（積み込みへ）。このあとのBのリーダーは要確認"}], ["17:00", {"A": "撤収スタート。QG班（西田 健太朗、タイムズ17:00〜21:00）がB→C→D→Eインフォメの順に赤・青をQGへ／いずみ野班がBに戻り、BのPA・ダイワ・簡易インフォ・インフォメの黄を積む（15点）", "B": "ダイワサイクル・インフォメ・簡易インフォを片付け", "C": "インフォ・野ゲー・総合インフォメを片付け（北本 直裕・木村 勇樹）", "D": "インフォ終了／地域団体・展示の誘導（〜18:30）", "E": "インフォ終了（緑 机1・椅子2→Eゾーン倉庫）／津田 康汰がBから合流／メンバーは状況でCへ"}], ["17:40", {"A": "いずみ野班がCのPA・HI-ORLEANS物販・Dのインフォメの黄を積む（8点）"}], ["18:00", {"A": "いずみ野班が搬入表で数を確かめ、積み残しを拾う（ここまで52点）／QG班がタリーズの赤・青をQGへ。芝生ロール→防災センター", "B": "タリーズの備品を回収。蓄電池→qg→その日に小田さんへ（西山 るか・大寺 ちひろ）"}], ["18:30", {"A": "いずみ野班：Eの控室のテント・垂れ幕・おもり2を積む（4点）", "D": "Dのすべてを片付け（18:00 旅人WSのあと）", "E": "CのコールマンテントをEへ移して設営（津田 康汰・斎藤 理恵瑠）→ いずみ野の控室テントと交換し、いずみ野班が積む。机・椅子は緑→Eゾーン倉庫"}], ["19:00", {"A": "いずみ野班がEからそのままいずみ野へ必ず出発（一回だけ・合計56点）→ 20:00までに降ろして数え、鍵をかける"}], ["20:00", {"A": "いずみ野班がハイエースで星川に戻る", "E": "E終了 → 撤収（Eのリーダー・西田 健太朗）：赤→QG、緑（PA・観客席・fratipi）→Eゾーン倉庫。EのPAの黄14点の扱いは要確認"}], ["21:00", {"A": "タイムズを返す（西田 健太朗）／ハイエースを22:00までに横浜で必ず返す（土屋 勇介・君塚 豊）"}]],
 stage:{
  B:["10:15 大道芸人ちぇん","11:30 ムラタップ（タップ＋パーカッション）","12:00 ムラタップ練り歩き（Bから出発）","12:30 こっころ（読み聞かせ・赤ちゃん人形）","13:45 ザ・ワースレス練り歩き（Bから出発）","15:30 横浜ヨコハマ（漫才）","12:30〜 LAB vol.13（2F・qg）"],
  C:["10:00〜17:00 野ゲー","11:00 HI-ORLEANS","12:30 奥本めぐみ＆柴田亮太郎DUO","13:30 帷子戦士デザイヤー","14:00 たーにーのゲーム大会","15:00 バブリン先生","16:00 夕日ビール（フィナーレ）"],
  D:["10:30 リビングトーク（保護司会）","14:30 YADORESIカフェ（認知症カフェ）","18:00 旅人よ！星天に集まりたまえ！！","終日 あなたと窓の文化祭","終日 クレメのお部屋","17:00〜18:30 地域団体・トレーラーハウス展示"],
- E:["第1部 11:00〜 ダンス6組","第2部 14:00〜 ビリージョエルバンド・ダンス3組","16:30 ラテルミン","第3部 17:00〜 BD LABO・クローバー・Yu-kids／IoTama・スターキング","19:30 Dancing Queen","20:00 終了・撤収"]
+ E:["第1部 キッズダンス 11:00〜13:00（LIPS・BEE KIDS A/B・Cheer & Peace・Yu-kids・BD LABO）", "第2部 小中学生のダンスと音楽ライブ 14:00〜15:10（相鉄Billy・Dance International・LOOP'S・miniCaribe）", "16:30 ラテルミン", "第3部 おとなのダンスと音楽ライブ 17:00〜（BD LABO・クローバー・Yu-kids / IoTama・Star King・BD LABO）", "19:30 Dancing Queen（ダンスと音楽ライブのコラボ）", "20:00 終了・撤収"]
 }
 };
 
 const ZN = {A:"全体",B:"B",C:"C",D:"D",E:"E"};
 const $ = s => document.querySelector(s);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-let view = "time", zoneSel = "ALL", zoneTab = "B", q = "";
-try { zoneTab = localStorage.getItem("zt") || "B"; zoneSel = localStorage.getItem("zs") || "ALL"; } catch(e) {}
+let view = "time", zoneSel = "ALL", zoneTab = "B", q = "", zmode = "brief";
+try { zmode = localStorage.getItem("zmode") || "brief"; if (zmode === "full") zmode = "brief"; zoneTab = localStorage.getItem("zt") || "B"; zoneSel = localStorage.getItem("zs") || "ALL"; } catch(e) {}
 
 const toMin = t => { const m = /^(\d{1,2}):(\d{2})/.exec(t); return m ? (+m[1]) * 60 + (+m[2]) : null; };
 function currentSlot(list) {
@@ -292,42 +571,256 @@ function chipsFor(opts, sel, key) {
 function renderTime() {
   chipsFor([["ALL","すべて"],["B","B"],["C","C"],["D","D"],["E","E"]], zoneSel, "zs");
   const now = currentSlot(D.time);
-  let h = `<h2>トータルタイムテーブル</h2><p class="muted small">7:30 鍵開け〜22:00 車の返却。上のボタンでゾーンを絞れます。</p><div class="tl">`;
+  const lead = zoneSel === "ALL" ? "全体の動き（全）と各ゾーンの動き。上のボタンでゾーンを選ぶと、そのゾーンの動きだけになります。" : zoneSel + "ゾーンの動きだけを表示しています（全体の動きは「すべて」で見られます）。";
+  let h = `<h2>${zoneSel === "ALL" ? "トータルタイムテーブル" : zoneSel + "ゾーン タイムテーブル"}</h2><p class="muted small">${lead}</p><div class="tl">`;
   D.time.forEach((r, i) => {
     const [t, all, z] = r; const rows = [];
-    if (all && (zoneSel === "ALL")) rows.push(["A", all]);
-    if (all && zoneSel !== "ALL") rows.push(["A", all]);
-    ["B","C","D","E"].forEach(k => { if (z[k] && (zoneSel === "ALL" || zoneSel === k)) rows.push([k, z[k]]); });
+    if (zoneSel === "ALL") (all || []).forEach(x => rows.push(["A", x]));
+    ["B","C","D","E"].forEach(k => { if (z[k] && (zoneSel === "ALL" || zoneSel === k)) [].concat(z[k]).forEach(x => rows.push([k, x])); });
     if (!rows.length) return;
     h += `<div class="slot ${i===now?'now':''}" id="s${i}"><div class="t">${t}</div><div class="b">` +
-      rows.map(([k, x]) => `<div class="row"><span class="zb zb${k}">${ZN[k]==="全体"?"全":k}</span><div class="x">${esc(x)}</div></div>`).join("") + `</div></div>`;
+      rows.map(([k, x]) => `<div class="row"><span class="zb zb${k}">${k==="A"?"全":k}</span><div class="x">${esc(x)}</div></div>`).join("") + `</div></div>`;
   });
-  h += `</div><p class="foot">元：R8星天qlay備品レイアウト（各ゾーンのタイムテーブル）／北本さんの修正指示（11/20夜）。当日運営資料 v8 と同じ内容です。</p>`;
+  h += `</div><p class="foot">元：演者進行表（B・C）・PA演者用タイムテーブル（11/20最新版）・搬入撤収スケジュール・エリアブランディングのSlack（11/20夜まで）。当日運営資料 v9。</p>`;
   $("#app").innerHTML = h;
   $("#nowbtn").hidden = now < 0;
 }
 
 function renderZone() {
+  { const t0 = document.getElementById("gtoast"); if (t0) t0.hidden = true; }
   chipsFor([["B","B"],["C","C"],["D","D"],["E","E"]], zoneTab, "zt");
   const z = D.zones[zoneTab], k = zoneTab;
   let h = `<div class="zhead" style="background:var(--z${k})"><div><div class="zn">${k} ZONE</div><div class="zp">${esc(z.place)}</div></div><div class="zp" style="text-align:right">リーダー<br>${esc(z.lead)}</div></div>`;
-  h += `<h3>メンバー</h3><div class="card" style="background:var(--z${k}t);border-color:transparent">` + z.members.map(([loc, n, hr, r, lead]) =>
+  h += `<div class="jump" role="navigation" aria-label="このゾーンの中を移動"><button data-j="zm">メンバー</button><button data-j="zt">当日の動き</button><button data-j="zs">特別対応</button><button data-j="zl">レイアウト</button></div>`;
+  h += `<details class="fold" id="zm" open><summary>メンバー<span>${z.members.length}人</span></summary><div class="card" style="background:var(--z${k}t);border-color:transparent">` + z.members.map(([loc, n, hr, r, lead]) =>
     `<div class="person"><div class="n">${lead?'<span class="star">★</span>':''}${loc?`<span class="loc" style="background:var(--z${k});">${esc(loc)}</span>`:''}${esc(n)}</div><div class="h">${esc(hr)}</div><div class="r">${esc(r)}</div></div>`).join("") + `</div>`;
   if (z.note) h += `<div class="note" style="margin-top:8px;color:var(--z${k}d);background:var(--z${k}t)">${esc(z.note)}</div>`;
-  h += `<h3>当日の動き</h3><div class="stack">` + z.moves.map(([t, d, c]) => `<div class="mv ${c}"><div class="t">${esc(t)}</div><div class="d">${esc(d)}</div></div>`).join("") + `</div>`;
-  h += `<h3>特別対応</h3><div class="stack">` + z.specials.map(([t, d, w]) => `<div class="sp"><div class="t">${esc(t)}</div><div class="d">${esc(d)}</div>${w?`<div class="w">${esc(w)}</div>`:''}</div>`).join("") + `</div>`;
-  h += `<h3>レイアウト（タップで拡大）</h3><div class="maps">` + z.maps.map(([f, c]) => `<div class="map"><figure><img src="maps/${f}.jpg" alt="${k}ゾーン ${esc(c)}" loading="lazy" data-full="maps/${f}.jpg"><figcaption>${esc(c)}</figcaption></figure></div>`).join("") + `</div>`;
+  h += `</details>`;
+  const zrows = []; D.time.forEach(([t, all, zz]) => { if (zz[k]) [].concat(zz[k]).forEach(x => zrows.push([t, x])); });
+  const RE = /^(\d{1,2}:\d{2}(?:頃)?(?:〜(?:\d{1,2}:\d{2})?)?)\s(.*)$/;
+  const brief = d => d.split(/[：（→。]/)[0].trim();
+  let last = "";
+  const items = zrows.map(([t, d]) => { const m = RE.exec(d); const tt = m ? m[1] : t + "台"; let dd = m ? m[2] : d;
+    if (zmode === "brief") { dd = brief(dd); if (dd === last) return ""; last = dd; }
+    return `<div class="mv${zmode==="brief"?" c":""}${/片付け|撤収|回収|積む|終了/.test(d)?' k':''}"><div class="t">${esc(tt)}</div><div class="d">${esc(dd)}</div></div>`; }).join("");
+  h += `<details class="fold" id="zt" open><summary>当日の動き<span>${k}ゾーンだけ・${zrows.length}件</span></summary>` +
+    `<div class="mode" role="group" aria-label="表示の細かさ"><button data-m="brief" aria-pressed="${zmode==="brief"}">簡易</button><button data-m="gantt" aria-pressed="${zmode==="gantt"}">時間軸</button></div>` +
+    (zmode==="gantt" ? gantt(zrows) : zmode==="brief" ? briefFlow(zrows) : `<div class="stack">${items}</div>`) + `</details>`;
+  h += `<details class="fold" id="zs"><summary>特別対応<span>${z.specials.length}件</span></summary><div class="stack">` + z.specials.map(([t, d, w]) => `<div class="sp"><div class="t">${esc(t)}</div><div class="d">${esc(d)}</div>${w?`<div class="w">${esc(w)}</div>`:''}</div>`).join("") + `</div></details>`;
+  h += `<h3 id="zl">レイアウト（タップで拡大）</h3><div class="maps">` + z.maps.map(([f, c]) => `<div class="map"><figure><img src="maps/${f}.jpg" alt="${k}ゾーン ${esc(c)}" loading="lazy" data-full="maps/${f}.jpg"><figcaption>${esc(c)}</figcaption></figure></div>`).join("") + `</div>`;
   h += `<p class="foot">レイアウトの元：R8星天qlay備品レイアウト（Googleスライド・11/20時点）</p>`;
-  $("#app").innerHTML = h; $("#nowbtn").hidden = true;
+  $("#app").innerHTML = h; $("#nowbtn").hidden = true; setHH(); const jb = document.querySelector(".jump"); if (jb) document.documentElement.style.setProperty("--jh", (jb.offsetHeight + 12) + "px");
+  const gw = document.getElementById("gwrap"); if (gw) { const nw = gw.querySelector(".gnow"); const x0 = window.__gkeep != null ? window.__gkeep : (nw ? Math.max(0, parseFloat(nw.style.left) - 220) : (window.__gfirst || 0)); window.__gkeep = null; const y0 = window.__gkeepY || 0; window.__gkeepY = 0; requestAnimationFrame(() => { gsetX(x0); const g2 = document.getElementById("gwrap"); if (g2) g2.scrollTop = y0; }); }
 }
 
+let pmode = "shift"; try { pmode = localStorage.getItem("pm") || "shift"; } catch(_) {}
+// 人・役割をゾーンで切り替える（北本さん11/20：「人・役割は、各ゾーンに切り替えれるように。DやEまで遷移させるのが大変」）
+let pzone = "ALL"; try { pzone = localStorage.getItem("pz") || "ALL"; } catch(_) {}
+function peopleChips() { chipsFor([["shift","シフト表"],["list","一覧"]], pmode, "pm");
+  const c = $("#zchips"); c.classList.add("pchips"); c.insertAdjacentHTML("beforeend", `<span class="chipsep" aria-hidden="true"></span>` + [["ALL","全員"],["B","B"],["C","C"],["D","D"],["E","E"]].map(([v, l]) => `<button class="chip ${v.length === 1 ? "z" : ""}" data-k="pz" data-v="${v}" aria-pressed="${v === pzone}">${l}</button>`).join("")); }
+function gToast(text) { let t = document.getElementById("gtoast"); if (!t) { t = document.createElement("div"); t.id = "gtoast"; t.className = "gtoast"; t.setAttribute("role", "status"); document.body.appendChild(t); }
+  t.innerHTML = ""; const b1 = document.createElement("div"); b1.style.whiteSpace = "pre-line"; b1.textContent = text; const cl = document.createElement("button"); cl.textContent = "閉じる"; cl.onclick = () => t.hidden = true; t.append(b1, cl); t.hidden = false;
+  clearTimeout(window.__gtt); window.__gtt = setTimeout(() => { t.hidden = true; }, 12000); }
+function shiftData() {
+  const DEF_S = 480, P = {};      // 始まりの記載なし＝8:00
+  // 終わりの記載がない人の仮設定（北本さん11/20：搬出搬入組は22時、メインシフトの西山・北本・土屋・大寺は21〜22時、それ以外は20〜21時）
+  //  搬出搬入組＝土屋（いずみ野班）・君塚（いずみ野班）・西田（QG班・タイムズ）→ 22:00／西山 22:00（統括・最後まで）・北本 21:30・大寺 21:30
+  //  それ以外：Eのメンバー 21:00（Eは20:00まで本番のあと撤収）、B・C・D 20:00（撤収完了）
+  //  11/21更新：搬入・撤収スケジュール（共有用）を正とする（北本さん）。18:30 E控室テントをコールマンと交換→19:00出発（片道40分）→20:10〜20:30積み下ろし→20:30〜21:10戻り→返却。終わり21:30（返却の長さは仮）
+  const ASSUME = {"土屋 勇介": 1320, "君塚 豊": 1320, "西田 健太朗": 1320, "西山 るか": 1320, "北本 直裕": 1290, "大寺 ちひろ": 1290};
+  // 時間を目安で決めている人（北本さん11/20：「近藤はお子さん連れのため、10-15時とかでお子さんの様子に合わせて」）
+  const FLEX = {"近藤 万緒": [600, 900, "お子さんの様子に合わせて"]};
+  const tm = v => { const m = /^(\d{1,2}):(\d{2})$/.exec(v || ""); return m ? +m[1] * 60 + +m[2] : null; };
+  ["B","C","D","E"].forEach(z => D.zones[z].members.forEach(([loc, n, hr, role, lead]) => {
+    const name = n.replace(/（.*?）/g, "").trim(), tag = (n.match(/（(.*?)）/) || [])[1] || "";
+    const m = /^(\d{1,2}:\d{2})?\s*〜\s*(\d{1,2}:\d{2})?$/.exec((hr || "").trim());
+    const fx = FLEX[name];
+    const s0 = fx ? fx[0] : m && m[1] ? tm(m[1]) : DEF_S, e0 = fx ? fx[1] : m && m[2] ? tm(m[2]) : null;
+    (P[name] = P[name] || {name, tag, segs: []}).segs.push({z, loc, s: s0, e: e0, role, lead: !!lead, raw: hr || "", flex: fx ? fx[2] : ""});
+    if (tag && !P[name].tag) P[name].tag = tag;
+  }));
+  // ゾーンを途中で移る時間（北本さん11/21：「梶山さんのシフトは、12-15時がCゾーンのトレーラーハウス展示に修正して」）
+  const MOVE = {"梶山 大起": [["C", 720, 900, "Cのトレーラーハウス展示"], ["D", 900, null, "Dに戻る"]]};
+  Object.entries(MOVE).forEach(([n, list]) => { const x = P[n]; if (!x) return; const b = x.segs[0];
+    list.forEach(([z, s1, e1, role]) => x.segs.push({z, loc: "", s: s1, e: e1, role, lead: z === b.z ? b.lead : false, raw: "", flex: ""})); });
+  return Object.values(P).map(x => { x.segs.sort((a, b) => a.s - b.s);
+    const lastE = Math.max(...x.segs.map(g => g.e || 0));
+    x.segs.forEach((g, i) => { const nx = x.segs[i + 1]; g.end = nx ? Math.min(g.e != null ? g.e : 9999, nx.s) : (g.e != null ? g.e : (lastE > g.s ? lastE : null)); g.unknown = g.end == null;
+      if (g.unknown) { g.end = ASSUME[x.name] || (g.lead ? (g.z === "E" ? 1260 : g.z === "D" ? 1140 : 1200) : ZEND[g.z]); g.unknown = false; g.assumed = true; g.zend = !ASSUME[x.name] && !g.lead; } });
+    x.zone = x.segs[0].z; x.lead = x.segs.some(g => g.lead); return x; });
+}
+// 搬出組の動き（北本さん11/20：「搬出組は、Eゾーンの黄色備品を回収して、19:30ごろにいずみのへ出発、片道40分、向こうでの積み下ろし20分、戻ってくる40分、返却をシフトに加えて」）
+const IZUMI = [[1110, 1140, "E交換", "Eの控室テントをコールマンと交換して積む"], [1140, 1180, "往路", "いずみ野へ移動（約40分）"], [1180, 1200, "降", "いずみ野で降ろして数え、鍵"], [1200, 1240, "復路", "ハイエースで星川に戻る（約40分）"], [1260, 1320, "返却", "ハイエースを22:00までに横浜で返す"]];
+const TASKS = {"土屋 勇介": IZUMI, "君塚 豊": IZUMI};
+// D は 18:30 に片付けが終わり、19:00 にシフトが終わる想定。Dはリーダーも19:00（北本さん11/20：「Dゾーンはリーダー含めて19時終わりで」）
+// ---- 終わりの記載がないリーダー以外＝そのゾーンの完全撤収（北本さん11/20：「各ゾーンのリーダー以外はそのゾーンの完全撤収のタイミングを終了時刻として」）
+//  B 18:30（18:00 タリーズ回収のあと）／C 18:00（17:40 CのPAの積み込みのあと）／D 19:00（18:30 Dの片付けのあと）／E 21:00（20:00終了→撤収）。時刻は暫定
+const ZEND = {B: 1110, C: 1080, D: 1140, E: 1260};
+// ---- 担当場所（各ゾーンのレイアウト右上「スタッフ配置」）。need＝必要人数、w＝必要な時間帯（北本さん11/20：「シフト表に担当場所の割り振りができるように（変更、組み替えができるようにしてほしい）」）
+const POSTS = {
+  B: [["info", "インフォメーション", 2, [600, 1020]], ["perf", "演者誘導", 2, [600, 1020]], ["gal", "2F クレギャラ・LAB", 0], ["lead", "リーダー・全体", 0], ["etc", "その他", 0]],
+  C: [["info", "インフォメーション（回遊施策と兼務）", 2, [600, 1020], ["quest"]], ["perf", "演者誘導", 3, [600, 1020]], ["tiny", "タイニーハウス", 1, [600, 1020]], ["quest", "回遊施策（ガラガラ）", 0], ["noge", "野ゲー", 0], ["mc", "司会", 0], ["lead", "リーダー・全体", 0], ["etc", "その他", 0]],
+  D: [["info", "インフォメーション", 2, [600, 1020]], ["kureme", "クレメちゃん", 1, [660, 1020]], ["lead", "リーダー・全体", 0], ["etc", "その他", 0]],
+  E: [["info", "インフォメーション", 2, [600, 1020]], ["perf", "演者誘導", 2, [660, 1200]], ["mc", "司会", 0], ["lead", "リーダー・全体", 0], ["etc", "その他", 0]]};
+// 最初の割り振り（仮）。役割の書き方から置いた。画面で組み替えられる（キー＝名前|ゾーン）
+const DEF_ASSIGN = {"土屋 勇介|B": "lead", "西田 健太朗|B": "perf", "津田 康汰|B": "perf", "近藤 万緒|B": "gal", "君塚 豊|B": "gal", "前山 倫子|B": "gal", "榊原 幸栄|B": "info", "上杉 勢太|B": "info",
+  "北本 直裕|C": "quest", "木村 勇樹|C": "perf", "大寺 ちひろ|C": "lead", "松島 海咲|C": "quest", "桑子 達矢|C": "info", "斎藤 理恵瑠|C": "mc", "竹之内 創太|C": "noge", "河村 慧|C": "perf",
+  "田中 惇資|D": "info", "梶山 大起|D": "info", "梶山 大起|C": "tiny", "遠藤 美智子|D": "kureme",
+  "西山 るか|E": "lead", "髙橋 優弥|E": "perf", "西浦 啓一郎|E": "info", "さわだ いっせい|E": "info", "中川 晃都|E": "perf", "津田 康汰|E": "perf", "斎藤 理恵瑠|E": "mc"};
+let ASSIGN = {}, ASSIGN_SRC = "この端末だけに保存";   // 共有（db）が使えるときは全員で同じ割り振りを見る。使えないとき（Claudeなしの版など）はこの端末だけ
+try { ASSIGN = JSON.parse(localStorage.getItem("shift-assign") || "{}"); } catch (_) {}
+const postOf = (n, z) => ASSIGN[n + "|" + z] || DEF_ASSIGN[n + "|" + z] || "etc";
+const postName = (z, k) => ((POSTS[z] || []).find(p => p[0] === k) || [k, "その他"])[1];
+let __sdb = null;
+(async () => { try { if (!window.claude || !claude.use) return; const db = await claude.use("db"); if (!db) return; __sdb = db;
+  db.collection("shift_assign").onSnapshot(snap => { const m = {}; snap.docs.forEach(d => { const v = d.data() || {}; if (v.key && v.post) m[v.key] = v.post; }); ASSIGN = m; ASSIGN_SRC = "全員で共有";
+    const sh = document.getElementById("shsheet"); if (view === "people" && pmode === "shift" && (!sh || sh.hidden)) renderShift(); }, () => {}); } catch (_) {} })();
+// 休憩を指で動かした位置（北本さん11/20：「シフトの休憩時間は、指タッチでドロップインして、組み換えれるようにして」）。名前→始まり（分）
+let BRK = {}; try { BRK = JSON.parse(localStorage.getItem("shift-break") || "{}"); } catch (_) {}
+(async () => { try { if (!window.claude || !claude.use) return; const db = await claude.use("db"); if (!db) return;
+  db.collection("shift_break").onSnapshot(snap => { const m = {}; snap.docs.forEach(d => { const v = d.data() || {}; if (v.name && typeof v.start === "number") m[v.name] = v.start; }); BRK = m;
+    const sh = document.getElementById("shsheet"); if (view === "people" && pmode === "shift" && (!sh || sh.hidden) && !window.__shdrag) { window.__shkeep = shKeep(); renderShift(); } }, () => {}); } catch (_) {} })();
+async function setBreak(name, start) {
+  if (start == null) delete BRK[name]; else BRK[name] = start;
+  if (__sdb) { try { const ref = __sdb.collection("shift_break").doc(keyId(name)); if (start == null) await ref.delete(); else await ref.set({name, start, at: new Date().toISOString()}); return true; } catch (e) { gToast("共有に保存できませんでした（" + (e && e.code || "エラー") + "）。この端末にだけ保存します"); } }
+  try { localStorage.setItem("shift-break", JSON.stringify(BRK)); } catch (_) {}
+  return false;
+}
+function shKeep() { const g = document.getElementById("shv"); return g ? {l: g.scrollLeft, t: g.scrollTop, y: window.scrollY} : null; }
+function keyId(k) { let h = 0; for (const c of k) h = (h * 31 + c.codePointAt(0)) >>> 0; return "a" + h.toString(36); }
+async function setPost(k, post) {
+  ASSIGN[k] = post;
+  if (__sdb) { try { await __sdb.collection("shift_assign").doc(keyId(k)).set({key: k, post, at: new Date().toISOString()}); return true; } catch (e) { gToast("共有に保存できませんでした（" + (e && e.code || "エラー") + "）。この端末にだけ保存します"); } }
+  try { localStorage.setItem("shift-assign", JSON.stringify(ASSIGN)); } catch (_) {}
+  return false;
+}
+// ---- 休憩の仮組み（北本さん11/20：「各メンバーの休憩時間を仮組してみてほしい。休憩取れるかの確認」）
+//  労基の目安：6時間超→45分、8時間超→60分。11:00〜16:00の間で、同じ担当場所の人と重ならないよう15分刻みでずらす。タイムテーブルに名前つきで時刻が書いてある動き（3時間以内のもの）とは重ねない
+function busyOf(n) { const out = []; D.time.forEach(([t, all, zz]) => { (all || []).concat(...Object.values(zz).map(v => [].concat(v))).forEach(l => { if (!l.includes(n)) return;
+    const m = /^(\d{1,2}):(\d{2})(?:〜(\d{1,2}):(\d{2}))?/.exec(l); if (!m) return; const a = +m[1] * 60 + +m[2], b = m[3] ? +m[3] * 60 + +m[4] : a + 30; if (b - a <= 180) out.push([a, b]); }); });   // 3時間を超える持ち場（ガラガラ・野ゲーの終日など）は休憩の妨げにしない
+  (TASKS[n] || []).forEach(([a, b]) => out.push([a, b])); return out; }
+function planBreaks(ppl) {
+  const placed = [];
+  ppl.slice().sort((a, b) => ((BRK[b.name] != null) - (BRK[a.name] != null)) || (a.lead - b.lead) || (a.segs[0].s - b.segs[0].s)).forEach(x => {
+    const s0 = Math.min(...x.segs.map(g => g.s)), e0 = Math.max(...x.segs.map(g => g.end)), L = e0 - s0;
+    x.brk = null; x.brkLen = L > 480 ? 60 : L > 360 ? 45 : 0; x.s0 = s0; x.e0 = e0; if (!x.brkLen) return;
+    if (BRK[x.name] != null) { const t = Math.max(s0, Math.min(e0 - x.brkLen, BRK[x.name])), g = x.segs.find(g => g.s <= t && t < g.end) || x.segs[0];
+      x.brk = [t, t + x.brkLen, g.z]; x.manual = true; placed.push([g.z + ":" + postOf(x.name, g.z), t, t + x.brkLen]); return; }
+    const busy = busyOf(x.name); let best = null;
+    for (let t = 660; t + x.brkLen <= 960; t += 15) {
+      const g = x.segs.find(g => g.s + 90 <= t && t + x.brkLen <= g.end - 60); if (!g) continue;
+      if (busy.some(([a, b]) => a < t + x.brkLen && t < b)) continue;
+      const pk = g.z + ":" + postOf(x.name, g.z);
+      const same = placed.filter(([k, a, b]) => k === pk && a < t + x.brkLen && t < b).length, zone = placed.filter(([k, a, b]) => k[0] === g.z && a < t + x.brkLen && t < b).length;
+      const sc = same * 100 + zone * 3 + Math.abs(t - 750) / 60;
+      if (!best || sc < best.sc) best = {t, g, pk, sc};
+    }
+    if (best) { x.brk = [best.t, best.t + x.brkLen, best.g.z]; placed.push([best.pk, best.t, best.t + x.brkLen]); }
+  });
+}
+// ---- 配置の確認：担当場所ごとに、必要人数に足りない時間帯（休憩中の人は数えない）
+function coverage(ppl) {
+  const hm = m => Math.floor(m / 60) + ":" + String(m % 60).padStart(2, "0"), out = {};
+  // Cのインフォは回遊施策（ガラガラ）と同じ場所で兼務（北本さん11/20：「Cゾーンのインフォは、回遊施策と同じ場所で兼務になる予定なので、インフォには2-3名いる状態」）
+  ["B","C","D","E"].forEach(z => { out[z] = POSTS[z].filter(p => p[2]).map(([k, label, need, w, also]) => {
+    const ks = [k].concat(also || []), who = []; ppl.forEach(x => x.segs.forEach(g => { if (g.z === z && ks.includes(postOf(x.name, z))) who.push({x, g}); }));
+    const gaps = []; let cur = null;
+    for (let t = w[0]; t < w[1]; t += 15) {
+      const on = who.filter(({g}) => g.s <= t && t < g.end), rest = on.filter(({x}) => x.brk && x.brk[0] <= t && t < x.brk[1]).length;
+      let short = need - (on.length - rest);
+      if (k === "info" && rest && short === 1 && on.length >= need) short = 0;   // インフォは休憩中に1名になってもよい（北本さん11/20：「休憩時間にインフォ人数が1名になるのは、不足ではなく良しとする。そこで人数調整すると混乱するため」）
+      if (short > 0) { if (cur && cur.short === short && cur.e === t) cur.e = t + 15; else { cur = {s: t, e: t + 15, short}; gaps.push(cur); } } else cur = null;
+    }
+    return {k, label, need, names: [...new Set(who.map(({x}) => x.name))], gaps: gaps.map(c => `${hm(c.s)}〜${hm(c.e)} ${c.short}名`)}; }); });
+  return out;
+}
+const __cf = chipsFor; chipsFor = function (...a) { const c = $("#zchips"); if (c) c.classList.remove("pchips"); return __cf.apply(this, a); };
+function renderShift() {
+  const ppl = shiftData(), PX = 1, LW = 92, h0 = 7, h1 = 22; planBreaks(ppl); const cov = coverage(ppl);
+  const X = m => LW + (m - h0 * 60) * PX, W = X(h1 * 60) + 12;
+  const grid = `background-image:repeating-linear-gradient(to right,var(--line) 0 1px,transparent 1px ${60 * PX}px);background-position:${LW}px 0;background-repeat:repeat-y`;
+  const ZT = {B:"星天STAGE・2Fクレギャラ", C:"芝生広場", D:"トレーラーハウス前", E:"ダンス・音楽ステージ"};
+  let rows = "";
+  ["B","C","D","E"].filter(z => pzone === "ALL" || pzone === z).forEach(z => {
+    const list = ppl.filter(x => pzone === "ALL" ? x.zone === z : x.segs.some(g => g.z === z)).sort((a, b) => (b.lead - a.lead) || (a.segs[0].s - b.segs[0].s));
+    if (!list.length) return;
+    rows += `<div class="gvs shz" style="width:${W}px;background:var(--z${z}t)"><span class="gvsb" style="color:var(--z${z}d)">${z} ZONE<small>${ZT[z]}・${list.length}人</small></span></div>`;
+    list.forEach(x => {
+      const tk = TASKS[x.name] || [];
+      let r = `<div class="gvr shr" style="width:${W}px;height:${tk.length ? 62 : 40}px;${grid}"><button class="gvn shn" data-n="${esc(x.name)}">${x.lead ? '<b class="star">★</b>' : ''}${esc(x.name)}</button>`;
+      x.segs.forEach(g => { const w = Math.max((g.end - g.s) * PX, 24), hm = m => Math.floor(m / 60) + ":" + String(m % 60).padStart(2, "0");
+        const lab = `${hm(g.s)}〜${hm(g.end)} ${postName(g.z, postOf(x.name, g.z))}${x.segs.length > 1 ? " " + g.z : ""}`;
+        r += `<span class="shb${g.assumed ? " asm" : ""}${g.flex ? " flx" : ""}" style="left:${X(g.s)}px;width:${w}px;--c:var(--z${g.z});--d:var(--z${g.z}d)"><span>${esc(lab)}${g.flex ? '<i>' + esc(g.flex) + '</i>' : g.zend ? '<i>' + g.z + 'の片付け完了まで</i>' : g.assumed ? '<i>終わりは仮</i>' : ''}</span></span>`; });
+      if (x.brk) r += `<span class="shbr${x.manual ? " man" : ""}" data-n="${esc(x.name)}" data-s="${x.brk[0]}" data-len="${x.brkLen}" data-min="${x.s0}" data-max="${x.e0 - x.brkLen}" style="left:${X(x.brk[0])}px;width:${(x.brk[1] - x.brk[0]) * PX}px" title="休憩（${x.manual ? "動かした位置" : "仮"}）。指で左右に動かせます">休<b>${Math.floor(x.brk[0] / 60)}:${String(x.brk[0] % 60).padStart(2, "0")}</b></span>`;
+      tk.forEach(([s0, e0, sh, full]) => { r += `<span class="shk" style="left:${X(s0)}px;width:${(e0 - s0) * PX}px" title="${esc(full)}">${esc(sh)}</span>`; });
+      rows += r + `</div>`;
+    });
+  });
+  let ruler = `<div class="gvh" style="width:${W}px"><span class="gvn corner" style="width:${LW}px">名前</span>`;
+  for (let h = h0; h <= h1; h++) ruler += `<span class="gvt" style="left:${X(h * 60)}px">${h}:00</span>`;
+  ruler += `</div>`;
+  let now = ""; const nw = new Date(); let nowX = null;
+  if (nw.getFullYear() === 2026 && nw.getMonth() === 10 && nw.getDate() === 21) { const t = nw.getHours() * 60 + nw.getMinutes(); if (t >= h0 * 60 && t <= h1 * 60) { nowX = X(t); now = `<i class="gnow" style="left:${nowX}px"></i>`; } }
+  let h = `<h2>シフト表</h2><details class="shhow"><summary>表の見方（終わり・休憩の決め方）</summary><p class="muted small">始まりの記載がない人は 8:00 から。終わりは、資料に書いてある人はその時刻、ない人は仮の時刻（右端が点線・「終わりは仮」）。リーダー以外は<b>そのゾーンの片付け完了まで</b>（B 18:30・C 18:00・D 19:00＝18:30に片付け完了・E 21:00。バーに「○の片付け完了まで」）。Cのインフォメーションは回遊施策（ガラガラ）と兼務として数える、リーダーは B・C 20:00／D 19:00／E 21:00、西田・西山 22:00、北本・大寺 21:30、いずみ野班（土屋・君塚）22:00（黒い札＝E控室の交換 → 19:00 出発 → 降ろす → 戻る → 22:00までに横浜でハイエース返却）。近藤さんは 10:00〜15:00 を目安に（両端が点線）。<b>「休」＝休憩の仮組み。指で左右に動かすと時間を組み替えられます</b>（動かしたものは枠がピンク。名前を押すと自動の位置に戻せます。6時間超は45分・8時間超は60分。11:00〜16:00で、同じ担当場所の人と重ならないようにずらした。インフォメーションは休憩の間1名になってもよい）。名前を押すと、担当場所の組み替えと、その人の動きが出ます。</p></details>`;
+  const hmx = m => Math.floor(m / 60) + ":" + String(m % 60).padStart(2, "0");
+  const ngN = ["B","C","D","E"].filter(z => pzone === "ALL" || pzone === z).reduce((n, z) => n + cov[z].filter(c => c.gaps.length).length, 0), noB = ppl.filter(x => x.brkLen && !x.brk).length;
+  let ck = `<details class="shck"><summary>配置と休憩の確認（仮）<em class="${ngN || noB ? "ngt" : ""}">足りない担当場所 ${ngN}か所・休憩を入れられない人 ${noB}人</em><span>担当場所ごとの必要人数（レイアウトの「スタッフ配置」）に、休憩中の人を除いて足りているか・${esc(ASSIGN_SRC)}</span></summary>`;
+  ["B","C","D","E"].filter(z => pzone === "ALL" || pzone === z).forEach(z => { ck += `<div class="shckz"><b style="color:var(--z${z}d)">${z}</b><div>` + cov[z].map(c => `<div class="shckr${c.gaps.length ? " ng" : ""}"><span class="p">${esc(c.label)}<small>${c.need}名</small></span><span class="n">${c.names.length ? esc(c.names.join("・")) : "（だれもいない）"}</span><span class="g">${c.gaps.length ? "足りない：" + esc(c.gaps.join("／")) : "足りている" + (c.k === "info" ? "（休憩の間は1名でよい）" : "")}</span></div>`).join("") + `</div></div>`; });
+  const nob = ppl.filter(x => x.brkLen && !x.brk).map(x => x.name), brl = ppl.filter(x => x.brk).sort((a, b) => a.brk[0] - b.brk[0]).map(x => `${x.name} ${hmx(x.brk[0])}〜${hmx(x.brk[1])}`);
+  ck += `<p class="small">休憩（仮）：${esc(brl.join("／"))}${nob.length ? `<br><b class="ngt">休憩を入れられない人：${esc(nob.join("・"))}</b>` : ""}</p></details>`;
+  h += ck;
+  h += `<div class="gv shv" id="shv"><div class="gvg" style="width:${W}px">${ruler}${rows}${now}</div></div>`;
+  h += `<p class="foot">元：各ゾーンのメンバー（当日運営資料 v8・北本さん11/20夜の指示）。★＝リーダー。2つのゾーンにいる人は、次のゾーンの始まりで色が変わります。</p>`;
+  $("#app").innerHTML = h; $("#nowbtn").hidden = true;
+  const g = $("#shv"), kp = window.__shkeep; window.__shkeep = null;
+  if (g && kp) { g.scrollLeft = kp.l; g.scrollTop = kp.t; window.scrollTo(0, kp.y); } else if (g) g.scrollLeft = nowX != null ? Math.max(0, nowX - 160) : X(7 * 60 + 30) - LW;
+}
+document.addEventListener("click", e => {
+  const b = e.target.closest(".shn"); if (!b) return;
+  const n = b.dataset.n, all = shiftData(); planBreaks(all); const x = all.find(p => p.name === n); if (!x) return;
+  const hm = m => Math.floor(m / 60) + ":" + String(m % 60).padStart(2, "0");
+  const lines = [n + (x.tag ? "（" + x.tag + "）" : "")];
+  x.segs.forEach(g => lines.push(`${g.z}ゾーン ${hm(g.s)}〜${hm(g.end)}${g.flex ? "（目安・" + g.flex + "）" : g.zend ? "（" + g.z + "の片付け完了まで）" : g.assumed ? "（終わりは仮）" : ""}：${g.role}`));
+  if (TASKS[n]) { lines.push("— 搬出（いずみ野） —"); TASKS[n].forEach(([a, b, , f]) => lines.push(`${hm(a)}〜${hm(b)} ${f}`)); }
+  const acts = []; D.time.forEach(([t, all, zz]) => { (all || []).concat(...Object.values(zz).map(v => [].concat(v))).forEach(l => { if (l.includes(n)) acts.push(l); }); });
+  if (acts.length) { lines.push("— タイムテーブル上の動き —"); acts.forEach(a => lines.push("・" + a)); }
+  if (x.brk) lines.splice(1 + x.segs.length, 0, `休憩（仮）${hm(x.brk[0])}〜${hm(x.brk[1])}`); else if (x.brkLen) lines.splice(1 + x.segs.length, 0, "休憩（仮）：入れられる時間がない");
+  openSheet(x, lines);
+});
+document.addEventListener("pointerdown", e => {
+  const el = e.target.closest(".shbr"); if (!el) return; e.preventDefault();
+  const x0 = e.clientX, s0 = +el.dataset.s, mn = +el.dataset.min, mx = +el.dataset.max, l0 = parseFloat(el.style.left), lab = el.querySelector("b"); let t = s0, moved = false;
+  const hm = m => Math.floor(m / 60) + ":" + String(m % 60).padStart(2, "0");
+  try { el.setPointerCapture(e.pointerId); } catch (_) {} el.classList.add("drag"); window.__shdrag = true;
+  const mv = ev => { const dx = ev.clientX - x0; if (Math.abs(dx) > 4) moved = true; t = Math.max(mn, Math.min(mx, s0 + Math.round(dx / 15) * 15)); el.style.left = (l0 + (t - s0)) + "px"; if (lab) lab.textContent = hm(t); };
+  const up = async () => { el.removeEventListener("pointermove", mv); el.removeEventListener("pointerup", up); el.removeEventListener("pointercancel", up); el.classList.remove("drag"); window.__shdrag = false;
+    if (!moved || t === s0) { if (!moved) gToast("休憩（" + hm(s0) + "〜）は、指で左右に動かすと時間を変えられます"); return; }
+    const ok = await setBreak(el.dataset.n, t); window.__shkeep = shKeep(); renderShift(); gToast(el.dataset.n + " の休憩を " + hm(t) + "〜 にしました（" + (ok ? "全員の画面に反映" : "この端末に保存") + "）"); };
+  el.addEventListener("pointermove", mv); el.addEventListener("pointerup", up); el.addEventListener("pointercancel", up);
+});
+function openSheet(x, lines) {
+  let t = document.getElementById("shsheet"); if (!t) { t = document.createElement("div"); t.id = "shsheet"; t.className = "gtoast shsheet"; t.setAttribute("role", "dialog"); document.body.appendChild(t); }
+  clearTimeout(window.__gtt); const gt = document.getElementById("gtoast"); if (gt) gt.hidden = true;
+  t.innerHTML = ""; const hd = document.createElement("b"); hd.textContent = lines[0]; t.appendChild(hd);
+  const st = document.createElement("small"); st.className = "shst";
+  x.segs.forEach(g => { const lb = document.createElement("label"); lb.className = "shsel"; const sp = document.createElement("span"); sp.textContent = g.z + "ゾーンの担当場所";
+    const se = document.createElement("select"); POSTS[g.z].forEach(([k, label, need]) => { const o = document.createElement("option"); o.value = k; o.textContent = label + (need ? `（${need}名）` : ""); se.appendChild(o); });
+    se.value = postOf(x.name, g.z);
+    se.onchange = async () => { const ok = await setPost(x.name + "|" + g.z, se.value); window.__shkeep = shKeep(); renderShift(); st.textContent = ok ? "保存しました（全員の画面に反映）" : "この端末に保存しました"; };
+    lb.append(sp, se); t.appendChild(lb); });
+  st.textContent = __sdb ? "変えると全員の画面に反映されます" : "この画面では共有できないため、この端末にだけ保存されます"; t.appendChild(st);
+  if (BRK[x.name] != null) { const rb = document.createElement("button"); rb.className = "shrb"; rb.textContent = "休憩を自動の位置に戻す"; rb.onclick = async () => { await setBreak(x.name, null); window.__shkeep = shKeep(); renderShift(); rb.remove(); }; t.appendChild(rb); }
+  const b1 = document.createElement("div"); b1.style.whiteSpace = "pre-line"; b1.className = "shinfo"; b1.textContent = lines.slice(1).join("\n"); t.appendChild(b1);
+  const cl = document.createElement("button"); cl.textContent = "閉じる"; cl.onclick = () => { t.hidden = true; }; t.appendChild(cl); t.hidden = false;
+}
 function renderPeople() {
-  $("#zchips").hidden = true;
-  const list = D.people.filter(p => !q || (p[1] + p[2] + p[3] + ZN[p[0]]).includes(q));
+  peopleChips();
+  if (pmode === "shift") return renderShift();
+  const list = D.people.filter(p => (pzone === "ALL" || p[0] === pzone) && (!q || (p[1] + p[2] + p[3] + ZN[p[0]]).includes(q)));
   let h = `<h2>人・役割</h2><input class="search" id="q" type="search" placeholder="名前・役割で探す（例：西田、司会）" value="${esc(q)}" autocomplete="off">`;
   h += `<h3>YADOKARIメンバーとアルバイト（${list.length}人）</h3><div class="card plist">` + (list.length ? list.map(([z, n, g, m]) =>
     `<div class="p"><span class="zb zb${z}">${z==="A"?"全":z}</span><div style="min-width:0"><div class="nm">${esc(n)}${g?`<small>${esc(g)}</small>`:''}</div><div class="mm">${esc(m)}</div></div></div>`).join("") : `<p class="muted small">見つかりません。名前の一部で探してください。</p>`) + `</div>`;
-  h += `<h3>ゾーンをまたぐ役割</h3><div class="stack">` + D.roles.filter(r => !q || r.join("").includes(q)).map(([k, w, m]) =>
+  if (pzone === "ALL") h += `<h3>ゾーンをまたぐ役割</h3><div class="stack">` + D.roles.filter(r => !q || r.join("").includes(q)).map(([k, w, m]) =>
     `<div class="card role"><div class="k">${esc(k)}</div><div class="who">${esc(w)}</div><div class="m">${esc(m)}</div></div>`).join("") + `</div>`;
   h += `<p class="foot">参加できない：渡辺 李咲さん（11/9 授業参観）ほか2名。</p>`;
   $("#app").innerHTML = h; $("#nowbtn").hidden = true;
@@ -338,7 +831,7 @@ function renderPeople() {
 function renderTear() {
   chipsFor([["ALL","すべて"],["B","B"],["C","C"],["D","D"],["E","E"]], zoneSel, "zs");
   const now = currentSlot(D.tear);
-  let h = `<h2>撤収・片付け</h2><div class="tdhead">片付け先：E倉庫・クレギャラ・防災センター（いずみ野への第二便はなし）。朝にE倉庫から出した備品は緑のシールで見分ける</div><div class="tl td" style="margin-top:10px">`;
+  let h = `<h2>撤収・片付け</h2><div class="tdhead">片付け先：赤＝QG／青＝防災倉庫／黄＝いずみ野（一回だけ・第二便はなし）／緑＝Eゾーン倉庫。朝にE倉庫から出した備品は緑のシールで見分ける。元：搬入・撤収スケジュール（共有用・11/20〜21）</div><div class="tl td" style="margin-top:10px">`;
   D.tear.forEach(([t, z], i) => {
     const rows = ["A","B","C","D","E"].filter(k => z[k] && (zoneSel === "ALL" || zoneSel === k || k === "A"));
     if (!rows.length) return;
@@ -359,17 +852,187 @@ function renderStage() {
   $("#app").innerHTML = h; $("#nowbtn").hidden = true;
 }
 
-const R = {time: renderTime, zone: renderZone, people: renderPeople, tear: renderTear, stage: renderStage};
+document.addEventListener("click", e => {
+  const m = e.target.closest(".mode button"); if (m) { zmode = m.dataset.m; try { localStorage.setItem("zmode", zmode); } catch(_) {} const y = window.scrollY; renderZone(); window.scrollTo(0, y); return; }
+  const j = e.target.closest(".jump button"); if (j) { const el = document.getElementById(j.dataset.j); if (el) { if (el.tagName === "DETAILS") el.open = true; const top = el.getBoundingClientRect().top + window.scrollY - (document.querySelector("header").offsetHeight + 8); window.scrollTo({top, behavior: "smooth"}); } }
+});
+
+// ---- 時間軸（試作）：横＝時刻、縦＝入り・搬入／本番／撤収／対応 ----
+const LANES = [["in","入り・搬入"],["show","本番"],["out","撤収"],["etc","対応"]];
+function laneOf(d) {
+  if (/撤収|片付け|回収|積む|終了|退出|出庫|返す/.test(d)) return "out";
+  if (/本番|ショー|第\d部|フィナーレ|体験|トーク|カフェ|WS|展示|ゲーム大会|野ゲー|練り歩き|グリーティング|ピーク|開始|ガラガラ|販売|物販|LAB|ラテルミン|Dancing|旅人|文化祭/.test(d)) return "show";
+  if (/入り|搬入|入室|セッティング|設営|準備|受け入れ|集合|到着|待機|誘導|リハーサル|着替え/.test(d)) return "in";
+  return "etc";
+}
+// 演者（ゾーンごと）。[行の中で探す言葉, 表示名]
+const PERF = {B:[["ちぇん","大道芸人ちぇん"],["ムラタップ","ムラタップ"],["こっころ","こっころ"],["ワースレス","ザ・ワースレス"],["横浜ヨコハマ","横浜ヨコハマ"]],
+  C:[["HI-ORLEANS","HI-ORLEANS"],["奥本DUO","奥本DUO"],["デザイヤー","帷子戦士デザイヤー"],["バブリン先生","バブリン先生"],["夕日ビール","夕日ビール"],["たーにー","たーにーのゲーム大会"]], D:[], E:[]};
+const PH = {in:"入り・搬入", show:"本番", out:"撤収", etc:"対応"};
+function zEvents(zrows, zone) {
+  const RE = /^(\d{1,2}):(\d{2})(?:頃)?(?:〜(?:(\d{1,2}):(\d{2}))?)?\s(.*)$/;
+  return zrows.map(([t, d], i) => {
+    let s, e, txt = d, pt = false, tl; const m = RE.exec(d);
+    if (/^終日/.test(d)) { s = 600; e = 1020; tl = "終日"; }
+    else if (m) { s = +m[1] * 60 + +m[2]; txt = m[5]; if (m[3]) e = +m[3] * 60 + +m[4]; else { e = s + 15; pt = true; } tl = m[3] ? `${m[1]}:${m[2]}〜${m[3]}:${m[4]}` : `${m[1]}:${m[2]}`; }
+    else { s = toMin(t) || 600; e = s + 15; pt = true; tl = t; }
+    const label = txt.split(/[：（→。]/)[0].trim();
+    const pf = (PERF[zone] || []).find(([key]) => label.includes(key));
+    let short = label; if (pf) short = label.replace(/^(大道芸人|帷子戦士|ザ・)/, "").replace(pf[0], "").replace(/^[のをが・\s]+/, "").trim() || PH[laneOf(label)];
+    return {i, s, e, pt, tl, label, short, full: d, lane: laneOf(label), perf: pf ? pf[1] : null};
+  });
+}
+function foldOpen(k) { try { return localStorage.getItem("zf-" + k) !== "0"; } catch (e) { return true; } }
+document.addEventListener("toggle", e => { const d = e.target; if (d.classList && d.classList.contains("fold2")) { try { localStorage.setItem("zf-" + d.dataset.k, d.open ? "1" : "0"); } catch (_) {} } }, true);
+function gsetX(x) { window.__gx = x; window.__gsync = true; document.querySelectorAll(".gwrap").forEach(o => { if (o.scrollLeft !== x) o.scrollLeft = x; }); const gi = document.querySelector("#gruler .grin"); if (gi) gi.style.transform = `translateX(${-x}px)`; requestAnimationFrame(() => window.__gsync = false); }
+document.addEventListener("scroll", e => { const g = e.target; if (!g.classList || !g.classList.contains("gwrap") || window.__gsync) return; gsetX(g.scrollLeft); }, true);
+document.addEventListener("toggle", e => { const d = e.target; if (d.classList && d.classList.contains("fold2") && d.open && window.__gx != null) requestAnimationFrame(() => gsetX(window.__gx)); }, true);
+function gcOpen(name) { try { return localStorage.getItem("gc-" + name) !== "0"; } catch (e) { return true; } }
+document.addEventListener("click", e => { const b = e.target.closest(".gtog"); if (!b) return; const n = b.dataset.p, o = gcOpen(n);
+  try { localStorage.setItem("gc-" + n, o ? "0" : "1"); } catch (_) {} const g0 = document.getElementById("gwrap"); window.__gkeep = g0 ? g0.scrollLeft : window.__gx; window.__gkeepY = g0 ? g0.scrollTop : 0; const sy = window.scrollY; renderZone(); window.scrollTo(0, sy); });
+function gzoom() { try { return +(localStorage.getItem("gz") || 2); } catch (e) { return 2; } }
+function gsetX(x) { const g = document.getElementById("gwrap"); window.__gx = x; if (g) g.scrollLeft = x; }
+function gantt(zrows) {
+  const ev = zEvents(zrows, zoneTab);
+  const PX = [1.2, 2, 3][Math.max(0, Math.min(2, gzoom() - 1))], LW = 72, HR = 30;   // 1分の幅・名前の列・目盛りの高さ
+  const h0 = Math.floor(Math.min(...ev.map(x => x.s)) / 60), h1 = Math.max(21, Math.ceil(Math.max(...ev.map(x => x.e)) / 60));   // 21:00まで出す（北本さん11/20：「ゾーンの当日の動きを21:00まで」）
+  const X = mins => LW + (mins - h0 * 60) * PX, W = X(h1 * 60) + 16;
+  const grid = `background-image:repeating-linear-gradient(to right,var(--line) 0 1px,transparent 1px ${60 * PX}px);background-position:${LW}px 0;background-repeat:repeat-y`;
+  let rows = "";
+  const secRow = (key, title, n) => { const op = foldOpen(key);
+    return `<div class="gvs${op ? "" : " shut"}" style="width:${W}px"><button class="gvsb" data-sec="${key}" aria-expanded="${op}">${title}<small>${n}</small></button></div>`; };
+  const perfs = [...new Set(ev.filter(x => x.perf).map(x => x.perf))];
+  if (perfs.length) {
+    rows += secRow("perf", "演者", `${perfs.length}組・名前を押すと札をたたむ`);
+    if (foldOpen("perf")) perfs.forEach(name => {
+      const list = ev.filter(x => x.perf === name).sort((a, b) => a.s - b.s), op = gcOpen(name);
+      const tr = []; list.forEach(x => { let k = tr.findIndex(end => end <= x.s); if (k < 0) { k = tr.length; tr.push(0); } tr[k] = Math.max(x.e, x.s + 5); x.k = k; });
+      const lanes = []; let prev = -1;
+      list.forEach(x => { x.l = X(x.s); x.cw = (x.tl.replace(/〜.*/, "").length + x.short.length) * 11.6 + 26;
+        const fits = r => lanes[r] <= x.l - 4; let r = -1;
+        for (let k = prev + 1; k < lanes.length; k++) if (fits(k)) { r = k; break; }
+        if (r < 0) for (let k = 0; k <= Math.min(prev, lanes.length - 1); k++) if (lanes[k] <= x.l - 120) { r = k; break; }
+        if (r < 0) { r = lanes.length; lanes.push(0); } lanes[r] = x.l + x.cw; x.r = r; prev = r; });
+      const capY = 8 + tr.length * 12 + 6, h = op ? capY + lanes.length * 25 + 6 : capY + 2;
+      const s0 = Math.min(...list.map(x => x.s)), e0 = Math.max(...list.map(x => x.e));
+      let r = `<div class="gvr perf${op ? "" : " shut"}" style="width:${W}px;height:${h}px;${grid}"><button class="gvn gtog" data-p="${esc(name)}" aria-expanded="${op}">${esc(name)}</button>`;
+      r += `<i class="gvc" style="left:${X(s0)}px;width:${(e0 - s0) * PX}px"></i>`;
+      list.forEach(x => r += `<i class="gvseg g-${x.lane}" style="left:${x.l}px;top:${8 + x.k * 12}px;width:${Math.max((x.e - x.s) * PX, 8)}px"></i>`);
+      if (op) list.forEach(x => r += `<button class="gvcap g-${x.lane}" data-i="${x.i}" style="left:${x.l}px;top:${capY + x.r * 25}px"><b>${esc(x.tl.replace(/〜.*/, ""))}</b>${esc(x.short)}</button>`);
+      rows += r + `</div>`;
+    });
+  }
+  const rest = ev.filter(x => !x.perf);
+  if (rest.length) {
+    rows += secRow("staff", "運営・スタッフ", `${rest.length}件`);
+    if (foldOpen("staff")) LANES.forEach(([key, name]) => {
+      const list = rest.filter(x => x.lane === key).sort((a, b) => a.s - b.s); if (!list.length) return;
+      const lanes = [], isPart = x => /^第\d部/.test(x.label);   // 第1部〜第3部は一番上の段にそろえる（北本さん11/20：「3部の位置が本番の真ん中にあるので上へ」）
+      if (list.some(isPart)) lanes.push(Infinity);
+      list.forEach(x => { x.l = X(x.s); x.w = Math.max((x.e - x.s) * PX, x.label.length * 12 + 18);
+        if (isPart(x)) { x.w = Math.max((x.e - x.s) * PX - 2, 40); x.r = 0; return; }
+        let r = lanes.findIndex(end => end <= x.l - 3); if (r < 0) { r = lanes.length; lanes.push(0); } lanes[r] = x.l + x.w; x.r = r; });
+      let r = `<div class="gvr" style="width:${W}px;height:${lanes.length * 30 + 10}px;${grid}"><span class="gvn lane">${name}</span>`;
+      list.forEach(x => r += `<button class="gvbar g-${key}${x.pt ? ' pt' : ''}${/^第\d部/.test(x.label) ? ' gpart' : ''}" data-i="${x.i}" style="left:${x.l}px;top:${6 + x.r * 30}px;width:${x.w}px"><span>${esc(x.label)}</span></button>`);
+      rows += r + `</div>`;
+    });
+  }
+  let ruler = `<div class="gvh" style="width:${W}px"><span class="gvn corner">時刻</span>`;
+  for (let h = h0; h <= h1; h++) ruler += `<span class="gvt" style="left:${X(h * 60)}px">${h}:00</span>`;
+  ruler += `</div>`;
+  let now = ""; const nw = new Date(); let nowX = null;
+  if (nw.getFullYear() === 2026 && nw.getMonth() === 10 && nw.getDate() === 21) { const t = nw.getHours() * 60 + nw.getMinutes(); if (t >= h0 * 60 && t <= h1 * 60) { nowX = X(t); now = `<i class="gnow" style="left:${nowX}px"></i>`; } }
+  const z = gzoom();
+  let html = `<div class="gvbar-top"><span class="muted small">時間の幅</span><button class="gvz" data-z="-1" aria-label="時間の幅を広く（狭い範囲を大きく）" ${z <= 1 ? "disabled" : ""}>−</button><button class="gvz" data-z="1" aria-label="時間の幅を細かく" ${z >= 3 ? "disabled" : ""}>＋</button>${nowX != null ? '<button class="gvnow">いまへ</button>' : ''}<span class="muted small gvhint">枠の中を上下左右に送れます</span></div>`;
+  html += `<div class="gv" id="gwrap"><div class="gvg" style="width:${W}px">${ruler}${rows}${now}</div></div>`;
+  html += `<div class="glegend"><span class="g-in">入り・搬入</span><span class="g-show">本番</span><span class="g-out">撤収</span><span class="g-etc">対応</span><span class="muted">札を押すと詳細が下に出ます</span></div>`;
+  window.__gev = ev; window.__gnowX = nowX; window.__gLW = LW;
+  const pf = ev.filter(x => x.perf); window.__gfirst = pf.length ? Math.max(0, X(Math.min(...pf.map(x => x.s)) - 20) - LW) : 0;
+  return html;
+}
+// 操作：見出し行・演者名でたたむ、時間の幅、いまへ、札の詳細（画面下）
+document.addEventListener("click", e => {
+  const sb = e.target.closest(".gvsb"); const zb = e.target.closest(".gvz"); const nb = e.target.closest(".gvnow");
+  const keep = () => { const g = document.getElementById("gwrap"); window.__gkeep = g ? g.scrollLeft : null; window.__gkeepY = g ? g.scrollTop : 0; window.__gkeepC = g ? (g.scrollLeft + g.clientWidth / 2) : null; };
+  if (sb) { keep(); const k = sb.dataset.sec; try { localStorage.setItem("zf-" + k, foldOpen(k) ? "0" : "1"); } catch (_) {} const sy = window.scrollY; renderZone(); window.scrollTo(0, sy); return; }
+  if (zb) { keep(); const old = [1.2, 2, 3][gzoom() - 1]; const nz = Math.max(1, Math.min(3, gzoom() + +zb.dataset.z)); try { localStorage.setItem("gz", nz); } catch (_) {}
+    const nw2 = [1.2, 2, 3][nz - 1], g = document.getElementById("gwrap"); if (g && window.__gkeepC != null) window.__gkeep = Math.max(0, (window.__gkeepC - window.__gLW) / old * nw2 + window.__gLW - g.clientWidth / 2);
+    const sy = window.scrollY; renderZone(); window.scrollTo(0, sy); return; }
+  if (nb) { const g = document.getElementById("gwrap"); if (g && window.__gnowX != null) g.scrollTo({left: Math.max(0, window.__gnowX - g.clientWidth / 2), behavior: "smooth"}); return; }
+  const c = e.target.closest(".gvcap,.gvbar"); if (c) { const x = (window.__gev || [])[+c.dataset.i]; if (!x) return;
+    document.querySelectorAll(".gvcap.sel,.gvbar.sel").forEach(el => el.classList.remove("sel")); c.classList.add("sel");
+    let t = document.getElementById("gtoast"); if (!t) { t = document.createElement("div"); t.id = "gtoast"; t.className = "gtoast"; t.setAttribute("role", "status"); document.body.appendChild(t); }
+    t.innerHTML = ""; const b1 = document.createElement("div"); b1.textContent = x.full; const cl = document.createElement("button"); cl.textContent = "閉じる"; cl.onclick = () => t.hidden = true; t.append(b1, cl); t.hidden = false;
+    clearTimeout(window.__gtt); window.__gtt = setTimeout(() => { t.hidden = true; }, 8000); }
+});
+function briefFlow(zrows) {
+  const ev = zEvents(zrows, zoneTab);
+  const perfs = [...new Set(ev.filter(x => x.perf).map(x => x.perf))];
+  let h = "";
+  if (perfs.length) {
+    h += `<details class="fold2" data-k="perf"${foldOpen("perf") ? " open" : ""}><summary class="fl-h">演者の流れ<span>入り・搬入 → 本番 → 撤収・${perfs.length}組</span></summary><div class="stack">`;
+    perfs.forEach(name => {
+      const list = ev.filter(x => x.perf === name).sort((a, b) => a.s - b.s || a.e - b.e);
+      const s0 = Math.min(...list.map(x => x.s)), e0 = Math.max(...list.map(x => x.e)), hm = m => Math.floor(m / 60) + ":" + String(m % 60).padStart(2, "0");
+      h += `<div class="flow"><div class="fl-n"><b>${esc(name)}</b><span>${hm(s0)}〜${hm(e0)}</span></div><div class="fl-steps">` +
+        list.map((x, j) => `${j ? '<i class="fl-ar" aria-hidden="true">→</i>' : ''}<button class="fl-st g-${x.lane}" data-i="${x.i}"><small>${esc(x.tl)}</small>${esc(x.short)}</button>`).join("") + `</div></div>`;
+    });
+    h += `</div></details>`;
+  }
+  const rest = ev.filter(x => !x.perf).sort((a, b) => a.s - b.s);
+  if (rest.length) {
+    h += `<details class="fold2" data-k="staff"${foldOpen("staff") ? " open" : ""}><summary class="fl-h">${perfs.length ? "運営・スタッフの動き" : "当日の動き"}<span>時刻順・${rest.length}件</span></summary><div class="stack">` +
+      rest.map(x => `<div class="mv c${x.lane === "out" ? " k" : ""}"><div class="t">${esc(x.tl)}</div><div class="d"><span class="fl-dot g-${x.lane}"></span>${esc(x.label)}</div></div>`).join("") + `</div></details>`;
+  }
+  h += `<div class="gdetail" id="gdetail" aria-live="polite">${perfs.length ? "演者の札を押すと、詳しい動きが出ます。" : "誰が・どう動くかは「タイム」タブで見られます。"}</div>`;
+  window.__gev = ev;
+  return h;
+}
+document.addEventListener("click", e => {
+  const b = e.target.closest(".gbar,.fl-st,.gcap"); if (!b) return;
+  const x = (window.__gev || [])[+b.dataset.i]; if (!x) return;
+  document.querySelectorAll(".gbar.sel,.fl-st.sel,.gcap.sel").forEach(el => el.classList.remove("sel")); b.classList.add("sel");
+  $("#gdetail").textContent = x.full;
+});
+
+// ---- 回遊施策タブ（スマホ版スタッフシートと同じ中身） ----
+const QSUB = [["top","全体"],["booth","ブースBDE"],["c","Cゾーン"],["help","困ったら"]];
+let questSub = "top"; try { questSub = localStorage.getItem("qs") || "top"; } catch(_) {} if (!QSUB.some(([k]) => k === questSub)) questSub = "top";
+const QV = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAADhCAMAAAB4FU7WAAABgFBMVEXd4doaXmcrKSBaYl+doZtYnaZiVh/ZbRDRtprXxKvdo2vo2Mjm18lrcm0EcnE3k6Lv1bEbXWVQNxmsqKIpHhTksaIhKSFWLhUUJyPr2MegvsOWgwkkXWBdfIKcWhhTYl6Nh3X/AADl0bsA//+lr6lOXlz/9HqmraPqrHAAAHtdUx3/e3v/+gSGe3GnmXHkbh2keHEAAP++2+AHdQpug31///+xwrwNPEMecYPdhyjk0L5/f/91jHR6k4q0AAD/tBUMPEMqSD8A/wBIfIJcg4N/vsJ//3+RbSSKe3mIfXmSe4OViH+/1L+rxL6q//8AAAACd4vc18rj283VaAEBWGoFBAMAZXfjdwbadQzp5NYCR1Wnx8wAOkYuh5YAbIOMqq6RtLmYvMIAMjubwcfVeia21Nj///8WgpIWFBABLDJod3dKlqMlfIznyatuh4iztq7WgzHogRXkgifbpXHjuI/r1LmNl5Py7OLXlVR0lJaPegZup63RiUgATmBLiZJUamrnamTrAAAAgHRSTlP09/n8+f7//v7+/l+fEgb/HJ/+DiMPWxKeJv7/Yf7+VvwBWAGZowNcCgITAgH4DwcRAf8H/gL/yND+ogIdKQMFqVUBiUj/AgdnmyGkDLIDAP7+/v/+//7//v7+/v7//v7+/v7+//8B//79/v7+/v7+/v///v7+/v7+/v/////+/WxorY8AACAnSURBVHjazZ2HQ9vItsYlS2DZQKgpZBPSs9lsNtndu3dvf/f1/p4tmWK5ADYKOAZbTlxZHPjX3zkzozLSjGwnbN49EKqxf/5OmTNFsZL78nYM/1YeLypgf3y8Cd8fJ9xY+fJ4x7k3jxctZqa1uEmR/1YAgWWF4PVbhmG0LNuyFldyz/9WAEE+wLNtqzd2CmhOt08Ij/82AAFjQbHtVtYppAvU0mkDCaVxqHxZPpTP6npwlHCrZ1l/zP0qgMffHh+vHwcGXz8/TuazrUyH40NrWdaCjFD5jHA6lv1cTLmSewzyZQsxSzuWpcicrHxysONDgj1eWPzjIrWFhYXNlZsy+pvI1x+nCwJCQy4hB3i8tHQ8Ld2jzYVFBaqFbQ/RFGVoQ3KCFIsLK4Ty+PgVr9+CNWw5BZGlx/B3N8WESkQUfO6vEvGI/1aAzkYo09AH+Pbdd7phZAguUj7eXCFPOKTfgmX3xHw0CjeTAfFhH61skvtNGnue/5YMUxbQmXpTSzV2QtZIadpD3QB0G5REHf9EK/AjyifDK6S7Uh8rfoFCl9k2eGjzhRTxeB1vhwAZXePYOM41TbcoI/zN+sr6+jHGX6YgBwQfLz6SAz4iBWCokGiyLYgiYHkkjL2VBUtRMg/ldMxSTdcaMkR4ANAv48gBC440CBWvvsMz7rdarT5Gka0sCEZwggdxp2thkHliIt6UbuJAu/AYEt20W8VCEmDfMsUjsoLCLC3A8DMqEhtne5COgPgtTwjefb6gDBUOb2d+PkV8Sj7FEQeY5ZjqlpWkH2aJaS7k1iWAuYWhPSoU9ohBnepkEBHaoONv+SbEVjIcHvChhGupnYaYcEe3TWip+mZ/XJgECFlyUwgIfLbVYXjECoUxQVwI3HxMgs9s8q5cmwfGr+YbDXS1HBCsU5gEaMkAn+dWFGUU4isUiyBjp0VFXKGjbG4TUvy7aKTNN7wgbOwIJdRsgmd3J/EVMlLA30KC9Ip7YQPCvXQRQ1HZZDcD+dwYAVNtLdWAr+bX4nwPKZ+VmchX6CHgitDFK4rF8yEd/KQw6mOurLx48QKaJKUpyIF59gEjUAA4YP7tO4VpFHwsicGFYbbA8xULzNc9GF9xagOp+N2OGLDxy9YaSeVYpWmw+DOt0US8NMagBPDNovKHdERBACym4YeEkPYAwsKMwn311S/zNJ+jvxxS/aye3z0Xx6PsyJHXQWGhXlHsqIcRMA1uLu4VeiyK7IfCOgeypVI7Qr6dlDdx84icbgu/bY3FHaF1M/etCHBhmIkDopFcKXQZ4dAV1ZE1EnmplIBvJ2VaphnK4Cy6G35mWfGcTsMvF9fFCi4MewUhIK3cheyQDASWPdQbIg2JiUpMQwkyOF1wMrZpsplwP1YV05DEi5JuZnHYjYYgJaT5QrzMqpkCI8bO1AaAoBfLYKfFMpqo2J2+Tudg8BcChlLai0NzKPJyI5Vam+dsbS1F2sRMwDLuWx4fCcN4M2MmAcb4QDjaOVBaT0N7LYo2P//LL1+B/RIzAEVAKqBjcXxmtHPAdhByZGl6Bdl4UmSfWrQjsbUQHLAxtK/Ie9wyVp9kCBa5MF+8MmJDvbgumXaKAEn+kjAkMhZGNumahpqfGZSJAHpepba2Rhy+BT83vDHE4Pngu970E2MEjGVxOl0odsCKBQabJU5WNCod1e0rRFtLSdIGbueVmKzN81mx7h9DULY8A1ncK8aTZERr6shTsWVD0bC1FPqVwaVSyT3/uJvNYBc9tqJ8lmVEqiDMX9blgK14oe7R8Q37bFKwCx38gf2QxNtXW9iiTrA1v8PP2NStckDoFOxF6dLHY7tfjOlne9Fi21nSOsCIAoaA8/OpyTVwbSuYgTijbrfXtznGTHTGJOn3yVhs250IoNMigwArzzB2Yr3u2qb9cCq6ndRWcS9a6LK9FtXRpP1D2LrydQUA3FSUbCRFfAGZiMTNxT5MhgGv8Ql4rJXp9b0k6UZy2F6QL7/dXlSyvI8xZ0MZB3NHp0AkbHU7kxRMrW0VxHjoc2dskKGOr4NQpc1NYSfDGlYl0s4Uez4gK9AZMqxg1XnvyPMD4LYcsXqB0fIw5qu0vbiUsAS8aUdafhw4aBZbbFoLiY4DCnnfK26tRSsM1uetQpHMWSdaJ9uyHb5XlS9f0jmJPeIB+14b7TH2s8XAyEgDlcazra2ttDf0TGedLj9dshdvJgAe5xYjszoG6GsIaw6FIm+RrArH2azWSRYQAWHe/oFLklYYz8JC6HU3gSEypXKczmg0yvZ6sLKT6Wa73W52PHamBoSMTNqFQMAVGwrNe24csRiijVWQk44JSNk6WaPV9yMV8jOoxa3uqDONoE7fTBSQLH0s8nlczFJAeNw+kS/qXtSvM+plcJsIoUzPgq8IaavVG08xH7Y2H00AhLWjTgQQV1DZMFeMedcZd/te9x60UKbAUMlxkpAj7HQ2Jym4zg8mxRFZf6NjXBQO6qrRx/pIJ2gM0pQbMPayCWvTkwGJhP0/vA+i0CEe7hUFfM6oxyvnz4QSGfuy5XMDg3dhImBkPIZKDftVrOIF2UF2/mzbEpg50ayuGLEHQ+nisWC9ObwE/FuUsBMOwmF/VGTNf+Bcx4g0TdPjIWErK1vWSq6DdHWSrzSdTIcOa3sh58KQafJzs5kAEXEsyWNF3ivQVX6sNFzbWgxNPSkeaTkjU5/Z+BBRFIoOVCtlM3m381voGBQjXKx5/xbGLds0LYlJcezYryzRXkQRNFz8Pnk7FiTEWvj+vQgQ1gktRYyWwAf7rm4mxkjmYbHh2J64HXt8DAvV2eJ7YjzhHpHPkgMKES1bx5YspZn2FG6GsVXZTN6OfQ4tA3RdhO89P4HviitLooiWqe00NNjK20m5VowwLqElb/oZ4KvjF4vDPpPQE5EMu1lRYbHMcGMQB4RFEs1Uhi7IiItcEcJ4vYGpqbLyKnG3E7sumzk5tITktHj5QE1zco7AirZm22xbYC2eKl3BVp2dvNsJiQydtd3d4zXk+GB+p7iwwxPJZ0EAZmB51XYbwWbOBMI0xpHy39LNRLaVBID2B4+PEI45/WyyD5YaREQ0o41Mxm4ClOXPW1J2/ClEE6Uo7at5wF7nfUhCh0tfW4edoybsw2pRN8c8nNpR8NaeGXGVe/HxRLL6EXYxDsjvA3N6Eb6UoSg6IUwEtBRY4Q+tJeKGjjkpUXoKri4sJSh4DEnSZWn8Aey9Y3D5YTZSJt0Oa/hbhGJGy0WRiYc1+jEOaEa3j0e2ZJU6cDE2/gwO+dLc+gIuXupKpkFXPlKJ/SBoDUiIpimuDDC6/1lsJQNiCJKOywfMcsObbe5oQ3Ab4ZsgIQEkCqbo9rIQMFpqII+FQagEAkIVBEIGmO5xAtoDENDdaaABYNNO0JC4OByDTQGg2YrNTgBQQKgEOUzXFz6ghu8/ZPmHH2oNBTY8cesaETWbTUWEgBlMkmZiksCtIs3hGJqudSngOowj/T+gh6mC78l+dkhDO0USswEnYxAwZYVmlyFAyyszhp0JAF1hO9GNAop3Ivx2y2aLcO9Rv3QXZnVckU6lbHseo0/BQEyZMcAQBKjXtAMJU+J+LFIKR3AXKzJAKILBQjABNLz9ryiglklNBDQzDWgRFC0IQVG/0y9GF9LlgHBwyfaX0nEUGUVTwF5LYaXBGMQPKTuxtcdmBsbsZgo3ayUCRgBBQVPuYm6FCwAjKewlycOdVIPmsWZPmH2koN2Ck0zmoLHjSm7bisagqcgASQ53Q4Cd2Axp2NxxFaPhAT60J6wnAGFK0/EQ0ED2XOKAi68lWbyU45b6BR62SPEFHzPCjB3upMlCRPTxaQSmfP1iAw4PmAYXL76UAGKzGpp1pp1eJEXQUg0Fxy/Pw0FmAJur60Z08mEruj5wPXCrZcDCodGSZ7FhWtKRBBdnwgtwYysOOBzgWGdqKdwLdgNA0JZ2BKlmJFfJOrc/lyt65wIk/UwHQnAhAZBbBc76uzhhJ2Nmwtajq4UGOjI72qGyStMVhpat0JK+cCRJZ01TWZG3W9xeCV0fjAGSuB9o4YEYHmaejs9e6ogBO+FyJwZED7+Wz0mmALTQv+RUYDApMaGHaASATRmgExw/8aOQO44Ex1IUU9ryP0LA0URARHRJ2IemUQ/DgIKKR8IwmKuPW34MchueWzArUFZmAhRO0kkDEV7VsrGFZXiiigcZlCFyZUfjcbbbCi1nj7hZXUYxFx/JJu6PRC4OMeFs2F/kiCLr3uQtJdLP9btVvHV4Ct/iD1WYivJYOi9OUtDuG/DcR4YlXN1CBnOggT10bUEAQnshGUn4IgMpYsL61iv5AiYPOPIFs7IOO9naN03B6ioNM1s0koANH+7I2oouf3KrJSmCDBBOsSvdEODYd6CByzOO4+zhajdZ8OMXjpJ7GpwxiVsFfpjbShCQAGI/ncFTMkV+wQMK2J7jkBV02IQHHN20+B7QSuRr7EhKI7+hvdWVpjDfLPiAe95BEthrL9I1pJ5Fu7yhGfWzlA8nnsL5HCR1msuQPqRw4hIwnTKxZXM6GHsH1bodcDDs8JJ8gOO++nDKPRJyfEDYNlr8IJLegtotXb4MGtahUUx7fMWOvy5JTqd72QCLHzAnCXqnBEBbb9AThIKNPDsbCcCM9XTCRVdkUufs+TvBjt9R+7NLfAAbW2qdtSiJq0c4wuzMK7E0wh/YRuRal4ylbCTvk6CPLZzV+Rvq42gyUIwhasiWnRO8bBtkemVPkSBw9BJc8mBj0oV/x2/IASQPEGt1nJAunTawXUhaxIQJJ06tMFpFfEYhzZ3LAwd/vXEndE3QEn9ZkDcvfgzH5f3dfljaNyRVGYY2EFEZWuJFakAf4Lx0XjJVsjLcXA7qPxxw33h5a2NpaX39TwHYjaXI2syjFTpzL3q7D04rSscITbK+0MwE7bLPB+OJoSFeY2CzuTC3JGJG4g+nmqb9NPc6d4vRvHr9ev0/v19a+jfB4tECKYXB/lxWtj6EIjZwzqbYQ9s7hEZMp9fBNLSMHdqKZZSk+elGJ3Km9V8buY1bd16vr3/99dOnT/XB+Xn7flN79kCwPgjn9OiGP7HI+mUI0baaZHIHFzB9N9AzIKqRgSuI2PVNcCmOP1NiRYCdG7Ai0xAc320XJqcHBweHzA4OCGCzqS2x/j8A3IRE5rawQyvAJr+nZJsPUw22yoDHLmk/iN+tDUySQR4grZakvtiZjn9UxJs/WT8f1Gq1gA7svN0GvqurBxFA3DS2rTE93s007ElXAaFtcL/TfDB25FbTM1xpCT8vqz8qFIr+WRZyLtM0yweHRLwD+o8AIqF2dfXsZeS6OtiuW7T75MIXX8N4KrPQpxlhZvRBU9PmaUNI5pncsY/QfB0vuWL7u+zYPN6V67s2pCCREO7xZe43/IV/sCerwKWN3DZxNtancnlpBzbk9zW5AyEQtd0CdzJj3LclfAc6BfR9rISv+sKLLzvcMZ6sP9Bxm4cTd7FpXrBJA06auENLXRKm4NSDgyhfAPgsBpj7X7x80ODPaXV6kZ1D0RgoXEH15jRw6rDIuQUupIGfK2HtCGsYEAi1jdjFp4+e4wV6vQ5/FAXOyYRmwiHAhP1O73cmnF1yCsXw5j05eW+bP3toIfHCCgIg9TF3dSxsiAIh5Bt/WAZUtGnREE5MhBvG8COFOJdWBX/3voPbazDB9v3KFAwMANsIyHzMX767vv4Stm773Hk8B++WHPkQrPuKNppYOccJYSd6Mgh3x22zzLmXV5ACkiDceCK4APrNQzz3nBlF7xkup7GVoKsLb2pHAo9ld2vkxE70dVrEvS6PFwX0SrV2O3YBNI6HrgvrgDBqhu/eQRkdaPztYNjiAP0CaRE6q2fA34ePBcHRAjwaSuWr8QIe8IZB+BPJEjLahS6Azr3Q7x4dwchTxr631eUERF449YbHBe3wxkhIQRt3vG1YqiTa7TncwaUO5C4EpQnJW6sJyh8PGBrtwoA3Xfa3romR3BozNAfxHMrYGY+NVsayw6Z4J0r7rV537NCWw3H2/GoK54LwMIFtl13Aq0UIMVPiQSgCXNfpH8N7mR4Y71AyZh4lSmn04P/BaBk9sFY/A5+Ncafj8HHBjkN2Rlmyb6WYBO+QJ4z7eECDEHqu3I0YINW/hiKSzc4MVNkQoSO0jkNCIO04ae48JNHQyVK5FYWpV6txTj6IuXjg5TEJQh7wiAQwvQvXpKc8jE4xygNAnc6HdDr94UPxw4eOg1+msdYhJ3bluFryHm4FZ29J6EFq3D2sHTH9JmTJgPNxALiUWz+seU+SeIH6GQaDcVi8tIO+dD44nQ9ICVuPgJx20mmHKAi7BB+okM6I7kjaJHN9vHgQRgEHbdqzQqk+DgH+Nvd1CI/ejauY5KxtKwOpCZBpvE7H6RBzPnjWIXLCR5SU+rUDh3BJVcHELdcoXk2IF3PyYMCaalIJA8AnL556z/Du3QCxTGoJlo/uaITSIcqHuHVo4cOFkp4B1z3YZMYCPSnCHckBD4RByABf5paUcBkENHoP5bvlu4SSlEUFt2WwbYLRK9uF9cxxh3mbmpNmwTnqwtll7xw7NohluI8jz2pCxjggKoiEtCcMAd7UDz3tymC1u+Wad8flctCdkhPSRrYHJ87hAHoWP/Tg/HkG/oeBoDzCcyoTz+LfHwkYE10cCsIAcAnqNACWQboyM+/OyUPdZZAY84otN4XMNcp3ayHtBIRJTh54M7umFp6TgII1D+6uR1gmfERQKqwSafVtlqjeKjDc5Ge8KflLTj2OMDEKdQ9QgywRA4bsyPtMHwtjE7+NNoD0eWHMHkmtFtYwYTAmWXKfdK1LYUAYSMrTmP+A5dBDhzxaFtPVjoJic5gkIfznK6zt5wBJGSx/rpGIoGEhcS77IqkS6szHAPggAFzPfQ1p+7l8ZQIYkbpG38N8k4KwzXz8jAOsHd4tfz4hHwrlIAYo2lSArM4A4W0f8EnuKYy+1ydf8LMgl6cdTXSv42peBXXwyauntEC/hbcy/WIqeztNQtWmH0rKZdK0/kQAm0sKV2Xw8d6SRySf2Jf0eyR/y347S9L4gJHxuMZaOwoLUBcXF3Pnl5dtiLxnD77XdReOQjx9zQEykLAxyNAPPW5PwCRq37uek4OfU665ubnLudPL6tku2va2ur2rkuXWlzqsOT79+rWfJKQbPGIP92OYkMcL07xlSscIjwQhgOFZq4FIc3Onp3NnZ3kwdZdxbW/Tj/Bpt3T7eH3pwX/oTx/fDE87CSA8lAJvb+G/98BPnoJvo0YjNaRoQPg2CBGwo8O5i4uj2txpFQ2gVHU/n9/dZ7a7u78bMopZgjXh3IN/X2f/B5QH+K9Qpw/LPyqe4d2bihnG+vFHn5l9pl8p+Jn8RfktOO7gqOZ5bi6v5vPV5Tx+ipqaV/djeMTLt3Cu5P/nWkpQBkFBJbAfUUeToP4YON2X6y19Fgp0EYeo1Pn5+QWodQlCnZ5Vz07AEAs+JpjK8eWpm9UNAFzyL98IXAxV5q0SNaIQ/ex9Sx1Yg9HoonZ4MXd5OYeBdQpv6Mbl5WoVoBK5AgvLp9IoREDRKeClf3xaK8cBsbsiTjXfHsydX0CgQyG4vGCGjsSor3qGupH3GQEBS92dAAgKlkNU4NzywcU5QB9qQARanc+BVKf4AdIQEpF8PD0lqi0zOmLT8+V9+fJeNoP9hsVgdBH9f8rlw4OLA5iEgdsua+XaxSXSEKUugIT6EcDoZ88onA+YnwHPV9D/ggDeEABCM/js8vTi/LJ6iTgXKNUpQQNWj+YSyUJoBI+nI28zAHJpzADVewLAG7kHKhRxSD+wahWoLk/h7bI6FyKCagZ6LYe0O61WufAj8k2PR4QLZQpTUAK4O3e5u6vmkQ8MsEA6eKvOXVIaiLZl5COIyzwcBWQPOouD8xxeIuDSrgpqwZ8wwCqJ/0vyzSl5ry5X0aGn7MNyNSLfLMoxvGVVwCcDhNtWL04xodiDXl6GCIJUWF6uVuPizeZZUqJhjMnvCvi2V4WAf4Gyf3aGIgaInC1XZXZyMiseqgflfDc2FtNCeFtUB/+MgCDbBUE8q85gs/LtwxsOhDAazwD4WoVm4wxiD4vf0Zw6FaNfmmeg2w2Nz+quyMciwCe5ld9Xz1gGV+cuym8vqmJPfxYfenZ5Obi9qqoiwBvCK3JWsV1jhBCMh0dHlyo822S+/GxF+WxueRn8KwNkLt4WAuaeVc+q+epZkBGn/3KhYo8rhaTj2tR0eaj60VvLAL+JAX6T+6czaiEC6FROYbIAQsYgZ3Ht/n4+4trgN/uiLOEKIQOEoeQsTggyQlZDf3ymehXcA5w26iBhYQASP5t9CeDqDICkYmP/MIc1PJBycviRR4Sgw7CTSjuLgv8MEy0JIf4Iu6xLbCrB4/vBkHsiCrd92gXA2D23fJLg+V0Ob9s3sYJ/PgtZABZQVrEVvCBtPuQQmyvu8g+CpQkaCbgBNhUniYEpFI8CPsoJAP+CAuZlbkaDu2Wdzhw1HKyBBTqdOTZMwxcwVk8zJ5kV8AkMJfk8ryHJVFHxI1alXVeV3OTkZJnNlqauikmAORHgTTZ3ZYB5NvlBRgaaPwlb/rNMTgdWuk2PzPCFenPVB+TuKhjS8l7HTCo0zeJP5UzgU7dLt0JZEuw0rYrv6qRKs5UF1udKl9+PFRceUJ0e8CTyzYkX/Cefrpy09gV8EsAbuXtJ9+sJd5I/+Xz9Evi21RKYGPDB9A9zcl3O3Y3JV6KAv/k8wF8j9oh6lE8CuPRrwyX79uPHjyVmFRHgk9z3v/9y4m3H8Eohq9wWNKzQ9K/+qoAJdKQ4hyx1W/zSC6tfBE8E+JETUAI4oc5cG9+2iG86wAe/Cl6ydlHvkhAUAz6B5ZkvL56ATw74Qv3/AFSjeJWKLEmuPUsm5m40+ChgXQJ4vVkSLS2C0ieIPmLv7sgArzMIecC4YwXRV2F257bsJWier/4qeJLUUCV89Vuy18i5Rh+H+CR49yX+BQ8nAC7tfwH3lkofS+r5pYyv8m5DBngthWY/2rnEw+9ChfeKEI6E4N9JXwbpRu7Z9bpX1LVoutoGpm0xYL0eCcEI4JJ6LepJ4w8y4z4cr6yUZPrV66mNpFe6erGav76+Ly6fOqdr26X7WgBYwbckD/OAn5XHsa45qt52SWuXzivbofyoqBG8Sv1O0ktxQVut5vevqW+O6nd5WTpTt8+x/kEa/3xVQT5dq4d8XK9Xoh6OuPgGjsf7nwI3kQ+O6syVSnN0YlS5ygzQu+r8lhbycT0uYAxw9uFufz+WHKL0uGyr7W3VHz7cA+Jf1dDDGRIdRuJXQzyZvaWZZspWwvUC9TwoL5WBqw7cQamkbaUSPRwFnH002RcARkeObbgGo6Rehkbfimborm60381/p4WL4J3cD5NeUO949bNSN86n3t9Wz9vR1kB1jZ/qA1fTjHY9EPDdxsRX/JtJwv2JywWgntu+Uut+8FXu61fgW7UyMK7qQLm1pialiEDBH6aOwsmxV4KG/r520C59DEsHh8Zcva4Z4Ft18DDlC1gRCRgHJOPd/rUAltTBgVq61C7ZoAFZ2/5Z013j6iqjltwBgUpMYeGLOsJwsn8dM/ISVBa48rX0sULde6Ur4GrdcLX76hX4d2CofgmsEz6RgALAJz98vzqVhBNyV91Wr+DFFL2BrW0Y0MVUmq7brGOBqUBTE0pfzJBbt6d7WUw4t7L7ubVlW73valD5Bix9QbkD0gO6A93Q9SY4vF7n+OqiDJG8bicOePvS7XIxYLSruhj85Gr18ysggby4Ut02foWjR71tNOtcD0P53m1MDfjkh4l5kjTywjrpAUjWbJ6rXuLqCIR5UnoHPE1DexdRrx5vBJNe+RQy+ffYAHxi66Id6uel84Nzv+UDzbzGT4OyV4fCyMG9Q5sFkDSGCYDJAbjrDqC8kMa+Umq62J7qulrXDkrvVBzdSEmJ0AHfTIC5b97IwnBflCHhtupAbR+09UvSFcBF5e4V0GjG4F3b0K50/aeSV1Y4vHeNO7c2ZntxWxaGCDJpRTccf5C34F7aF7TdjNvWmuftEhSWK5DRHVyJxJP7NwGQlOv9WQGhuAzaA6gvJVwWOnDb6hVAQs+ngpPV5lXpXShrQ4ByPrmCSMga5RnirzQ4aJ/f98fdd1pGvyKBd+XqpXf1SOZOwZfw+sU3Xt1j8ZYPEmZihYauT8U5B/ExdAQ6ZC3IV6o3XTVS9wLAW7lPe5n0v64GzbwcULSo1lZ01vSR4QMAK8G4G40/frltpleAfqPmZwUko/BhBsKupFbaCs7RK6GmVASYyDfhJaqXfMKp+bbVtpLRoZ0amCqZhdQ1V1djfPUp+Sa9hjZHKJq+xQW8slwIOsjegUqG37YR5qvMyDcB8EaIcF80v9wWLQ+V1IzuZugCR6WE/f2n801SEAhX87MBQgHUM9D80eYA/1XkDp7IN/Fl0r/JvRERJuxZfiy1MzDrQP+SFK6Elw4i+t2a/JLnE1/H/Ubuxb1dMZ2QD5aIIAi1jFq50t3I2lW0Qk/BN90Lzd/bFy1wbG+LN323z9UKjCAw+/gpunTFAd7ZyF0T4DckVXYnx19o2/Lc1TE5SgI6j+927roASars5qcFpJAqF3wc4Cx80wHiIQwSiLvJ2+Yft0sJi7veCFwn7n2Tu07A3A8/oIgTAeV8QQLDe+rWlPJND4iB+Nd7u9Mei5ALiD3MdNkxKyC6eWl1W57B0wCS5u9WLverAKKIuRurdO9ysnySAjiLd2cGzN34Iffqxur2FOciSsIBri6bGV0XIPHz83ur6uQEiQmIG9Wz480MSBAhFtWZAUG927ncFwBkiPd4RlVVE0oMiHfnVu7TTPmkv/qGY1QRTw4IdBsvc7kvCph7Qg74vby3uqqqsbNX4b0jkO4z6D4dED19A3cM3iBkqSQ4vFFJ3QG4257gXx6QMJKH3rj14B8AE9UE+93vfvf3d4Dt1u03uc+ly+Vy/wc81yjKzkRPcQAAAABJRU5ErkJggg==", QBALLS = [{"no": 1, "name": "ミサキドーナツ", "kind": "tenant", "zone": "B", "benefit": "ドリップバッグ4個セット", "place": "番号ファイルのポケット", "n": 4}, {"no": 2, "name": "タリーズコーヒー", "kind": "tenant", "zone": "B", "benefit": "ドリップコーヒー1つ（お好きな味）", "place": "番号ファイルのポケット", "n": 8}, {"no": 3, "name": "タリーズコーヒー", "kind": "tenant", "zone": "B", "benefit": "ドリップコーヒー1つ（お好きな味）", "place": "番号ファイルのポケット", "n": 8}, {"no": 4, "name": "Sta.R", "kind": "tenant", "zone": "B", "benefit": "クラフトビールペーパーのクリスマスカードづくり体験（２枚分）", "place": "番号ファイルのポケット", "n": 10}, {"no": 5, "name": "Sta.R", "kind": "tenant", "zone": "B", "benefit": "クラフトビールペーパーのクリスマスカードづくり体験（２枚分）", "place": "番号ファイルのポケット", "n": 10}, {"no": 6, "name": "Sta.R", "kind": "tenant", "zone": "B", "benefit": "クラフトビールペーパーのクリスマスカードづくり体験（２枚分）", "place": "番号ファイルのポケット", "n": 10}, {"no": 7, "name": "Sta.R", "kind": "tenant", "zone": "B", "benefit": "クラフトビールペーパーのクリスマスカードづくり体験（２枚分）", "place": "番号ファイルのポケット", "n": 10}, {"no": 8, "name": "Sta.R", "kind": "tenant", "zone": "B", "benefit": "クラフトビールペーパーのクリスマスカードづくり体験（２枚分）", "place": "番号ファイルのポケット", "n": 10}, {"no": 9, "name": "ファミリーマート", "kind": "tenant", "zone": "B", "benefit": "おかし1個（税込200円まで）", "place": "番号ファイルのポケット", "n": 13}, {"no": 10, "name": "ファミリーマート", "kind": "tenant", "zone": "B", "benefit": "おかし1個（税込200円まで）", "place": "番号ファイルのポケット", "n": 12}, {"no": 11, "name": "ポニークリーニング", "kind": "tenant", "zone": "B", "benefit": "300円割引券", "place": "番号ファイルのポケット", "n": 8}, {"no": 12, "name": "ポニークリーニング", "kind": "tenant", "zone": "B", "benefit": "300円割引券", "place": "番号ファイルのポケット", "n": 8}, {"no": 13, "name": "からだラボ整骨院 星川院", "kind": "tenant", "zone": "B", "benefit": "1000円引きクーポン", "place": "番号ファイルのポケット", "n": 5}, {"no": 14, "name": "ハックドラッグ", "kind": "tenant", "zone": "B", "benefit": "入浴剤1個", "place": "番号ファイルのポケット", "n": 9}, {"no": 15, "name": "ハックドラッグ", "kind": "tenant", "zone": "B", "benefit": "入浴剤1個", "place": "番号ファイルのポケット", "n": 9}, {"no": 16, "name": "手織工房じょうた", "kind": "tenant", "zone": "C", "benefit": "ボールボーイ（糸玉のチャーム）1つ", "place": "番号ファイルのポケット", "n": 8}, {"no": 17, "name": "手織工房じょうた", "kind": "tenant", "zone": "C", "benefit": "ボールボーイ（糸玉のチャーム）1つ", "place": "番号ファイルのポケット", "n": 8}, {"no": 18, "name": "ＳＡＩ.", "kind": "tenant", "zone": "C", "benefit": "お食事500円券（どの時間帯でも使えます。1会計につき1枚まで）", "place": "番号ファイルのポケット", "n": 10}, {"no": 19, "name": "ワオキッズ 星川園", "kind": "tenant", "zone": "C", "benefit": "おもちゃ1つ", "place": "番号ファイルのポケット", "n": 8}, {"no": 20, "name": "ワオキッズ 星川園", "kind": "tenant", "zone": "C", "benefit": "おもちゃ1つ", "place": "番号ファイルのポケット", "n": 8}, {"no": 21, "name": "YADORESI", "kind": "tenant", "zone": "D", "benefit": "YADORESI限定ステッカー1枚", "place": "番号ファイルのポケット", "n": 8}, {"no": 22, "name": "YADORESI", "kind": "tenant", "zone": "D", "benefit": "YADORESI限定ステッカー1枚", "place": "番号ファイルのポケット", "n": 8}, {"no": 23, "name": "Robert's Coffee", "kind": "tenant", "zone": "D", "benefit": "300円引き", "place": "番号ファイルのポケット", "n": 8}, {"no": 24, "name": "Robert's Coffee", "kind": "tenant", "zone": "D", "benefit": "300円引き", "place": "番号ファイルのポケット", "n": 8}, {"no": 25, "name": "PILE", "kind": "tenant", "zone": "D", "benefit": "アーティストのポストカード（4名分1セット）", "place": "番号ファイルのポケット", "n": 5}, {"no": 26, "name": "MuM'", "kind": "tenant", "zone": "E", "benefit": "お子さまソフトドリンク1杯", "place": "番号ファイルのポケット", "n": 10}, {"no": 27, "name": "TDM 1874 Brewery", "kind": "tenant", "zone": "E", "benefit": "ノンアルコールドリンク1杯", "place": "番号ファイルのポケット", "n": 8}, {"no": 28, "name": "TDM 1874 Brewery", "kind": "tenant", "zone": "E", "benefit": "ノンアルコールドリンク1杯", "place": "番号ファイルのポケット", "n": 8}, {"no": 29, "name": "CAFE＆BRASSERIE MASSE", "kind": "tenant", "zone": "E", "benefit": "クロワッサン1個", "place": "番号ファイルのポケット", "n": 16}, {"no": 30, "name": "fragrante tipico", "kind": "tenant", "zone": "E", "benefit": "ドルチェ1品 または お子さま用のソフトドリンク1杯（店内のみ）", "place": "番号ファイルのポケット", "n": 16}, {"no": 31, "name": "お酒の美術館", "kind": "tenant", "zone": "E", "benefit": "500円引き", "place": "番号ファイルのポケット", "n": 10}, {"no": 32, "name": "もつ焼き 肉の佐藤", "kind": "tenant", "zone": "E", "benefit": "ソフトドリンク1杯", "place": "番号ファイルのポケット", "n": 16}, {"no": 33, "name": "ジョウジョウ飯店", "kind": "tenant", "zone": "E", "benefit": "バニラアイス1つ", "place": "番号ファイルのポケット", "n": 16}, {"no": 34, "name": "大衆すし酒場 りく丸", "kind": "tenant", "zone": "E", "benefit": "たまご寿司1貫 または ソフトドリンク1杯", "place": "番号ファイルのポケット", "n": 16}, {"no": 35, "name": "カトラリーセット（星天qlay）", "kind": "cut", "zone": "", "benefit": "", "place": "番号の箱", "n": 10}, {"no": 36, "name": "カトラリーセット（星天qlay）", "kind": "cut", "zone": "", "benefit": "", "place": "番号の箱", "n": 10}, {"no": 37, "name": "カトラリーセット（星天qlay）", "kind": "cut", "zone": "", "benefit": "", "place": "番号の箱", "n": 10}, {"no": 38, "name": "カトラリーセット（星天qlay）", "kind": "cut", "zone": "", "benefit": "", "place": "番号の箱", "n": 10}, {"no": 39, "name": "カトラリーセット（星天qlay）", "kind": "cut", "zone": "", "benefit": "", "place": "番号の箱", "n": 10}, {"no": 40, "name": "カトラリーセット（星天qlay）", "kind": "cut", "zone": "", "benefit": "", "place": "番号の箱", "n": 9}, {"no": 41, "name": "カトラリーセット（星天qlay）", "kind": "cut", "zone": "", "benefit": "", "place": "番号の箱", "n": 9}, {"no": 42, "name": "カトラリーセット（星天qlay）", "kind": "cut", "zone": "", "benefit": "", "place": "番号の箱", "n": 9}, {"no": 43, "name": "星天シール＋お菓子1個", "kind": "ss", "zone": "", "benefit": "", "place": "番号の箱", "n": 11}, {"no": 44, "name": "星天シール＋お菓子1個", "kind": "ss", "zone": "", "benefit": "", "place": "番号の箱", "n": 11}, {"no": 45, "name": "星天シール＋お菓子1個", "kind": "ss", "zone": "", "benefit": "", "place": "番号の箱", "n": 11}, {"no": 46, "name": "星天シール＋お菓子1個", "kind": "ss", "zone": "", "benefit": "", "place": "番号の箱", "n": 11}, {"no": 47, "name": "星天シール＋お菓子1個", "kind": "ss", "zone": "", "benefit": "", "place": "番号の箱", "n": 10}, {"no": 48, "name": "星天シール＋お菓子1個", "kind": "ss", "zone": "", "benefit": "", "place": "番号の箱", "n": 10}, {"no": 49, "name": "星天シール＋お菓子1個", "kind": "ss", "zone": "", "benefit": "", "place": "番号の箱", "n": 10}, {"no": 50, "name": "星天シール＋お菓子1個", "kind": "ss", "zone": "", "benefit": "", "place": "番号の箱", "n": 10}];
+function renderQuest() {
+  chipsFor(QSUB, questSub, "qs");
+  $("#app").innerHTML = ""; $("#nowbtn").hidden = true;
+  const qa = $("#questApp");
+  qa.querySelectorAll("[data-q]").forEach(s => s.hidden = s.dataset.q !== questSub);
+  qa.querySelectorAll(".sm-vimg").forEach(i => { if (!i.src) i.src = QV; });
+  if (!qa.dataset.bound) { qa.dataset.bound = "1";
+    const role = k => { qa.querySelectorAll(".sm-chip").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.role === String(k)))); qa.querySelectorAll(".sm-card").forEach(c => c.hidden = c.dataset.card !== String(k)); try { localStorage.setItem("sm-crole", String(k)); } catch(_) {} };
+    qa.querySelectorAll(".sm-chip").forEach(b => b.addEventListener("click", () => role(b.dataset.role)));
+    let r0 = "0"; try { r0 = localStorage.getItem("sm-crole") || "0"; } catch(_) {} role(r0);
+    const inp = qa.querySelector("#sm-ball"), res = qa.querySelector("#sm-res");
+    if (inp) inp.addEventListener("input", () => { const n = parseInt(inp.value, 10); const b = QBALLS.find(x => x.no === n);
+      if (!inp.value) { res.innerHTML = "<b>番号を入れると、渡す特典が出る</b><small>玉の番号＝置き場の番号</small>"; return; }
+      if (!b) { res.innerHTML = "<b>1〜50の番号を入れてください</b>"; return; }
+      res.innerHTML = ""; const h = document.createElement("b"); h.textContent = n + "番 → " + b.name; res.appendChild(h);
+      if (b.benefit) { const s = document.createElement("span"); s.textContent = b.benefit; res.appendChild(s); }
+      const m = document.createElement("small"); m.textContent = (b.zone ? b.zone + "ゾーン｜" : "") + b.place + " " + n + " から1つ（はじめ" + b.n + "個）"; res.appendChild(m); });
+  }
+}
+const R = {time: renderTime, zone: renderZone, people: renderPeople, tear: renderTear, stage: renderStage, quest: renderQuest};
 function go(v, push) {
   view = v;
   document.querySelectorAll("nav.tabs button").forEach(b => b.setAttribute("aria-current", b.dataset.v === v ? "page" : "false"));
+  $("#questApp").hidden = v !== "quest"; $("#app").hidden = v === "quest";
   R[v](); window.scrollTo(0, 0);
   if (push && location.hash !== "#" + v) history.replaceState(null, "", "#" + v);
 }
 document.querySelector("nav.tabs").addEventListener("click", e => { const b = e.target.closest("button"); if (b) go(b.dataset.v, true); });
 $("#zchips").addEventListener("click", e => {
   const b = e.target.closest(".chip"); if (!b) return;
-  if (b.dataset.k === "zt") { zoneTab = b.dataset.v; try { localStorage.setItem("zt", zoneTab); } catch(_) {} }
+  if (b.dataset.k === "pm") { pmode = b.dataset.v; try { localStorage.setItem("pm", pmode); } catch(_) {} } else
+  if (b.dataset.k === "pz") { pzone = b.dataset.v; try { localStorage.setItem("pz", pzone); } catch(_) {} } else
+  if (b.dataset.k === "qs") { questSub = b.dataset.v; try { localStorage.setItem("qs", questSub); } catch(_) {} }
+  else if (b.dataset.k === "zt") { zoneTab = b.dataset.v; try { localStorage.setItem("zt", zoneTab); } catch(_) {} }
   else { zoneSel = b.dataset.v; try { localStorage.setItem("zs", zoneSel); } catch(_) {} }
   R[view](); window.scrollTo(0, 0);
 });
@@ -383,9 +1046,21 @@ document.addEventListener("click", e => {
 });
 window.addEventListener("hashchange", () => { const v = location.hash.slice(1); if (R[v] && v !== view) go(v, false); });
 tick(); setInterval(() => { tick(); }, 30000);
+const setHH = () => document.documentElement.style.setProperty("--hh", document.querySelector("header").offsetHeight + "px"); setHH(); addEventListener("resize", setHH);
+// 時刻の行をページの上にも残す（v9i）
+function gvStick() {
+  const gs = document.querySelectorAll(".gv"); if (!gs.length) return;
+  let lim = document.querySelector("header").getBoundingClientRect().bottom;
+  const jb = document.querySelector(".jump"); if (jb && jb.offsetParent) lim = Math.max(lim, jb.getBoundingClientRect().bottom);
+  gs.forEach(g => { const h = g.querySelector(".gvh"); if (!h) return; const r = g.getBoundingClientRect();
+    const off = Math.max(0, Math.min(lim - r.top, g.clientHeight - h.offsetHeight - 40));
+    h.style.top = off + "px"; h.classList.toggle("gvh-float", off > 0); });
+}
+addEventListener("scroll", gvStick, {passive: true}); addEventListener("resize", gvStick);
+new MutationObserver(() => requestAnimationFrame(gvStick)).observe(document.getElementById("app"), {childList: true});
+
 const start = location.hash.slice(1);
 go(R[start] ? start : "time", false);
 </script>
 
-</body>
-</html>
+</body></html>
