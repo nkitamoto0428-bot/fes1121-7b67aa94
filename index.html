@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>星天qlayフェス 当日運営</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap">
+<style>
+/* Layout: phone-first app — sticky header with zone chips, scrolling cards, fixed bottom tab bar */
+:root{
+  --bg:#F5F3EE; --surface:#FFFFFF; --sunk:#ECE8DF; --ink:#22302A; --muted:#5E6B63; --line:#DAD5C9;
+  --green:#2E8F5E; --orange:#C46A00; --pink:#D3237F; --info:#2E7D9A;
+  --zB:#9DB8C4; --zBt:#E3EDF1; --zBd:#1F6F8B;
+  --zC:#E5A08B; --zCt:#F8E4DB; --zCd:#B5483A;
+  --zD:#DDAA4F; --zDt:#F6EDCF; --zDd:#8A5E0C;
+  --zE:#A8B5A0; --zEt:#E3EADF; --zEd:#3D6B3A;
+  --zA:#B8C4BD; --zAt:#E7ECE9; --zAd:#3a4a3e;
+  --font:"Noto Sans JP","Hiragino Sans","Yu Gothic",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#141A17; --surface:#1E2622; --sunk:#26302B; --ink:#E9EEEA; --muted:#A3B0A8; --line:#34403A;
+  --green:#4CC489; --orange:#F0A24A; --pink:#F06BAF; --info:#6BB8D6;
+  --zB:#5E8597; --zBt:#22323A; --zBd:#9DD0E4;
+  --zC:#B06A55; --zCt:#3A2722; --zCd:#F2A694;
+  --zD:#A87B2C; --zDt:#352C18; --zDd:#F0C873;
+  --zE:#6E8064; --zEt:#26302A; --zEd:#A9D2A0;
+  --zA:#6C7A72; --zAt:#28302C; --zAd:#C6D2CB; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141A17; --surface:#1E2622; --sunk:#26302B; --ink:#E9EEEA; --muted:#A3B0A8; --line:#34403A;
+  --green:#4CC489; --orange:#F0A24A; --pink:#F06BAF; --info:#6BB8D6;
+  --zB:#5E8597; --zBt:#22323A; --zBd:#9DD0E4;
+  --zC:#B06A55; --zCt:#3A2722; --zCd:#F2A694;
+  --zD:#A87B2C; --zDt:#352C18; --zDd:#F0C873;
+  --zE:#6E8064; --zEt:#26302A; --zEd:#A9D2A0;
+  --zA:#6C7A72; --zAt:#28302C; --zAd:#C6D2CB; color-scheme:dark}
+*{box-sizing:border-box}
+html,body{background:var(--bg);color:var(--ink);font-family:var(--font)}
+body{font-size:15px;line-height:1.55;-webkit-text-size-adjust:100%}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--surface)}
+.wrap{max-width:640px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:12px calc(92px + env(safe-area-inset-bottom,0px))}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--surface);border-bottom:1px solid var(--line)}
+.hin{max-width:640px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:10px 10px}
+.top{display:flex;align-items:baseline;justify-content:space-between;gap:8px}
+.brand{font-weight:900;font-size:17px;letter-spacing:.02em}
+.brand small{font-weight:500;font-size:11px;color:var(--muted);margin-left:6px;letter-spacing:.04em}
+.clock{font-variant-numeric:tabular-nums;font-size:12px;color:var(--muted);white-space:nowrap}
+.chips{display:flex;gap:6px;margin-top:8px;overflow-x:auto;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;border:1px solid var(--line);background:var(--sunk);color:var(--ink);border-radius:999px;padding:6px 14px;font:700 13px var(--font);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+.chip.z{min-width:44px}
+h2{font-size:20px;font-weight:900;margin:14px 0 8px;text-wrap:balance}
+h3{font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--muted);margin:18px 0 8px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.stack{display:flex;flex-direction:column;gap:8px}
+.muted{color:var(--muted)}
+.small{font-size:12.5px}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:1px 8px;border-radius:999px;background:var(--sunk);color:var(--muted);vertical-align:middle}
+/* timeline */
+.tl{display:flex;flex-direction:column;gap:8px}
+.slot{display:grid;grid-template-columns:58px 1fr;gap:10px;align-items:start}
+.slot .t{font-weight:900;font-variant-numeric:tabular-nums;font-size:15px;padding-top:10px;text-align:right}
+.slot .b{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px;min-width:0}
+.slot.now .b{border:2px solid var(--green)}
+.slot.now .t{color:var(--green)}
+.row{display:flex;gap:8px;align-items:flex-start;padding:3px 0}
+.row+.row{border-top:1px dashed var(--line);margin-top:3px;padding-top:6px}
+.zb{flex:0 0 auto;width:26px;height:22px;border-radius:7px;font-weight:900;font-size:12px;display:grid;place-items:center;color:var(--ink)}
+.zbB{background:var(--zB)}.zbC{background:var(--zC)}.zbD{background:var(--zD)}.zbE{background:var(--zE)}.zbA{background:var(--zA)}
+.row .x{min-width:0;font-size:14px}
+.nowbtn{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(76px + env(safe-area-inset-bottom,0px));z-index:15;background:var(--green);color:#fff;border:0;border-radius:999px;padding:10px 16px;font:700 14px var(--font);box-shadow:0 4px 14px rgba(0,0,0,.18);cursor:pointer}
+/* zone */
+.zhead{border-radius:16px;padding:14px 16px;display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
+.zhead .zn{font-size:34px;font-weight:900;line-height:1}
+.zhead .zp{font-size:12.5px;font-weight:700}
+.lead{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.person{display:grid;grid-template-columns:1fr auto;gap:2px 8px;padding:9px 0;border-top:1px solid var(--line)}
+.person:first-child{border-top:0;padding-top:2px}
+.person .n{font-weight:700;font-size:15.5px}
+.person .n .star{color:var(--pink);margin-right:2px}
+.person .h{font-variant-numeric:tabular-nums;font-size:12.5px;font-weight:700;color:var(--muted);white-space:nowrap;align-self:center}
+.person .r{grid-column:1/-1;font-size:12.5px;color:var(--muted)}
+.loc{font-size:11px;font-weight:700;padding:1px 6px;border-radius:6px;margin-right:6px;vertical-align:2px}
+.mv{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start;border-radius:12px;padding:9px 12px;border:1px solid var(--line);background:var(--surface)}
+.mv .t{font-variant-numeric:tabular-nums;font-size:12px;font-weight:700;color:var(--muted);min-width:78px;padding-top:2px}
+.mv .d{font-size:14px;font-weight:500;min-width:0}
+.mv.g{border-left:5px solid var(--green)}
+.mv.k{border-left:5px solid var(--orange);background:color-mix(in srgb,var(--orange) 9%,var(--surface))}
+.mv.k .t{color:var(--orange)}
+.sp{border-radius:12px;padding:10px 12px;background:color-mix(in srgb,var(--pink) 10%,var(--surface));border:1px solid color-mix(in srgb,var(--pink) 35%,var(--line));display:grid;grid-template-columns:1fr auto;gap:2px 10px}
+.sp .t{font-size:12px;font-weight:700;color:var(--pink);font-variant-numeric:tabular-nums}
+.sp .d{grid-column:1;font-size:14px;font-weight:500}
+.sp .w{grid-row:1/3;grid-column:2;align-self:center;font-size:12px;font-weight:700;background:var(--surface);color:var(--pink);border-radius:999px;padding:4px 10px;border:1px solid color-mix(in srgb,var(--pink) 40%,var(--line))}
+.note{font-size:13px;font-weight:700;border-radius:10px;padding:8px 12px}
+.maps{display:flex;flex-direction:column;gap:12px}
+.map figure{margin:0}
+.map img{display:block;width:100%;height:auto;border-radius:10px;border:1px solid var(--line);background:#fff;cursor:zoom-in}
+.map figcaption{font-size:12.5px;font-weight:700;margin:4px 2px 0}
+/* people */
+.search{width:100%;font:500 16px var(--font);padding:11px 14px;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+.plist .p{display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}
+.plist .p:first-child{border-top:0}
+.plist .zb{width:30px;height:30px;border-radius:9px;font-size:14px}
+.plist .nm{font-weight:700}
+.plist .nm small{font-weight:500;font-size:11.5px;color:var(--muted);margin-left:6px}
+.plist .mm{font-size:12.5px;color:var(--muted)}
+.role{display:flex;flex-direction:column;gap:2px}
+.role .k{font-size:12px;font-weight:700;color:var(--green)}
+.role .who{font-weight:900;font-size:16px}
+.role .m{font-size:13px;color:var(--muted)}
+/* teardown */
+.td .slot .b .row .x{font-size:13.5px}
+.tdhead{font-size:13px;font-weight:700;color:var(--orange);background:color-mix(in srgb,var(--orange) 10%,var(--surface));border-radius:10px;padding:8px 12px}
+/* bottom tabs */
+nav.tabs{position:fixed;left:0;right:0;bottom:0;z-index:25;background:var(--surface);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px);padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+nav.tabs .in{max-width:640px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr)}
+nav.tabs button{background:none;border:0;color:var(--muted);font:700 11px var(--font);padding:8px 2px 9px;display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer}
+nav.tabs button svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+nav.tabs button[aria-current="page"]{color:var(--green)}
+button:focus-visible,.chip:focus-visible,input:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:50;background:rgba(10,14,12,.92);overflow:auto;-webkit-overflow-scrolling:touch}
+.lb img{display:block;width:220%;max-width:none;height:auto;margin:calc(56px + env(safe-area-inset-top,0px)) 0 24px}
+.lb .close{position:fixed;top:calc(10px + env(safe-area-inset-top,0px));right:max(12px,env(safe-area-inset-right,0px));z-index:51;background:#fff;color:#111;border:0;border-radius:999px;padding:8px 16px;font:700 14px var(--font)}
+.lb .hint{position:fixed;top:calc(16px + env(safe-area-inset-top,0px));left:max(16px,env(safe-area-inset-left,0px));color:#ddd;font-size:12px}
+.foot{font-size:11.5px;color:var(--muted);margin-top:22px}
+@media (prefers-reduced-motion:no-preference){.view{animation:fade .18s ease-out}@keyframes fade{from{opacity:.4}to{opacity:1}}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hin">
+    <div class="top">
+      <div class="brand">星天qlayフェス<small>11/21 SAT 当日運営</small></div>
+      <div class="clock" id="clock"></div>
+    </div>
+    <div class="chips" id="zchips" hidden></div>
+  </div>
+</header>
+
+<main class="wrap" id="app"></main>
+<button class="nowbtn" id="nowbtn" hidden>いまへ移動</button>
+
+<nav class="tabs" aria-label="画面の切り替え">
+  <div class="in">
+    <button data-v="time" aria-current="page"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>タイム</button>
+    <button data-v="zone"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/></svg>ゾーン</button>
+    <button data-v="people"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.3-5.5 6.5-5.5s5.7 1.9 6.5 5.5"/><circle cx="17.5" cy="9" r="2.5"/><path d="M16 14.6c2.6.1 4.6 1.7 5.3 4.6"/></svg>人・役割</button>
+    <button data-v="tear"><svg viewBox="0 0 24 24"><path d="M3 7h13v9H3z"/><path d="M16 10h3l2 3v3h-5"/><circle cx="7" cy="18" r="1.8"/><circle cx="17" cy="18" r="1.8"/></svg>撤収</button>
+    <button data-v="stage"><svg viewBox="0 0 24 24"><path d="M9 18V6l11-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></svg>ステージ</button>
+  </div>
+</nav>
+
+<script>
+const D = {
+time: [
+ ["7:30","全ゾーン鍵開け（土屋）。E倉庫から備品を出すときは緑のシールを貼る",{E:"E倉庫から備品出し"}],
+ ["8:00","朝の会（相鉄さん・YADOKARI・アルバイト・ヤドレジ）",{}],
+ ["8:30","PA（Movements）8:30 Eに集合→搬入 E→C→B。音量チェックはPAさんに朝一で依頼",{B:"PA搬入の補助",C:"PA受け入れ",D:"準備・設営",E:"PA搬入（最初）"}],
+ ["9:00","キッチンカー搬入・車両誘導",{B:"ICHIPO",C:"SANDS"}],
+ ["10:00","出店ブース 10:00〜",{B:"10:15 大道芸人ちぇん",C:"野ゲー（〜17:00）",D:"10:30 リビングトーク"}],
+ ["11:00","INFO・チラシ配布／回遊施策スタート（ガラガラ 11:15〜）",{B:"11:30 ムラタップ",C:"11:00 HI-ORLEANS",E:"第1部 11:00〜"}],
+ ["12:00","",{B:"12:00 ムラタップ練り歩き（B発・誘導 西田）／12:30 こっころ／LAB（2F）",C:"12:30 奥本DUO／12-15時 トレーラー展示（梶山）",D:"練り歩きのフィナーレ"}],
+ ["13:00","回遊施策のピーク（13時〜）・アンケート回収（目標100件）",{B:"13:45 ワースレス練り歩き（B発・誘導 津田）",C:"13:30 デザイヤー（司会：斎藤）"}],
+ ["14:00","",{C:"14:00 たーにーゲーム大会",D:"14:30 YADORESIカフェ",E:"第2部 14:00〜"}],
+ ["15:00","札をひけるのは 15:30 まで",{B:"15:30 横浜ヨコハマ",C:"15:00 バブリン先生"}],
+ ["16:00","撤収の積み込み開始（土屋・君塚）／16:45 回遊施策の最終受付",{B:"君塚：2Fの黄色備品回収",C:"16:00 夕日ビール（フィナーレ）",E:"16:30 ラテルミン"}],
+ ["17:00","INFO・回遊施策 終了／撤収の車（タイムズ）17:00〜22:00 予約",{B:"土屋：黄色備品回収／西田：B1撤収→タイムズ／津田→E",C:"Cの片付け（北本・木村）",D:"地域団体・トレーラー展示の誘導",E:"第3部 17:00〜"}],
+ ["18:30","",{D:"18:00 旅人WS → 18:30 片付け",E:"幕付きテント撤収完了 → コールマンテント設営"}],
+ ["19:30","",{E:"19:30 Dancing Queen"}],
+ ["20:00","撤収完了（E倉庫・クレギャラ・防災センター）",{E:"Eの撤収"}],
+ ["22:00","タイムズを返す（予約の終わり）",{}]
+],
+zones: {
+ B:{place:"星天STAGE（駅前広場）／2F クレギャラ", lead:"土屋 勇介（業務委託）・西田 健太朗",
+  members:[
+   ["1F","土屋 勇介（業務委託）","7:30〜","搬入・撤収リーダー。7:30 全ゾーン鍵開け。17:00 黄色備品回収",1],
+   ["1F","西田 健太朗","","12:00 ムラタップ練り歩きの誘導。17:00 B1完全撤収→タイムズ→B・C・Eの備品回収",1],
+   ["1F","津田 康汰","8:00〜21:00","アルバイト。ワースレス練り歩きの誘導。17:00 終了後 Eへ",0],
+   ["2F","近藤 万緒","","子連れ対応（お子さんのタイミングで）。クレギャラ",0],
+   ["2F","君塚 豊（qg）","","12:30〜 LAB vol.13。16:00〜 黄色備品回収",0],
+   ["2F","前山 倫子（qg）","","ほしてん応援部（クレギャラ）",0],
+   ["2F","榊原 幸栄","","クレギャラ",0],
+   ["1F・2F","上杉 勢太","","1F（B1）と2F（B2）を掛け持ち",0]],
+  moves:[["7:30","土屋：全ゾーンの鍵開け","g"],["8:30-9:00","PA搬入の補助（E→C→Bの最後）","g"],["9:00-10:00","キッチンカーICHIPO搬入・車両誘導","g"],["10:15-16:00","演者：控室への案内・入れ替わり",""],["11:00-17:00","INFO・チラシ配布（1F）","g"],["片付け 16:00","君塚：2Fの黄色備品回収を開始","k"],["片付け 17:00","土屋：黄色備品回収／西田：B1完全撤収→タイムズ","k"]],
+  specials:[["12:00-12:30","ムラタップ練り歩き（Bから出発）横断歩道の誘導1名","西田"],["13:45-14:45","ワースレス練り歩き（Bから出発）誘導1名","津田"],["15:00-17:00","出店者の備品回収：ポニー15:00・ファミマ／からだラボ16:00・ダイワサイクル17:00","回収"],["17:00〜","津田はB終了後にEへ移動","津田"],["17:00〜","タイムズ（17:00〜22:00予約）で B・C・EのYADOKARI・防災備品を回収","西田"]],
+  note:"1F（B1）＝駅前広場（星天STAGE）／2F（B2）＝クレギャラ・LAB",
+  maps:[["B2_layout","レイアウト（全体）"],["B3_stage","ステージ周辺 詳細レイアウト"],["B4_rain","ステージ周辺 雨天時レイアウト"]]},
+ C:{place:"芝生広場", lead:"北本 直裕・木村 勇樹（演者周り）",
+  members:[
+   ["","北本 直裕","8:00〜","リーダー。回遊施策のログ・特典をPC管理。Cの片付け",1],
+   ["","木村 勇樹","8:00〜","リーダー（演者周り）。Cの片付け",1],
+   ["","大寺 ちひろ（全体）","8:00〜","全体。ポイントでC：奥本さま11:00・デザイヤー確認11:30",0],
+   ["","松島 海咲","8:00〜17:00","アルバイト。回遊施策のログ・特典も対応",0],
+   ["","桑子 達矢","〜15:00","回遊施策・アンケート回収",0],
+   ["","斎藤 理恵瑠（全体司会）","8:00〜21:00","デザイヤー司会→全体司会（C・B・E）。18:30 Eでテント設営",0],
+   ["","竹之内 創太","8:00〜17:00","野ゲーのセットアップ・見守り・片付け",0],
+   ["","河村 慧","14:00〜","グリーティング列誘導・回遊施策のピーク対応",0]],
+  moves:[["8:50-9:00","PA受け入れ（しゅんたさん）","g"],["9:00-10:00","キッチンカーSANDS搬入・車両誘導・電源確認","g"],["10:00-17:00","野ゲー（竹之内：セットアップ・見守り・片付け）",""],["11:00-16:30","演者6組（控室α・βを交互に使用）",""],["11:15-17:00","回遊施策（13時からピーク）＋アンケート回収 目標100件","g"],["片付け 15:00 / 15:30","①ゲーム大会（15:00）　②バブリンのポール（15:30）","k"],["片付け 16:30 / 17:00","③観客席・PA　④インフォ・野ゲー（北本・木村が中心）","k"]],
+  specials:[["回遊施策の待ち時間","QRでアンケートに答えてもらう（目標100件）。回答者はボックスからおかし1個","全員"],["ガラガラの記録","ログと特典は北本がPCで管理。松島さんも対応","北本"],["景品引換時","そうにゃんバイザーの家族は、ガラガラをもう1回","北本"],["13:30-14:00","デザイヤーの司会 → そのあと全体司会（C・B・E）","斎藤"],["14:00-15:00","グリーティングの子どもの列誘導・パーテーションポール設置","河村"]],
+  note:"役割はその場で振り分ける。13時からのピークは全員で回遊施策へ",
+  maps:[["C2_layout","レイアウト（全体）"],["C3_stage","ステージ周辺 詳細レイアウト"],["C4_stage2","ステージ周辺 詳細レイアウト（ボール配置）"]]},
+ D:{place:"芝生広場（トレーラーハウス前）", lead:"田中 惇資・梶山 大起",
+  members:[
+   ["","田中 惇資","8:00〜","リーダー。北本さんが回遊施策を解説",1],
+   ["","梶山 大起（セールス）","8:00〜","リーダー。12:00〜15:00 はCのトレーラー展示",1],
+   ["","遠藤 美智子（セールス）","8:00〜","クレメちゃん対応（詳細は西山さんから説明）",0]],
+  moves:[["8:30-9:30","準備・設営（YADORESI設置の確認）","g"],["10:30-12:30","リビングトーク（保護司会）",""],["11:00-17:00","イベントINFO・チラシ配布","g"],["12:00 / 13:45","ムラタップ・ワースレス練り歩きのフィナーレ",""],["14:30-16:00","YADORESIカフェ／終日：窓の文化祭・クレメのお部屋",""],["17:00-18:30","地域団体さん・トレーラーハウス展示の利用誘導（18:00 旅人WS）",""],["片付け 18:30","Dのすべてを片付け","k"]],
+  specials:[["終日","クレメちゃん対応（遠藤）。詳細は西山さんから説明","遠藤"],["12:00-15:00","梶山さんはCゾーンのトレーラー展示へ。その間は田中・遠藤で回す","梶山"],["17:00-18:30","地域団体さん・トレーラーハウス展示の利用者を誘導",""],["朝","クレメちゃんみっけの荷物をDへ",""]],
+  note:"Dは18:30まで続く（旅人WS 18:00-18:30）",
+  maps:[["D2_layout","レイアウト"]]},
+ E:{place:"ダンス・音楽ステージ", lead:"西山 るか・髙橋 優弥（業務委託）",
+  members:[
+   ["","西山 るか","8:00〜","リーダー／全体統括。デシベル測定",1],
+   ["","髙橋 優弥（業務委託）","8:00〜21:00","リーダー。西山さんが外す間はEの中心",1],
+   ["","西浦 啓一郎（コーポレート）","8:00〜","インフォ・演者窓口",0],
+   ["","さわだ いっせい","8:00〜","腰痛のため重労働なし。インフォ受付・案内",0],
+   ["","中川 晃都","8:00〜","Eの設営・演者対応",0],
+   ["","津田 康汰","17:00〜","Bが終わったら合流。18:30 コールマンテント設営",0],
+   ["","斎藤 理恵瑠","18:30〜","全体司会。18:30 コールマンテント設営",0]],
+  moves:[["7:30-8:00","E倉庫から備品を出す（緑のシールを貼る）","g"],["8:30","PA集合・搬入（Eが最初。小林さん）","g"],["11:00-17:00","イベントINFO・チラシ配布","g"],["第1部 11:00／第2部 14:00","ダンス（窓口：おだぎりさん）・ライブ（あいそるさん）",""],["第3部 17:00〜19:30","17:00 BD LABO … 19:30 Dancing Queen",""],["片付け 〜18:30","幕付きテントの撤収完了 → 18:30〜 コールマンテント設営","k"],["片付け 20:00","撤収完了：E倉庫・クレギャラ・防災センターへ","k"]],
+  specials:[["終日","車の侵入防止の柵：南京錠の番号 9015",""],["終日","デシベル測定","西山"],["18:30〜","コールマンテント設営（CのテントをEへ移す）","津田"],["状況に応じて","Eのメンバーは、Cへ振り替えることがある",""],["20:00","撤収完了。片付け先：E倉庫・クレギャラ・防災センター（いずみ野へは運ばない）","撤収"]],
+  note:"18:30のテント設営は津田・斎藤",
+  maps:[["E2_layout","ステージ配置（フロアマップ）"]]}
+},
+people:[
+ ["B","土屋 勇介","業務委託","1F／7:30鍵開け・搬入撤収リーダー"],["B","西田 健太朗","","1F／ムラタップ誘導・17時B1撤収→タイムズ"],["B","近藤 万緒","","2F・クレギャラ／子連れ（お子さんのタイミングで）"],["B","君塚 豊","qg","2F／LAB・16時黄色備品回収"],["B","前山 倫子","ホシテン応援部","2F・クレギャラ"],["B","榊原 幸栄","コーポレート","2F・クレギャラ"],["B","上杉 勢太","","1F・2Fを掛け持ち"],["B","津田 康汰","アルバイト","1F／ワースレス誘導・17時からE"],
+ ["C","北本 直裕","","Cリーダー・回遊施策（PC管理）"],["C","木村 勇樹","コーポレート","Cリーダー・演者周り"],["C","松島 海咲","アルバイト","8:00〜17:00／回遊施策のログ・特典"],["C","桑子 達矢","","15時まで"],["C","河村 慧","","14時から"],["C","斎藤 理恵瑠","アルバイト","全体司会（C・B・E）・18:30 Eでテント設営"],["C","竹之内 創太","アルバイト","野ゲー"],
+ ["D","田中 惇資","","Dリーダー"],["D","梶山 大起","セールス","12-15時 Cのトレーラー展示"],["D","遠藤 美智子","セールス","クレメちゃん対応"],
+ ["A","大寺 ちひろ","","全体（ポイントでC対応）"],
+ ["E","西山 るか","","Eリーダー・全体統括・デシベル測定"],["E","髙橋 優弥","業務委託","Eリーダー・8:00〜21:00"],["E","西浦 啓一郎","コーポレート","E"],["E","さわだ いっせい","","腰痛：受付・案内のみ"],["E","中川 晃都","","E"]
+],
+roles:[
+ ["全体統括・雨天判断・SBM窓口","西山 るか","雨天・中止の判断は西山（管理シート）。当日は本部兼Eリーダー。Eでデシベル測定"],
+ ["演者対応（B・C）","大寺 ちひろ・木村 勇樹","大寺：11:00 奥本さま到着対応＠C、11:30 デザイヤー現地確認。木村：Cの演者周り。延長コードのメモあり"],
+ ["回遊施策（ホシテンクエスト）","北本 直裕","Cのリーダー。ログと特典はPCで管理（松島さんも対応）。そうにゃんバイザーの家族はガラガラもう1回"],
+ ["搬入・撤収リーダー／鍵開け","土屋 勇介・君塚 豊","7:30 土屋が全ゾーンの鍵開け。撤収の積み込みは16:00開始"],
+ ["撤収の車（タイムズ）","17:00〜22:00 予約","17:00 西田がB1撤収後にピックアップ → B・C・EのYADOKARI・防災備品を回収"],
+ ["PA（音響）","Movements","8:30 Eゾーンに集合。B＝野田さん／C＝しゅんたさん／E＝小林さん。搬入は E→C→B"],
+ ["相鉄さん（SBM）","各ゾーン1名","B・C・Eに1名ずつ。倉庫の開け閉めと音量確認。杉山・遠藤・宮坂・小田さんが1日対応"],
+ ["撮影","下鳥 達也（Ubird）","終日撮影。時間・範囲は確認済み"],
+ ["全体司会（C・B・E）","斎藤 理恵瑠","Cのデザイヤー司会のあと全体司会へ。音量チェックはPAさんに朝一で依頼"]
+],
+tear:[
+ ["15:00",{B:"①ワースレス物販／ポニーの備品を回収",C:"①ゲーム大会"}],
+ ["15:30",{B:"②こっころ",C:"②バブリンのポール／控室β（16:10ごろ）"}],
+ ["16:00",{A:"撤収の積み込み開始（土屋・君塚）",B:"君塚：2Fの黄色備品回収／ファミマ・からだラボの備品回収"}],
+ ["16:30",{B:"③控室・観客席・PA",C:"③観客席・PA／控室α（16:45ごろ）"}],
+ ["17:00",{A:"タイムズ 17:00〜22:00予約。西田が受け取り→B・C・EのYADOKARI・防災備品を回収",B:"土屋：黄色備品回収／西田：B1完全撤収→タイムズ／ダイワサイクルの備品回収",C:"④インフォ・野ゲー／Cの片付け（北本・木村）",D:"インフォ終了／地域団体・展示の誘導（〜18:30）",E:"インフォ終了／津田がBから合流／メンバーは状況でCへ"}],
+ ["18:30",{D:"Dのすべてを片付け（18:00 旅人WSのあと）",E:"幕付きテント撤収完了→CのコールマンテントをEへ移して設営（津田・斎藤）"}],
+ ["20:00",{A:"撤収完了",E:"Eの撤収完了→E倉庫・クレギャラ・防災センターへ"}],
+ ["22:00",{A:"タイムズを返す（予約の終わり）"}]
+],
+stage:{
+ B:["10:15 大道芸人ちぇん","11:30 ムラタップ（タップ＋パーカッション）","12:00 ムラタップ練り歩き（Bから出発）","12:30 こっころ（読み聞かせ・赤ちゃん人形）","13:45 ザ・ワースレス練り歩き（Bから出発）","15:30 横浜ヨコハマ（漫才）","12:30〜 LAB vol.13（2F・qg）"],
+ C:["10:00〜17:00 野ゲー","11:00 HI-ORLEANS","12:30 奥本めぐみ＆柴田亮太郎DUO","13:30 帷子戦士デザイヤー","14:00 たーにーのゲーム大会","15:00 バブリン先生","16:00 夕日ビール（フィナーレ）"],
+ D:["10:30 リビングトーク（保護司会）","14:30 YADORESIカフェ（認知症カフェ）","18:00 旅人よ！星天に集まりたまえ！！","終日 あなたと窓の文化祭","終日 クレメのお部屋","17:00〜18:30 地域団体・トレーラーハウス展示"],
+ E:["第1部 11:00〜 ダンス6組","第2部 14:00〜 ビリージョエルバンド・ダンス3組","16:30 ラテルミン","第3部 17:00〜 BD LABO・クローバー・Yu-kids／IoTama・スターキング","19:30 Dancing Queen","20:00 終了・撤収"]
+}
+};
+
+const ZN = {A:"全体",B:"B",C:"C",D:"D",E:"E"};
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+let view = "time", zoneSel = "ALL", zoneTab = "B", q = "";
+try { zoneTab = localStorage.getItem("zt") || "B"; zoneSel = localStorage.getItem("zs") || "ALL"; } catch(e) {}
+
+const toMin = t => { const m = /^(\d{1,2}):(\d{2})/.exec(t); return m ? (+m[1]) * 60 + (+m[2]) : null; };
+function currentSlot(list) {
+  const n = new Date();
+  const isDay = n.getFullYear() === 2026 && n.getMonth() === 10 && n.getDate() === 21;
+  if (!isDay) return -1;
+  const cur = n.getHours() * 60 + n.getMinutes(); let idx = -1;
+  list.forEach((r, i) => { const m = toMin(r[0]); if (m !== null && m <= cur) idx = i; });
+  return idx;
+}
+function tick() {
+  const n = new Date();
+  const isDay = n.getFullYear() === 2026 && n.getMonth() === 10 && n.getDate() === 21;
+  $("#clock").textContent = isDay ? "いま " + n.getHours() + ":" + String(n.getMinutes()).padStart(2, "0") : "当日：11/21（土）";
+}
+
+function chipsFor(opts, sel, key) {
+  const c = $("#zchips"); c.hidden = false;
+  c.innerHTML = opts.map(([v, l]) => `<button class="chip ${v.length===1?'z':''}" data-k="${key}" data-v="${v}" aria-pressed="${v===sel}">${esc(l)}</button>`).join("");
+}
+
+function renderTime() {
+  chipsFor([["ALL","すべて"],["B","B"],["C","C"],["D","D"],["E","E"]], zoneSel, "zs");
+  const now = currentSlot(D.time);
+  let h = `<h2>トータルタイムテーブル</h2><p class="muted small">7:30 鍵開け〜22:00 車の返却。上のボタンでゾーンを絞れます。</p><div class="tl">`;
+  D.time.forEach((r, i) => {
+    const [t, all, z] = r; const rows = [];
+    if (all && (zoneSel === "ALL")) rows.push(["A", all]);
+    if (all && zoneSel !== "ALL") rows.push(["A", all]);
+    ["B","C","D","E"].forEach(k => { if (z[k] && (zoneSel === "ALL" || zoneSel === k)) rows.push([k, z[k]]); });
+    if (!rows.length) return;
+    h += `<div class="slot ${i===now?'now':''}" id="s${i}"><div class="t">${t}</div><div class="b">` +
+      rows.map(([k, x]) => `<div class="row"><span class="zb zb${k}">${ZN[k]==="全体"?"全":k}</span><div class="x">${esc(x)}</div></div>`).join("") + `</div></div>`;
+  });
+  h += `</div><p class="foot">元：R8星天qlay備品レイアウト（各ゾーンのタイムテーブル）／北本さんの修正指示（11/20夜）。当日運営資料 v8 と同じ内容です。</p>`;
+  $("#app").innerHTML = h;
+  $("#nowbtn").hidden = now < 0;
+}
+
+function renderZone() {
+  chipsFor([["B","B"],["C","C"],["D","D"],["E","E"]], zoneTab, "zt");
+  const z = D.zones[zoneTab], k = zoneTab;
+  let h = `<div class="zhead" style="background:var(--z${k})"><div><div class="zn">${k} ZONE</div><div class="zp">${esc(z.place)}</div></div><div class="zp" style="text-align:right">リーダー<br>${esc(z.lead)}</div></div>`;
+  h += `<h3>メンバー</h3><div class="card" style="background:var(--z${k}t);border-color:transparent">` + z.members.map(([loc, n, hr, r, lead]) =>
+    `<div class="person"><div class="n">${lead?'<span class="star">★</span>':''}${loc?`<span class="loc" style="background:var(--z${k});">${esc(loc)}</span>`:''}${esc(n)}</div><div class="h">${esc(hr)}</div><div class="r">${esc(r)}</div></div>`).join("") + `</div>`;
+  if (z.note) h += `<div class="note" style="margin-top:8px;color:var(--z${k}d);background:var(--z${k}t)">${esc(z.note)}</div>`;
+  h += `<h3>当日の動き</h3><div class="stack">` + z.moves.map(([t, d, c]) => `<div class="mv ${c}"><div class="t">${esc(t)}</div><div class="d">${esc(d)}</div></div>`).join("") + `</div>`;
+  h += `<h3>特別対応</h3><div class="stack">` + z.specials.map(([t, d, w]) => `<div class="sp"><div class="t">${esc(t)}</div><div class="d">${esc(d)}</div>${w?`<div class="w">${esc(w)}</div>`:''}</div>`).join("") + `</div>`;
+  h += `<h3>レイアウト（タップで拡大）</h3><div class="maps">` + z.maps.map(([f, c]) => `<div class="map"><figure><img src="maps/${f}.jpg" alt="${k}ゾーン ${esc(c)}" loading="lazy" data-full="maps/${f}.jpg"><figcaption>${esc(c)}</figcaption></figure></div>`).join("") + `</div>`;
+  h += `<p class="foot">レイアウトの元：R8星天qlay備品レイアウト（Googleスライド・11/20時点）</p>`;
+  $("#app").innerHTML = h; $("#nowbtn").hidden = true;
+}
+
+function renderPeople() {
+  $("#zchips").hidden = true;
+  const list = D.people.filter(p => !q || (p[1] + p[2] + p[3] + ZN[p[0]]).includes(q));
+  let h = `<h2>人・役割</h2><input class="search" id="q" type="search" placeholder="名前・役割で探す（例：西田、司会）" value="${esc(q)}" autocomplete="off">`;
+  h += `<h3>YADOKARIメンバーとアルバイト（${list.length}人）</h3><div class="card plist">` + (list.length ? list.map(([z, n, g, m]) =>
+    `<div class="p"><span class="zb zb${z}">${z==="A"?"全":z}</span><div style="min-width:0"><div class="nm">${esc(n)}${g?`<small>${esc(g)}</small>`:''}</div><div class="mm">${esc(m)}</div></div></div>`).join("") : `<p class="muted small">見つかりません。名前の一部で探してください。</p>`) + `</div>`;
+  h += `<h3>ゾーンをまたぐ役割</h3><div class="stack">` + D.roles.filter(r => !q || r.join("").includes(q)).map(([k, w, m]) =>
+    `<div class="card role"><div class="k">${esc(k)}</div><div class="who">${esc(w)}</div><div class="m">${esc(m)}</div></div>`).join("") + `</div>`;
+  h += `<p class="foot">参加できない：渡辺 李咲さん（11/9 授業参観）ほか2名。</p>`;
+  $("#app").innerHTML = h; $("#nowbtn").hidden = true;
+  const inp = $("#q");
+  inp.addEventListener("input", e => { q = e.target.value.trim(); const pos = e.target.selectionStart; renderPeople(); const n = $("#q"); n.focus(); try { n.setSelectionRange(pos, pos); } catch(_) {} });
+}
+
+function renderTear() {
+  chipsFor([["ALL","すべて"],["B","B"],["C","C"],["D","D"],["E","E"]], zoneSel, "zs");
+  const now = currentSlot(D.tear);
+  let h = `<h2>撤収・片付け</h2><div class="tdhead">片付け先：E倉庫・クレギャラ・防災センター（いずみ野への第二便はなし）。朝にE倉庫から出した備品は緑のシールで見分ける</div><div class="tl td" style="margin-top:10px">`;
+  D.tear.forEach(([t, z], i) => {
+    const rows = ["A","B","C","D","E"].filter(k => z[k] && (zoneSel === "ALL" || zoneSel === k || k === "A"));
+    if (!rows.length) return;
+    h += `<div class="slot ${i===now?'now':''}" id="s${i}"><div class="t" style="color:var(--orange)">${t}</div><div class="b">` + rows.map(k => `<div class="row"><span class="zb zb${k}">${k==="A"?"全":k}</span><div class="x">${esc(z[k])}</div></div>`).join("") + `</div></div>`;
+  });
+  h += `</div>`;
+  $("#app").innerHTML = h; $("#nowbtn").hidden = now < 0;
+}
+
+function renderStage() {
+  $("#zchips").hidden = true;
+  let h = `<h2>ステージ・企画</h2>`;
+  ["B","C","D","E"].forEach(k => {
+    h += `<div class="card" style="margin-top:10px;padding:0;overflow:hidden"><div style="background:var(--z${k});padding:8px 14px;font-weight:900">${k} ZONE<span class="small" style="font-weight:700;margin-left:8px">${esc(D.zones[k].place)}</span></div><div style="padding:8px 14px">` +
+      D.stage[k].map(s => { const m = /^([\d:〜\-–]+|第\d部 [\d:〜]+|終日)\s(.*)$/.exec(s); return `<div class="row"><div class="x" style="font-variant-numeric:tabular-nums"><b>${esc(m?m[1]:"")}</b> ${esc(m?m[2]:s)}</div></div>`; }).join("") + `</div></div>`;
+  });
+  h += `<p class="foot">元：R8星天qlay備品レイアウト（11/20時点）</p>`;
+  $("#app").innerHTML = h; $("#nowbtn").hidden = true;
+}
+
+const R = {time: renderTime, zone: renderZone, people: renderPeople, tear: renderTear, stage: renderStage};
+function go(v, push) {
+  view = v;
+  document.querySelectorAll("nav.tabs button").forEach(b => b.setAttribute("aria-current", b.dataset.v === v ? "page" : "false"));
+  R[v](); window.scrollTo(0, 0);
+  if (push && location.hash !== "#" + v) history.replaceState(null, "", "#" + v);
+}
+document.querySelector("nav.tabs").addEventListener("click", e => { const b = e.target.closest("button"); if (b) go(b.dataset.v, true); });
+$("#zchips").addEventListener("click", e => {
+  const b = e.target.closest(".chip"); if (!b) return;
+  if (b.dataset.k === "zt") { zoneTab = b.dataset.v; try { localStorage.setItem("zt", zoneTab); } catch(_) {} }
+  else { zoneSel = b.dataset.v; try { localStorage.setItem("zs", zoneSel); } catch(_) {} }
+  R[view](); window.scrollTo(0, 0);
+});
+$("#nowbtn").addEventListener("click", () => { const el = document.querySelector(".slot.now"); if (el) el.scrollIntoView({behavior: "smooth", block: "center"}); });
+document.addEventListener("click", e => {
+  const img = e.target.closest(".map img"); if (!img) return;
+  const lb = document.createElement("div"); lb.className = "lb";
+  lb.innerHTML = `<span class="hint">左右にスクロールで見る</span><button class="close">閉じる</button><img src="${img.dataset.full}" alt="${img.alt}">`;
+  document.body.appendChild(lb); document.body.style.overflow = "hidden";
+  lb.querySelector(".close").addEventListener("click", () => { lb.remove(); document.body.style.overflow = ""; });
+});
+window.addEventListener("hashchange", () => { const v = location.hash.slice(1); if (R[v] && v !== view) go(v, false); });
+tick(); setInterval(() => { tick(); }, 30000);
+const start = location.hash.slice(1);
+go(R[start] ? start : "time", false);
+</script>
+
+</body>
+</html>
